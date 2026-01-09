@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WraithCG Docs</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <canvas id="canvas"></canvas>
+    
+    <div class="header-style">
+        <header class="glass-panel header-bar">
+            <div class="logo-area">
+                <button id="home-btn" class="icon-btn" title="Back to Home">
+                    <i class='bx bx-home-alt-2'></i>
+                </button>
+                <button id="home-btn" class="icon-btn" title="View Portfolio">
+                    <a href="https://wraithcg.github.io/me"><i class='bx bx-user'></i></a>
+                </button>
+                <div class="logo">wRAiTH<span class="highlight">cg</span></div>
+            </div>
+
+            <div class="project-select-wrapper">
+                <i class='bx bx-folder-open'></i>
+                <select id="project-selector">
+                    <option value="" disabled selected>Switch Project...</option>
+                    </select>
+            </div>
+            
+            <div class="theme-toggle" id="theme-btn" title="Cycle Theme">
+                <i class='bx bx-palette'></i>
+            </div>
+        </header>
+    </div>
+    <div id="landing-view" class="landing-container">
+        <div class="landing-header">
+            <h1>Select a <span class="highlight">Project</span></h1>
+            <p>Choose a documentation reference to begin.</p>
+        </div>
+        <div id="project-grid" class="project-grid">
+            </div>
+    </div>
+
+    <div id="docs-view" class="docs-wrapper hidden">
+        <div class="main-grid">
+            <nav class="glass-panel sidebar">
+                <div class="sidebar-header">CONTENTS</div>
+                
+                <div class="search-container">
+                    <i class='bx bx-search'></i>
+                    <input type="text" id="search-input" placeholder="Search docs...">
+                </div>
+
+                <ul id="section-list"></ul>
+            </nav>
+
+            <main class="glass-panel content-area" id="main-content">
+                <div class="placeholder">
+                    <h2>Select a Topic</h2>
+                    <p>Use the sidebar to navigate the documentation.</p>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
