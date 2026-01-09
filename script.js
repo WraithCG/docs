@@ -10,8 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const homeBtn = document.getElementById('home-btn');
     const themeBtn = document.getElementById('theme-btn');
     const searchInput = document.getElementById('search-input');
-
-    let allProjectsIndex = []; // Stores data.json content
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    
     let currentProjectData = null; // Stores currently loaded project JSON
 
     // --- INITIALIZATION ---
@@ -132,6 +134,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- NEW: LIGHTBOX LOGIC ---
+    // Close on 'X' button
+    if(lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+    }
+
+    // Close on clicking outside the image (the dark background)
+    if(lightbox) {
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
+
+    function openLightbox(src) {
+        lightboxImg.src = src;
+        lightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        // Clear src after animation to prevent "flash" of old image next time
+        setTimeout(() => { lightboxImg.src = ''; }, 300);
+    }
+
     // --- 3. SEARCH & RENDER (Same as before) ---
     function filterSidebar(query) {
         if (!currentProjectData) return;
@@ -148,6 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
         initSidebar(filtered);
     }
 
+    // --- UPDATED RENDER CONTENT ---
     function renderContent(section) {
         mainContent.innerHTML = '';
         const title = document.createElement('h1');
@@ -157,27 +193,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
         section.content.forEach(block => {
             let el;
+            
+            // ... [Header, Text, Note, Tip blocks remain same] ...
             if (block.type === 'header') {
                 el = document.createElement('h2');
                 el.innerHTML = block.value;
-            } else if (block.type === 'text') {
+            } 
+            else if (block.type === 'text') {
                 el = document.createElement('div');
                 el.className = 'text-block';
                 el.innerHTML = block.value;
-            } else if (block.type === 'note') {
+            } 
+            else if (block.type === 'note') {
                 el = document.createElement('div');
                 el.className = 'note-block';
                 el.innerHTML = `<i class='bx bx-info-circle'></i> <div>${block.value}</div>`;
-            } else if (block.type === 'tip') {
+            }
+            else if (block.type === 'tip') {
                 el = document.createElement('div');
                 el.className = 'tip-block';
                 el.innerHTML = `<i class='bx bx-bulb'></i> <div>${block.value}</div>`;
-            } else if (block.type === 'image') {
+            }
+            // --- UPDATED IMAGE BLOCK ---
+            else if (block.type === 'image') {
                 const wrap = document.createElement('div');
                 wrap.className = `img-wrap ${block.align}`;
+                
                 const img = document.createElement('img');
                 img.src = block.src;
+                
+                // NEW: Add zoom cursor & click event
+                img.style.cursor = 'zoom-in';
+                img.addEventListener('click', () => openLightbox(block.src));
+
                 wrap.appendChild(img);
+
                 if(block.caption) {
                     const cap = document.createElement('span');
                     cap.className = 'caption';
@@ -186,6 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 el = wrap;
             }
+
             if (el) mainContent.appendChild(el);
         });
 

@@ -10,14 +10,14 @@
     "id": "character-selection",
     "title": "Character Selection System V1.2",
     "description": "Extensive documentation for Character Selection System.",
-    "path": "projects/character_selection_system.json",
+    "path": "projects/character_selection.json",
     "image": "https://media.fab.com/image_previews/gallery_images/a5fd60f7-cad2-41e0-a7e1-b3b1bd35f6dd/e634bff9-1e80-44aa-9f75-b13f25ac951c.jpg"
   },
   {
     "id": "game-project",
     "title": "Game Project V1.0",
     "description": "Complete guide to the Game Project.",
-    "path": "projects/character_selection_system.json",
+    "path": "projects/game_project.json",
     "image": "https://media.fab.com/image_previews/gallery_images/a5fd60f7-cad2-41e0-a7e1-b3b1bd35f6dd/e634bff9-1e80-44aa-9f75-b13f25ac951c.jpg"
   }
 ]
