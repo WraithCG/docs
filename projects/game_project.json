@@ -1,0 +1,326 @@
+{
+            "id": "wraith-game-project-v1-full",
+            "title": "Game Project v1.0",
+            "sections": [
+                {
+                    "title": "Introduction",
+                    "content": [
+                        {
+                            "type": "image",
+                            "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
+                            "align": "full",
+                            "caption": "wRAiTH_CG’s Game Project (v1.0)"
+                        },
+                        {
+                            "type": "text",
+                            "value": "This document serves as a guide to the <b>Game Project</b> in Unreal Engine 5, featuring character selection, customization, and camera systems. It is organized logically to help you get started, understand the core systems, and customize the project without feeling overwhelmed."
+                        },
+                        {
+                            "type": "tip",
+                            "value": "<b>Support:</b> For questions or assistance, please leave a comment on the product page or join the Discord server for faster resolution. Please consider rating and reviewing the asset if it proves useful for your project."
+                        }
+                    ]
+                },
+                {
+                    "title": "Prerequisites & Notes",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "Motion Matching & Animations"
+                        },
+                        {
+                            "type": "text",
+                            "value": "This project uses the default motion matching setup and animations from the <i>GameAnimationSampleProject (GASP)</i>. No custom motion matching setup was created specifically for this template."
+                        },
+                        {
+                            "type": "note",
+                            "value": "<b>Game Data & Saves:</b> The project does <u>not</u> use a GameInstanceClass. Data is not saved between levels or game replays. Any customization items attached to a character are lost if the character is changed."
+                        },
+                        {
+                            "type": "header",
+                            "value": "Required Plugins"
+                        },
+                        {
+                            "type": "text",
+                            "value": "Ensure the following plugins are <b>Enabled</b> for the project to function correctly:"
+                        },
+                        {
+                            "type": "text",
+                            "value": "<ul><li><b>Animation:</b> AnimationWarping, MotionWarping, AnimationLocomotionLibrary, PoseSearch, Chooser, RigLogic, LiveLink, LiveLinkControlRig.</li><li><b>Tools/Physics:</b> ModelingToolsEditorMode, HairStrands, Mover, NetworkPrediction.</li></ul>"
+                        }
+                    ]
+                },
+                {
+                    "title": "Integration & Versions",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "Integration Strategy"
+                        },
+                        {
+                            "type": "text",
+                            "value": "<b>Development Goal:</b> The project is intended to be used as a base starting project.<br><ul><li><b>GameMode Logic:</b> The <i>GM_Project</i> is responsible for management of platforms (creation and removal).</li><li><b>Player Controller:</b> The <i>PC_Project</i> manages the current character data and handles the logic of fetching character data (Next/Previous).</li></ul>"
+                        },
+                        {
+                            "type": "note",
+                            "value": "<b>Migration Guide:</b> The system is heavily interface-driven. Though modular, this project is not intended for migration into existing projects. However, you can easily download and integrate <i>CharacterSelectionSystem</i>, <i>Customization System</i>, and <i>WidgetsManagementSystem</i> selectively from FAB for free."
+                        },
+                        {
+                            "type": "text",
+                            "value": "<b>5.7 Version Note:</b> You can open this project with UE 5.7, but the GASP 5.7 project differs slightly, so the CharacterSelectionSystem cannot be directly integrated yet. The 5.7 update will include Mover Component support and more features."
+                        }
+                    ]
+                },
+                {
+                    "title": "Package Contents",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "Included Systems"
+                        },
+                        {
+                            "type": "text",
+                            "value": "Integrated <b>CharacterSelectionSystemV1.2</b> and <b>CharacterCustomizationSystemV1.1</b> out of the box with <b>WidgetsManagementSystemV1.1</b>."
+                        },
+                        {
+                            "type": "header",
+                            "value": "Features Breakdown"
+                        },
+                        {
+                            "type": "text",
+                            "value": "<ul><li><b>Animation:</b> A CharacterAnimationModification system with micro-control to create and modify existing animations for unique character animations.</li><li><b>Camera:</b> Improved blending, transitions, and added a settings toggle. Play LevelSequences in background of widget screens. Includes Normal, Lean (L/R), Crouch, and Sprint cameras.</li><li><b>UI:</b> Revamped layouts, added Pause Menu.</li><li><b>Quality of Life:</b> Reorganized blueprints and commented code for better readability. Improved Emoting System.</li></ul>"
+                        },
+                        {
+                            "type": "header",
+                            "value": "Death Box"
+                        },
+                        {
+                            "type": "text",
+                            "value": "A simple trigger that makes the character ragdoll and activates death state. <b>Note:</b> There is no respawn system. The ragdoll is based on the UEFN_Mannequin physics body setup. Different characters do not use different physics bodies. You simply restart the level via the main menu."
+                        },
+                        {
+                            "type": "tip",
+                            "value": "<b>UEFN Mannequin Info:</b> There are 2 UEFN Mannequins in the project.<br>1. <b>UEFN_Mannequin (White):</b> Has all motion matching database and logic.<br>2. <b>NewUEFN_Mannequin (Orange):</b> Used for gameplay.<br><i>Reason:</i> Adding/removing sockets on the base mannequin updates all related animations, freezing the engine. The Orange mannequin prevents this."
+                        }
+                    ]
+                },
+                {
+                    "title": "Controls",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "Default Controls"
+                        },
+                        {
+                            "type": "text",
+                            "value": "<ul><li><b>Space:</b> Jump</li><li><b>W:</b> Move Forward</li><li><b>S:</b> Move Backward</li><li><b>A:</b> Move Left</li><li><b>D:</b> Move Right</li><li><b>C:</b> Crouch</li><li><b>RightMouseButton:</b> Aim</li></ul>"
+                        }
+                    ]
+                },
+                {
+                    "title": "Player Character",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "CBP_SandboxCharacter"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://placehold.co/800x400/333/FFF?text=Movement+Graph",
+                            "align": "full",
+                            "caption": "Character Movement Graph"
+                        },
+                        {
+                            "type": "text",
+                            "value": "The graphs and actions are respectfully spread out across different categories so that everything is easier to find and modify. Categories include: EventGraph, MovementGraph, ActionGraph, InterfaceGraph, and WidgetGraph."
+                        },
+                        {
+                            "type": "header",
+                            "value": "BPC_PlayerAttributesComponent"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://placehold.co/300x500/111/FFF?text=Attributes+Panel",
+                            "align": "left",
+                            "caption": "Player Attributes Details"
+                        },
+                        {
+                            "type": "text",
+                            "value": "This component manages critical character data:"
+                        },
+                        {
+                            "type": "text",
+                            "value": "<ul><li><b>Décor Data:</b> Used on Character Selection Screen to highlight qualities (modify via <i>S_Attributes</i> struct) .</li><li><b>Ragdoll on Death:</b> Determines if the player character ragdolls when overlapping the death trigger .</li><li><b>Aim Offsets:</b> Adjusts camera translation/rotation when aiming in First Person mode .</li><li><b>Emote - Wait Time:</b> Time to wait before actually emoting .</li><li><b>Emote - Blend Out:</b> Time taken to abruptly stop an emote .</li><li><b>Emote - Delays:</b> Min/Max random delay between emotes when blending out .</li><li><b>Emote - Data:</b> Data asset containing emoting sequences per widget screen .</li><li><b>Debug:</b> Prints Sequence Index or Anim Montage name.</li></ul>"
+                        }
+                    ]
+                },
+                {
+                    "title": "Emote System",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "Emote Data Asset"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://placehold.co/800x400/444/FFF?text=Emote+Data+Structure",
+                            "align": "full",
+                            "caption": "DA_EmoteActionData Setup"
+                        },
+                        {
+                            "type": "text",
+                            "value": "This map contains emote data respective to widget screens.<br><br><b>Abort Previous:</b> Aborts the current emote montage abruptly to start a fresh sequence.If disabled, the previous sequence completes first .<br><b>AnimationMontages:</b> Define multiple montages (e.g., standing up -> greeting -> sitting down).<br><b>PlaySequentially:</b> If true, plays all montages in order.If false, selects and plays them randomly."
+                        }
+                    ]
+                },
+                {
+                    "title": "Customization",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "System Overview"
+                        },
+                        {
+                            "type": "text",
+                            "value": "Customization data is fetched from the current character's data asset (<i>DA_PDA_CD_xyz</i>) which contains per-character selection and customization data.In this project, all characters must inherit <b>CBP_SandboxCharacter</b> to preserve running logic."
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://placehold.co/800x400/222/FFF?text=Customization+Data+Asset",
+                            "align": "full",
+                            "caption": "DA_PDA_CD Details"
+                        },
+                        {
+                            "type": "header",
+                            "value": "Adding New Characters"
+                        },
+                        {
+                            "type": "text",
+                            "value": "1.Right Click on <i>CBP_SandboxCharacter</i> -> Create Child Class.<br>2.In the event graph, plug the skeletal mesh component into <b>PlayerSkeletonMesh</b>.<br>3.Create a new character data asset (duplicate existing) and assign your new class.<br>4.Add the new DA to <i>DA_PDA_CSD</i>.<br>5. Setup sockets on your new skeleton.Standard sockets: <i>pu, hat, lenses, armor, shoes_l, shoes_r, neckwrap, chain</i>.You can copy/paste sockets from the UEFN skeleton."
+                        }
+                    ]
+                },
+                {
+                    "title": "Animation",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "ABP_SandboxCharacter"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://placehold.co/800x400/333/FFF?text=AnimGraph+Logic",
+                            "align": "full",
+                            "caption": "Animation Blueprint Graph"
+                        },
+                        {
+                            "type": "text",
+                            "value": "The animation blueprint is modified for custom animation modification and stabilizing camera movement .<br>• <b>P_CameraBlended:</b> Outputs poses blended for ThirdPerson/FirstPerson states .<br>• <b>P_AnimModified:</b> Outputs animations after modification .<br>• <b>Logic:</b> When a traversal action occurs or <i>UseCustomAnimationData</i> is false, modification stops . you can plug any animation or custom processed pose at the place of ‘M_Neutral_Stand_Idle_Loop’ for better camera control."
+                        },
+                        {
+                            "type": "header",
+                            "value": "Animation Modifiers"
+                        },
+                        {
+                            "type": "text",
+                            "value": "Enable <b>UseCustomAnimationData</b> to modify animations for specific actions (e.g., Running, Jumping) .<br>Define a <i>ModifierAnimation</i>, a <i>BlendValue</i> (0.0–1.0), and a list of <i>BoneToAffect</i> (from E_BonesToModify).Current categories: UpperBody, LeftArm, RightArm, LeftThigh, RightThigh."
+                        }
+                    ]
+                },
+                {
+                    "title": "Camera System",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "Camera Overhaul"
+                        },
+                        {
+                            "type": "text",
+                            "value": "The camera system has been re-organized for smoother blending .<br>• <b>Normal Gameplay:</b> Normal Third Person Camera.<br>• <b>Aiming:</b> Attached to player character’s head bone.Offset adjustable in AttributesComponent .<br>• <b>Rigs:</b> Specific camera rigs triggered for actions and menus. Found in <i>Components > CameraSystem > Camera > Rigs</i>."
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://placehold.co/400x300/333/FFF?text=Camera+Director+Blueprint",
+                            "align": "right",
+                            "caption": "Camera Director EventGraph"
+                        }
+                    ]
+                },
+                {
+                    "title": "UI & Widgets",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "Widgets Management System"
+                        },
+                        {
+                            "type": "text",
+                            "value": "All widgets use the <b>WidgetsManagementSystem</b>. Reusable elements allow for easy style modification."
+                        },
+                        {
+                            "type": "header",
+                            "value": "Core Elements"
+                        },
+                        {
+                            "type": "text",
+                            "value": "<ul><li><b>E_Button:</b> Button with customization for color/text/state.Uses 'SetButtonStatus' .</li><li><b>E_FixedText / E_VariableText:</b> For static or dynamic text (Uses 'SetNewText').</li><li><b>E_GameTitle:</b> Image widget.Uses 'SetNewImage' .</li><li><b>E_Horizontally/VerticallyStackedWidgetElements:</b> Like boxes but allows dynamic appending and property control .</li><li><b>E_PairedElement/Text:</b> For pairs of elements (Uses 'SetPairTextValue').</li></ul>"
+                        },
+                        {
+                            "type": "tip",
+                            "value": "<b>Editing Tip:</b> Child widgets added to Stacked Arrays during Pre-Construct become locked in the Details panel.To edit them, remove them from the slot, Compile, make changes, and add them back."
+                        }
+                    ]
+                },
+                {
+                    "title": "Adding Widgets",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "Workflow"
+                        },
+                        {
+                            "type": "text",
+                            "value": "1.Create a new WidgetBlueprint.<br>2.Define a category in <i>E_WidgetScreen</i> (Components > Widgets > Enumeration).<br>3. Add a new element in <i>PDA_DA_WidgetData</i>.Select your widget and category.<br>4.Call the <b>AddWidgetToScreen</b> interface function with GameMode as target."
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://placehold.co/800x400/444/FFF?text=AddWidgetToScreen+Logic",
+                            "align": "full",
+                            "caption": "Adding Widget to Screen Logic"
+                        },
+                        {
+                            "type": "text",
+                            "value": "<b>Level Sequences:</b> You can set level sequences to play in the background.Note: These are location-dependent; changing player location affects where the sequence plays."
+                        }
+                    ]
+                },
+                {
+                    "title": "Level Setup",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "Play in a New Level"
+                        },
+                        {
+                            "type": "text",
+                            "value": "1.Go to File -> New Level.<br>2.Select 'Basic' (or any type).<br>3.Go to World Settings and set GameMode to <b>GM_Project</b>.<br>4.Press Play."
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://placehold.co/600x400/111/FFF?text=New+Level+Dialog",
+                            "align": "full",
+                            "caption": "Creating a New Level"
+                        }
+                    ]
+                },
+                {
+                    "title": "Credits",
+                    "content": [
+                        {
+                            "type": "text",
+                            "value": "If there‘s anything missing in this doc or the project, please hit me up on Discord.Thanks and have a wonderful day :) "
+                        }
+                    ]
+                }
+            ]
+        }

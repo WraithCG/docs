@@ -1,43 +1,22 @@
 [
   {
-    "id": "wraith-engine",
-    "title": "Wraith Engine v2",
-    "description": "High-fidelity real-time rendering engine documentation.",
-    "path": "projects/wraith_engine.json",
-    "image": "https://placehold.co/600x400/111/FFF?text=Wraith+Engine"
-  },
-  {
     "id": "endless-runner",
-    "title": "Endless Runner Template",
-    "description": "Complete guide to the motion-matching runner template.",
+    "title": "Endless Runner Game Creator Template V1.3",
+    "description": "Complete guide to the Endless Runner Game Creator Template with Motion Matching.",
     "path": "projects/endless_runner.json",
     "image": "https://cdnb.artstation.com/p/assets/images/images/095/151/215/large/wraithcg-edsplash.webp?1767767615"
   },
   {
     "id": "character-selection",
     "title": "Character Selection System V1.2",
-    "description": "Documentation for easy to use, modular and robust Character Selection System with menu and camera systems.",
+    "description": "Extensive documentation for Character Selection System.",
     "path": "projects/character_selection_system.json",
     "image": "https://media.fab.com/image_previews/gallery_images/a5fd60f7-cad2-41e0-a7e1-b3b1bd35f6dd/e634bff9-1e80-44aa-9f75-b13f25ac951c.jpg"
   },
   {
-    "id": "character-selection",
-    "title": "Character Selection System V1.2",
-    "description": "Documentation for easy to use, modular and robust Character Selection System with menu and camera systems.",
-    "path": "projects/character_selection_system.json",
-    "image": "https://media.fab.com/image_previews/gallery_images/a5fd60f7-cad2-41e0-a7e1-b3b1bd35f6dd/e634bff9-1e80-44aa-9f75-b13f25ac951c.jpg"
-  },
-  {
-    "id": "character-selection",
-    "title": "Character Selection System V1.2",
-    "description": "Documentation for easy to use, modular and robust Character Selection System with menu and camera systems.",
-    "path": "projects/character_selection_system.json",
-    "image": "https://media.fab.com/image_previews/gallery_images/a5fd60f7-cad2-41e0-a7e1-b3b1bd35f6dd/e634bff9-1e80-44aa-9f75-b13f25ac951c.jpg"
-  },
-  {
-    "id": "character-selection",
-    "title": "Character Selection System V1.2",
-    "description": "Documentation for easy to use, modular and robust Character Selection System with menu and camera systems.",
+    "id": "game-project",
+    "title": "Game Project V1.0",
+    "description": "Complete guide to the Game Project.",
     "path": "projects/character_selection_system.json",
     "image": "https://media.fab.com/image_previews/gallery_images/a5fd60f7-cad2-41e0-a7e1-b3b1bd35f6dd/e634bff9-1e80-44aa-9f75-b13f25ac951c.jpg"
   }
