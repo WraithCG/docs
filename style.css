@@ -346,7 +346,7 @@ p {
 /* Mobile Responsiveness */
 @media screen and (max-width: 968px) {
     .main-grid { grid-template-columns: 1fr; overflow-y: auto; }
-    .docs-wrapper { height: auto; padding: 1rem; width: min-content;}
+    .docs-wrapper { height: auto; padding: 1rem; width: fit-content;}
     .sidebar { max-height: 300px; }
     .img-wrap.left, .img-wrap.right { float: none; width: 100%; margin: 0 0 1rem 0; }
     .content-area { padding: 1.5rem; }
