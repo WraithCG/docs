@@ -14,10 +14,31 @@
     "image": "https://media.fab.com/image_previews/gallery_images/a5fd60f7-cad2-41e0-a7e1-b3b1bd35f6dd/e634bff9-1e80-44aa-9f75-b13f25ac951c.jpg"
   },
   {
+    "id": "character-customization",
+    "title": "Character Customization System V1.1",
+    "description": "Complete guide to the Character Customization System.",
+    "path": "projects/character_customization.json",
+    "image": "https://cdna.artstation.com/p/assets/images/images/095/151/292/large/wraithcg-dsfgdgsfd.webp?1767768242"
+  },
+  {
+    "id": "widgets_management",
+    "title": "Widgets Management System V1.1",
+    "description": "Complete guide to the Widgets Management System V1.1",
+    "path": "projects/widgets_management.json",
+    "image": "https://cdnb.artstation.com/p/assets/images/images/095/162/801/large/wraithcg-17.jpg?1767798987"
+  },
+  {
+    "id": "free-runner",
+    "title": "Infinite Runner Game Template V1.1",
+    "description": "Extensive documentation for Infinite Runner Game Template V1.1",
+    "path": "projects/free_runner.json",
+    "image": "https://cdnb.artstation.com/p/assets/images/images/094/734/229/large/wraithcg-screenshot-2025-12-03dsfdsfd203700.webp?1766259292"
+  },
+  {
     "id": "game-project",
-    "title": "Game Project V1.0",
+    "title": "Action Adventure Game Project V1.0",
     "description": "Complete guide to the Game Project.",
     "path": "projects/game_project.json",
-    "image": "https://media.fab.com/image_previews/gallery_images/a5fd60f7-cad2-41e0-a7e1-b3b1bd35f6dd/e634bff9-1e80-44aa-9f75-b13f25ac951c.jpg"
+    "image": "https://media.fab.com/image_previews/gallery_images/267e1e8f-e8ad-4ecc-8d0b-dcd4f78b0f98/af251f82-5964-4ec5-95c1-fa7ba501c39f.jpg"
   }
 ]

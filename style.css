@@ -78,7 +78,7 @@ body.theme-metal { background-image: linear-gradient(153deg, #445f7a 0%, #c5e4f9
 .project-grid {
     display: flex;
     gap: 1rem;
-    width: max-content;
+    width: fit-content;
     height: 50%;
     justify-content: space-around;
 }
@@ -172,6 +172,147 @@ body.theme-metal { background-image: linear-gradient(153deg, #445f7a 0%, #c5e4f9
 .icon-btn:hover { background: var(--first-color); color: #000; scale: 1.25;}
 
 @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+
+/* === ROADMAP TIMELINE (Interactive) === */
+.roadmap-container {
+    position: relative;
+    padding: 20px 0;
+    margin: 2rem 0;
+    margin-left: 20px;
+}
+
+.roadmap-item {
+    position: relative;
+    margin-bottom: 1.5rem; /* Reduced margin since they are collapsed */
+    padding-left: 30px;
+}
+
+/* Status Dot */
+.roadmap-item::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 20px; /* Adjusted alignment */
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    /* background: var(--status-color); */
+    border: 3px double var(--status-color);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.roadmap-item:hover::before {
+    transform: scale(1.25);
+    box-shadow: 0 0 7px var(--status-color);
+}
+
+/* Card Container */
+.roadmap-content {
+    /* background: rgba(255, 0, 0, 0.03); */
+    background: hsla(var(--first-color-hue), 36%, 36%, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1rem 1.5rem; /* Slightly tighter padding */
+    position: relative;
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+    border-left: 4px solid var(--status-color);
+}
+
+/* === INTERACTIVE HEADER === */
+.roadmap-header-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.rm-meta { display: flex; width: 97% ; align-items: center; justify-content: space-between; }
+
+.rm-version {
+    font-family: var(--heading-font);
+    font-size: 1.2rem;
+    color: var(--status-color);
+    font-weight: bold;
+}
+
+.rm-date {
+    font-family: var(--content-font);
+    font-size: 0.95rem;
+    color: var(--text-color-light);
+    padding: 3px 8px;
+}
+
+.rm-toggle-icon {
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+    transition: transform 0.4s ease;
+}
+
+/* === EXPANDABLE DETAILS === */
+.roadmap-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rm-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rm-features li {
+    font-family: var(--content-font);
+    color: var(--text-color);
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rm-features li::before {
+    content: '•';
+    color: var(--status-color);
+    font-size: 1.2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* === ACTIVE STATE (Expanded) === */
+.roadmap-item.expanded .roadmap-details {
+    max-height: 500px; /* Large enough to fit content */
+    opacity: 1;
+}
+
+.roadmap-item.expanded .rm-toggle-icon {
+    transform: rotate(180deg);
+    color: var(--first-color);
+}
+
+.roadmap-item.expanded .roadmap-content {
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.rm-features li:hover {
+    color: var(--status-color);
+    font-size: 1.25rem;
+    text-shadow: 1px 5px 20px rgba(0,0,0,.4) ;
+    letter-spacing: 0.36rem;
+}
+
+/* Status Colors */
+.status-completed { --status-color: #00e61f; }
+.status-in-progress { --status-color: #1c89ff; }
+.status-planned { --status-color: #ffc400; }
 
 /* === LAYOUT === */
 .docs-wrapper {
@@ -268,7 +409,7 @@ select option { background: #000; color: var(--first-color); }
     color: var(--text-color-light);
     border: 1px solid transparent;
 }
-#section-list li:hover { background: rgba(255,255,255,0.05); color: var(--first-color); transform: translateX(5px); }
+#section-list li:hover { background: rgba(255,255,255,0.05); color: var(--first-color); transform: translateX(5px); font-size: 1.1rem;}
 #section-list li.active {
     background: rgba(255,255,255,0.1);
     border-color: var(--first-color);

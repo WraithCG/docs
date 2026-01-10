@@ -1,396 +1,499 @@
 {
-            "id": "endless-runner-mm-v1.3-fixed",
-            "title": "Endless Runner Template (Motion Matching)",
-            "sections": [
+    "id": "endless-runner-mm-v1.3-fixed",
+    "title": "Endless Runner Template (Motion Matching)",
+    "sections": [
+        {
+            "title": "Introduction",
+            "content": [
                 {
-                    "title": "Introduction",
-                    "content": [
-                        {
-                            "type": "image",
-                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/151/215/large/wraithcg-edsplash.webp?1767767615",
-                            "align": "full",
-                            "caption": "Endless Runner Game Template with Motion Matching (v1.3)"
-                        },
-                        {
-                            "type": "header",
-                            "value": "Getting Started"
-                        },
-                        {
-                            "type": "text",
-                            "value": "This document serves as a comprehensive guide to the <b>Infinite Runner Template</b>, which has been integrated with <b>Motion Matching</b>. The template provides a robust framework for creating endless runner games in Unreal Engine, featuring dynamic obstacle generation, character selection, customization, and power-up systems."
-                        },
-                        {
-                            "type": "tip",
-                            "value": "<b>Support:</b> For questions or assistance, please leave a comment on the product page or join the Discord server. Please consider rating and reviewing the asset if it proves useful."
-                        }
-                    ]
+                    "type": "image",
+                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/151/215/large/wraithcg-edsplash.webp?1767767615",
+                    "align": "full",
+                    "caption": "Endless Runner Game Template with Motion Matching (v1.3)"
                 },
                 {
-                    "title": "Important Notes",
-                    "content": [
-                        {
-                            "type": "header",
-                            "value": "Prerequisites"
-                        },
-                        {
-                            "type": "text",
-                            "value": "<b>Motion Matching:</b> This project uses the default setup from the <i>GameAnimationSampleProject (GASP)</i>. No custom motion matching setup was created specifically for this template. You will need to add specific animations to improve results."
-                        },
-                        {
-                            "type": "note",
-                            "value": "<b>Save Data:</b> The project does not use a GameInstance. Instead, it uses a <b>SaveGame class</b> to store customization and high scores. Data is lost if the character is changed without saving."
-                        },
-                        {
-                            "type": "text",
-                            "value": "<b>Required Plugins:</b><br><ul><li><b>Animation:</b> AnimationWarping, MotionWarping, AnimationLocomotionLibrary, PoseSearch, Chooser, RigLogic, LiveLink, LiveLinkControlRig.</li><li><b>Tools:</b> ModelingToolsEditorMode, HairStrands, Mover, NetworkPrediction.</li></ul>"
-                        },
-                        {
-                            "type": "note",
-                            "value": "The default setup has been modified to improve gameplay fluidity. But you will need to add  specific animations to improve the results. The existing GASP animations have been repurposed for various actions."
-                        },
-                        {
-                            "type": "text",
-                            "value": "<b>Collision:</b> A new object trace channel called \"Collectibles\" has been added (Default: Ignore)."
-                        },
-                        {
-                            "type": "text",
-                            "value": "<b>GameModeVariant:</b> A new game mode variant of infinite runner – Vector, has been added to the project."
-                        },
-                        {
-                            "type": "note",
-                            "value": "Game Data & Saves<ul><li><b>No Save Data:</b> The project does not use a GameInstanceClass. Data is not saved between levels or game replays.</li><li><b>Customization Reset:</b> Any customization items attached to a character are lost if the character is changed.</li></ul>"
-                        },
-                        {
-                            "type": "header",
-                            "value": "Integration Strategy"
-                        },
-                        {
-                            "type": "text",
-                            "value": "<b>Development Goal:</b> The project is intended to be used as a base starting project."
-                        },
-                        {
-                            "type": "text",
-                            "value": "<b>GameMode Logic:</b> The BP_RunnerGM is responsible for management of platforms (creation and removal)."
-                        },
-                        {
-                            "type": "text",
-                            "value": "<b>Player Controller:</b> The PC_RunnerController (derived from PC_Sandbox) manages the current character data and handles the logic of fetching character data (Next/Previous)."
-                        },
-                        {
-                            "type": "header",
-                            "value": "UI"
-                        },
-                        {
-                            "type": "text",
-                            "value": "Record Label and Value in the top-right corner of screen is partially implemented. As long as you do not change levels, the value of record will be updated and read from gameMode."
-                        },
-                        {
-                            "type": "image",
-                            "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
-                            "align": "full",
-                            "caption": "UI Display"
-                        },
-                        {
-                            "type": "note",
-                            "value": "<b>Migration Guide:</b> The system is heavily interface-driven. Though modular, this project is not intended for migration into existing projects. However, you can easily download and integrate <i>CharacterSelectionSystem</i>, <i>Customization System</i>, and <i>WidgetsManagementSystem</i> selectively from FAB for free."
-                        }
-                    ]
+                    "type": "header",
+                    "value": "Getting Started"
                 },
                 {
-                    "title": "What’s New in v1.3",
-                    "content": [
-                        {
-                            "type": "header",
-                            "value": "Systems"
-                        },
-                        {
-                            "type": "text",
-                            "value": "Integrated <i>Character Selection System V1.2</i>, <i>Character Customization System V1.1</i>, <i>Widgets Management System V1.1</i> out of the box."
-                        },
-                        {
-                            "type": "header",
-                            "value": "Game Modes"
-                        },
-                        {
-                            "type": "text",
-                            "value": "Added a new GameMode variant <b>Vector</b> other than <b>3 Lane Normal Runner</b>."
-                        },
-                        {
-                            "type": "header",
-                            "value": "PowerUps"
-                        },
-                        {
-                            "type": "text",
-                            "value": "<ul><li> 5 Preset powerUps - SuperJump, Invincibility, Magnet, DoubleCoins, ScoreBooster.</li><li>PowerUps attachments for visual indication.</li><li>Improved PowerUp management logic.</li><li>Fixed bugs related to invincibility.</li></ul>"
-                        },
-                        {
-                            "type": "header",
-                            "value": "Animations"
-                        },
-                        {
-                            "type": "text",
-                            "value": "<ul><li>New CharacterAnimationModification system with micro-control to create and modify existing animations for unique character animations.</li><li>The traversal animations chooser has been modified to include only run-related traversal animations.</li><li>A copy of original traversal animation chooser is also present for reference to add new animations.</li></ul>"
-                        },
-                        {
-                            "type": "header",
-                            "value": "Camera System"
-                        },
-                        {
-                            "type": "text",
-                            "value": "<ul><li>Improved blending, transitions, and added a settings toggle in the main menu.</li><li>Camera animations on character customization screen based on the customization category.</li><li>Stability Control with First Person Camera.</li><li>Play LevelSequences in background of the widget screens.</li></ul>"
-                        },
-                        {
-                            "type": "header",
-                            "value": "Platforms"
-                        },
-                        {
-                            "type": "text",
-                            "value": "<ul><li>SpawnZones based platform spawning (Sequential and Random).</li><li>Modified obstacle spawning logic on static platforms.</li><li>Modified Random platforms spawning logic.</li></ul>"
-                        },
-                        {
-                            "type": "header",
-                            "value": "Environment Creation Tools:"
-                        },
-                        {
-                            "type": "text",
-                            "value": "<ul><li>Environment Creation Tools have been included in the project.</li><li>Support for both static and animatable skeletal meshes.</li><li>Control over how far from the player, the skeletal mesh animation plays.</li><li>Ability to create environments separately and attach them to platforms or you can create environments on the fly unique to a platform.</li></ul>"
-                        },
-                        {
-                            "type": "header",
-                            "value": "UI Improvements"
-                        },
-                        {
-                            "type": "text",
-                            "value": "<ul><li>Revamped various menu layouts.</li><li>Added Pause Menu.</li><li>Uses DebugTABKey in CBP_SandboxCharacter to create widget. Will not appear in final game builds until changed to any other normal input key.</li></ul>"
-                        },
-                        {
-                            "type": "header",
-                            "value": "Quality of Life:"
-                        },
-                        {
-                            "type": "text",
-                            "value": "<ul><li>More toggle controls  over gameplay mechanics,</li><li>Mesh attachements when PowerUps are equipped,</li><li>Spawned PowerUps Indicator,</li><li>Roll mechanic on forced jump ends.</li><li>Control movement sensitivity in First Person Camera.</li><li>Obstacles and Collectibles Spawning logic updated.</li><li>Reorganized blueprints and commented code for better readability.</li><li>Fixed some collision issues.</li><li>Solved the issue of disappearing mouse cursor on widget screens.</li></ul>"
-                        }
-                    ]
+                    "type": "text",
+                    "value": "This document serves as a comprehensive guide to the <b>Infinite Runner Template</b>, which has been integrated with <b>Motion Matching</b>. The template provides a robust framework for creating endless runner games in Unreal Engine, featuring dynamic obstacle generation, character selection, customization, and power-up systems."
                 },
                 {
-                    "title": "Controls",
-                    "content": [
-                        {
-                            "type": "header",
-                            "value": "Gameplay Controls"
-                        },
-                        {
-                            "type": "text",
-                            "value": "<ul><li><b>Space:</b> Jump / Air-Parkour</li><li><b>C:</b> Slide</li><li><b>A:</b> Move Left</li><li><b>D:</b> Move Right</li></ul>"
-                        }
-                    ]
+                    "type": "tip",
+                    "value": "<b>Support:</b> For questions or assistance, please leave a comment on the product page or join the Discord server. Please consider rating and reviewing the asset if it proves useful."
+                }
+            ]
+        },
+        {
+            "title": "Development Roadmap",
+            "content": [
+                {
+                    "type": "text",
+                    "value": "Track the progress as the project upgrades. <ul><li>Green items are live,</li><li>Blue are currently being worked on</li><li>and Yellow are planned for future releases.</li></ul>"
                 },
                 {
-                    "title": "Core Systems",
-                    "content": [
+                    "type": "roadmap",
+                    "milestones": [
                         {
-                            "type": "header",
-                            "value": "Platform Architecture"
+                            "version": "Version 1.0",
+                            "date": "October 2025",
+                            "status": "completed",
+                            "features": [
+                                "Basic Menu System",
+                                "Character Death Screen",
+                                "Character Selection System",
+                                "Metahumans Support",
+                                "Dynamic Camera during Parkour",
+                                "Infinite Platforms Spawner",
+                                "Obstacle Spawning",
+                                "Dynamic Obstacles (can be slid under or climbed)"
+                            ]
                         },
                         {
-                            "type": "text",
-                            "value": "The world is built using a hierarchy of blueprints controlled by <b>GM_Runner</b>."
+                            "version": "Version 1.1",
+                            "date": "October 2025",
+                            "status": "completed",
+                            "features": [
+                                "Collectibles Counter",
+                                "Upgraded Menu Systems",
+                                "Collectibles Spawning System",
+                                "Spawning Dyanmic Obstacle Families",
+                                "Reorganized Blueprints for better readability",
+                                "Refined Obstacles Spawn System",
+                                "Separated Character Selection Screen",
+                                "Added Toggle Control for various features",
+                                "Improved Camera Blending",
+                                "Add First Person Camera"
+                            ]
                         },
                         {
-                            "type": "text",
-                            "value": "<b>BP_Floor:</b> Holds the reference for spawning platforms."
+                            "version": "Version 1.2",
+                            "date": "November 2025",
+                            "status": "completed",
+                            "features": [
+                                "Added PowerUps + 5 Presets",
+                                "Added Animation Modification System",
+                                "Added Theme based Spawn Zone System (Sequential & Random)",
+                                "Improved Ragdoll on Death",
+                                "Added Stability Controls for First Person Camera",
+                                "Added Roll on Forced Jump Ends",
+                                "Added more toggle controls",
+                                "Added Emoting Mechanic on Character Selection Screen"
+                            ]
                         },
                         {
-                            "type": "text",
-                            "value": "<b>B P_MapBase:</b> The base class for all platforms (floor and side walls)."
+                            "version": "Version 1.3",
+                            "date": "December 2025",
+                            "status": "completed",
+                            "features": [
+                                "Customized Traversal Choosers",
+                                "Refined PowerUps Implementation",
+                                "Added New Vector Game Mode",
+                                "Added Key based Retry System",
+                                "Parkour can now be disabled on certain obstacles",
+                                "Modularized Widgets",
+                                "Added Environment Creation Tools",
+                                "Added New Demo Maps - RunnerMap(Default), DayMap and NightMap",
+                                "Support for Multiple Spawn Zones",
+                                "Fixed Some Collision Issues",
+                                "Updated Character Selection System to Version 1.2",
+                                "Updated Character Customization System to Version 1.1",
+                                "Updated Widgets Management System to Version 1.1",
+                                "Shortened Folder Names",
+                                "Reorganized Blueprints for better readability"
+                            ]
                         },
                         {
-                            "type": "tip",
-                            "value": "<ul><li>Never spawn BP_MapBase directly.</li><li>Use Child Classes (BPSP_ or BPCC_) to spawn platforms with specific obstacle logic.</li><li>It is intended for common platform properties.</li></ul>"
+                            "version": "Version 1.4",
+                            "date": "TBA",
+                            "status": "in-progress",
+                            "features": [
+                                "Curved World System",
+                                "Fixing Collision Issues",
+                                "Revising Game Components",
+                                "Widgets for PowerUps",
+                                "Improving Emote System",
+                                "Improving Vector Game Mode",
+                                "Improving Environment Creation Tools",
+                                "Improving Demo Maps"
+                            ]
                         },
                         {
-                            "type": "text",
-                            "value": "<b>BPCC_ObstacleBase:</b> Spawns obstacles via ChildActorComponents (Dynamic Obstacle Families).<br><b>BPSP_ObstacleBase:</b> Spawns fixed, pre-configured obstacles (Static)."
-                        },
-                        {
-                            "type": "header",
-                            "value": "Spawning Logic"
-                        },
-                        {
-                            "type": "text",
-                            "value": "The <b>BP_RunnerGM</b> manages the infinite loop:<br>1. <b>AddFloor:</b> Spawns initial tiles.<br>2. <b>ExtendFloor:</b> Spawns new tile when player overlaps detector.<br>3. <b>DeleteFloor:</b> Removes oldest tile to maintain performance."
-                        },
-                        {
-                            "type": "header",
-                            "value": "Spawn Zones"
-                        },
-                        {
-                            "type": "text",
-                            "value": "Platforms can be grouped into Zones (e.g., City, Forest). You can set them to cycle <b>Sequentially</b> or <b>Randomly</b> using Data Assets (PDA)."
-                        }
-                    ]
-                },
-                {
-                    "title": "Obstacle System",
-                    "content": [
-                        {
-                            "type": "header",
-                            "value": "Obstacle Families"
-                        },
-                        {
-                            "type": "text",
-                            "value": "Obstacles are grouped into families to allow variation. <br>• <b>Blocking:</b> Walls, Cars (WorldDynamic collision).<br>• <b>UnderRolls:</b> High barriers (PhysicsBody collision)."
-                        },
-                        {
-                            "type": "text",
-                            "value": "<b>BP_DynamicObstacles:</b> This class dynamically spawns obstacles from a selected family at specific lane indices."
-                        }
-                    ]
-                },
-                {
-                    "title": "Environment Tools",
-                    "content": [
-                        {
-                            "type": "header",
-                            "value": "BP_EnvironmentBase"
-                        },
-                        {
-                            "type": "text",
-                            "value": "This tool allows you to create complex environments using <b>PropsData</b> maps.<br><ul><li><b>UseRandomSeedValues:</b> Randomizes transform within min/max ranges.</li><li><b>AutoUpdatePropsData:</b> Updates viewport in real-time.</li><li><b>PropsData:</b> Supports both Static Meshes (Instanced) and Skeletal Meshes (Animated).</li></ul>"
-                        }
-                    ]
-                },
-                {
-                    "title": "Player Character",
-                    "content": [
-                        {
-                            "type": "header",
-                            "value": "CBP_SandboxCharacter"
-                        },
-                        {
-                            "type": "text",
-                            "value": "Handles movement, lane logic, and input detection."
-                        },
-                        {
-                            "type": "text",
-                            "value": ""
-                        },
-                        {
-                            "type": "header",
-                            "value": "Attributes Component"
-                        },
-                        {
-                            "type": "text",
-                            "value": "<b>SpeedUpdateRate:</b> Score required to increase speed.<br><b>Lane Settings:</b> Controls lane width and switching speed.<br><b>Death Logic:</b> Checks for 'DeathTracer' collision and triggers ragdoll."
-                        },
-                        {
-                            "type": "header",
-                            "value": "Parkour Component"
-                        },
-                        {
-                            "type": "text",
-                            "value": "Uses <b>Motion Warping</b> to adapt animations. Handles Sliding, Rolling, and Bump reactions based on collision strength."
-                        }
-                    ]
-                },
-                {
-                    "title": "Power-Ups",
-                    "content": [
-                        {
-                            "type": "header",
-                            "value": "Available Power-Ups"
-                        },
-                        {
-                            "type": "text",
-                            "value": "<ul><li><b>DoubleCoins:</b> Multiplies coin value by 2.</li><li><b>Invincibility:</b> Phases through obstacles.</li><li><b>Magnet:</b> Increases collection radius.</li><li><b>SuperJump:</b> Allows extremely high jumps.</li></ul>"
-                        },
-                        {
-                            "type": "header",
-                            "value": "Management"
-                        },
-                        {
-                            "type": "text",
-                            "value": "Managed by <b>BPC_PowerUpsManager</b>. Only one power-up is active at a time. Picking up a new one overwrites the current effect."
-                        }
-                    ]
-                },
-                {
-                    "title": "Customization",
-                    "content": [
-                        {
-                            "type": "header",
-                            "value": "Character System"
-                        },
-                        {
-                            "type": "text",
-                            "value": "All characters must inherit from <b>CBP_SandboxCharacter</b> to preserve running logic. Data is fetched from `DA_PDA_CD` assets."
-                        },
-                        {
-                            "type": "header",
-                            "value": "Adding New Characters"
-                        },
-                        {
-                            "type": "text",
-                            "value": "1. Create Child Class of CBP_SandboxCharacter.<br>2. Assign Skeletal Mesh.<br>3. Create new Data Asset and add to `DA_PDA_CSD`.<br>4. Setup sockets (hat, glasses, backpack) on the skeleton."
-                        },
-                        {
-                            "type": "text",
-                            "value": ""
-                        }
-                    ]
-                },
-                {
-                    "title": "Camera System",
-                    "content": [
-                        {
-                            "type": "header",
-                            "value": "Modes"
-                        },
-                        {
-                            "type": "text",
-                            "value": "<b>Third Person (TPS):</b> Standard runner view.<br><b>First Person (FPS):</b> Attached to head bone with dynamic stabilization.<br><b>Rigs:</b> Specific camera rigs are triggered for actions (Slide, Roll) and Menus."
-                        }
-                    ]
-                },
-                {
-                    "title": "UI & Widgets",
-                    "content": [
-                        {
-                            "type": "header",
-                            "value": "Widget Management"
-                        },
-                        {
-                            "type": "text",
-                            "value": "Uses <b>WidgetsManagementSystem</b> with reusable elements (E_Button, E_FixedText).<br><b>Workflow:</b> Create Widget -> Define Category in Enum -> Add to Data Asset -> Call `AddWidgetToScreen` interface."
-                        },
-                        {
-                            "type": "text",
-                            "value": ""
-                        }
-                    ]
-                },
-                {
-                    "title": "Level Setup",
-                    "content": [
-                        {
-                            "type": "header",
-                            "value": "Play in a New Level"
-                        },
-                        {
-                            "type": "text",
-                            "value": "1. File -> New Level (Basic).<br>2. Add <b>BP_PlatformManager</b> and <b>PlayerStart</b> at (0,0,0).<br>3. Set GameMode to <b>BP_RunnerGM</b>.<br>4. Press Play."
-                        }
-                    ]
-                },
-                {
-                    "title": "Credits",
-                    "content": [
-                        {
-                            "type": "text",
-                            "value": "<b>ACTraceTraversal:</b> Special thanks to Umut Faruk.<br><b>RealisticSlideAnimations:</b> Special thanks to Threepeat.<br><b>Paragon Assets:</b> Epic Games."
+                            "version": "Version 1.5",
+                            "date": "TBA",
+                            "status": "planned",
+                            "features": [
+                                "Moving Obstacles",
+                                "Inventory System"
+                            ]
                         }
                     ]
                 }
             ]
+        },
+        {
+            "title": "Important Notes",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "Prerequisites"
+                },
+                {
+                    "type": "text",
+                    "value": "<b>Motion Matching:</b> This project uses the customized setup from the <i>GameAnimationSampleProject (GASP)</i> for Motion Matching. No new motion matching setup was specifically created for this project."
+                },
+                {
+                    "type": "note",
+                    "value": "The default setup has been modified to improve gameplay fluidity. But you will need to add  specific animations to improve the results. The existing GASP animations have been repurposed for various actions."
+                },
+                {
+                    "type": "header",
+                    "value": "Project Settings"
+                },
+                {
+                    "type": "text",
+                    "value": "<b>Required Plugins:</b><br><ul><li><b>Animation:</b> AnimationWarping, MotionWarping, AnimationLocomotionLibrary, PoseSearch, Chooser, RigLogic, LiveLink, LiveLinkControlRig.</li><li><b>Tools:</b> ModelingToolsEditorMode, HairStrands, Mover, NetworkPrediction.</li></ul>"
+                },
+                {
+                    "type": "text",
+                    "value": "<b>Collision:</b> A new object trace channel called \"Collectibles\" has been added (Default Behavior: Ignore)."
+                },
+                {
+                    "type": "text",
+                    "value": "<b>GameModeVariant:</b> A new game mode variant of infinite runner - Vector, has been added to the project."
+                },
+                {
+                    "type": "header",
+                    "value": "Save Game Data"
+                },
+                {
+                    "type": "text",
+                    "value": "<ul><li><b>No Save Data:</b> The project does not use a GameInstanceClass. Data is not saved between levels or game replays.</li><li><b>Customization Reset:</b> Any customization items attached to a character are lost if the character is changed.</li></ul>"
+                },
+                {
+                    "type": "header",
+                    "value": "Integration Strategy"
+                },
+                {
+                    "type": "text",
+                    "value": "The project is intended to be used as a base starting project."
+                },
+                {
+                    "type": "header",
+                    "value": "Miscellaneous"
+                },
+                {
+                    "type": "text",
+                    "value": "<b>UI: </b>Record Label and Value in the top-right corner of screen is partially implemented. As long as you do not change levels, the value of record will be updated and read from gameMode."
+                },
+                {
+                    "type": "image",
+                    "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
+                    "align": "right",
+                    "caption": "UI Display"
+                },
+                {
+                    "type": "note",
+                    "value": "<b>Migration Guide:</b> The system is heavily interface-driven. Though modular, this project is not intended for migration into existing projects. However, you can easily download and integrate <i>CharacterSelectionSystem</i>, <i>Customization System</i>, and <i>WidgetsManagementSystem</i> selectively from FAB for free."
+                }
+            ]
+        },
+        {
+            "title": "What’s New in v1.3",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "Systems"
+                },
+                {
+                    "type": "text",
+                    "value": "Integrated <i>Character Selection System V1.2</i>, <i>Character Customization System V1.1</i>, <i>Widgets Management System V1.1</i> out of the box."
+                },
+                {
+                    "type": "header",
+                    "value": "Game Modes"
+                },
+                {
+                    "type": "text",
+                    "value": "<ul><li><b>Normal (Runner) Mode</b> 3 Lane FP/TP Runner</li><li><b>Vector Mode</b> Single Lane Sidescroller Infinite Runner</li></ul>"
+                },
+                {
+                    "type": "header",
+                    "value": "PowerUps"
+                },
+                {
+                    "type": "text",
+                    "value": "<ul><li> 5 Preset powerUps - SuperJump, Invincibility, Magnet, DoubleCoins, ScoreBooster.</li><li>PowerUps attachments for visual indication.</li><li>Improved PowerUp management logic.</li><li>Fixed bugs related to invincibility.</li></ul>"
+                },
+                {
+                    "type": "header",
+                    "value": "Animations"
+                },
+                {
+                    "type": "text",
+                    "value": "<ul><li>New Character Animation Modification System that can be easily extended to micro-control creation and modification of existing animations for unique character animations by blending each body part with an unique animation during an action.</li><li>The traversal animations chooser has been modified to include only run-related traversal animations.</li><li>A copy of original traversal animation chooser is also present for reference to add new animations.</li></ul>"
+                },
+                {
+                    "type": "header",
+                    "value": "Camera System"
+                },
+                {
+                    "type": "text",
+                    "value": "<ul><li>Improved blending, transitions, and added a settings toggle in the main menu.</li><li>Camera animations on character customization screen based on the customization category.</li><li>Stability Control with First Person Camera.</li><li>Play LevelSequences in background of the widget screens.</li></ul>"
+                },
+                {
+                    "type": "header",
+                    "value": "Platforms"
+                },
+                {
+                    "type": "text",
+                    "value": "<ul><li>SpawnZones based platform spawning (Sequential and Random).</li><li>Modified obstacle spawning logic on static platforms.</li><li>Modified Random platforms spawning logic.</li></ul>"
+                },
+                {
+                    "type": "header",
+                    "value": "Environment Creation Tools:"
+                },
+                {
+                    "type": "text",
+                    "value": "<ul><li>Environment Creation Tools have been included in the project.</li><li>Support for both static and animatable skeletal meshes.</li><li>Control over how far from the player, the skeletal mesh animation plays.</li><li>Ability to create environments separately and attach them to platforms or you can create environments on the fly unique to a platform.</li></ul>"
+                },
+                {
+                    "type": "header",
+                    "value": "UI Improvements"
+                },
+                {
+                    "type": "text",
+                    "value": "<ul><li>Revamped various menu layouts.</li><li>Added Pause Menu.</li><li>Uses DebugTABKey in CBP_SandboxCharacter to create widget. Will not appear in final game builds until changed to any other normal input key.</li></ul>"
+                },
+                {
+                    "type": "header",
+                    "value": "Quality of Life:"
+                },
+                {
+                    "type": "text",
+                    "value": "<ul><li>More toggle controls  over gameplay mechanics,</li><li>Mesh attachements when PowerUps are equipped,</li><li>Spawned PowerUps Indicator,</li><li>Roll mechanic on forced jump ends.</li><li>Control movement sensitivity in First Person Camera.</li><li>Obstacles and Collectibles Spawning logic updated.</li><li>Reorganized blueprints and commented code for better readability.</li><li>Fixed some collision issues.</li><li>Solved the issue of disappearing mouse cursor on widget screens.</li></ul>"
+                }
+            ]
+        },
+        {
+            "title": "Controls",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "Gameplay Controls"
+                },
+                {
+                    "type": "text",
+                    "value": "<ul><li><b>Space:</b> Jump / Air-Parkour</li><li><b>C:</b> Slide</li><li><b>A:</b> Move Left</li><li><b>D:</b> Move Right</li></ul>"
+                }
+            ]
+        },
+        {
+            "title": "Core Systems",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "Platform Architecture"
+                },
+                {
+                    "type": "text",
+                    "value": "The world is built using a hierarchy of blueprints controlled by <b>GM_Runner</b>."
+                },
+                {
+                    "type": "text",
+                    "value": "<b>BP_Floor:</b> Holds the reference for spawning platforms."
+                },
+                {
+                    "type": "text",
+                    "value": "<b>B P_MapBase:</b> The base class for all platforms (floor and side walls)."
+                },
+                {
+                    "type": "tip",
+                    "value": "<ul><li>Never spawn BP_MapBase directly.</li><li>Use Child Classes (BPSP_ or BPCC_) to spawn platforms with specific obstacle logic.</li><li>It is intended for common platform properties.</li></ul>"
+                },
+                {
+                    "type": "text",
+                    "value": "<b>BPCC_ObstacleBase:</b> Spawns obstacles via ChildActorComponents (Dynamic Obstacle Families).<br><b>BPSP_ObstacleBase:</b> Spawns fixed, pre-configured obstacles (Static)."
+                },
+                {
+                    "type": "header",
+                    "value": "Spawning Logic"
+                },
+                {
+                    "type": "text",
+                    "value": "The <b>BP_RunnerGM</b> manages the infinite loop:<br>1. <b>AddFloor:</b> Spawns initial tiles.<br>2. <b>ExtendFloor:</b> Spawns new tile when player overlaps detector.<br>3. <b>DeleteFloor:</b> Removes oldest tile to maintain performance."
+                },
+                {
+                    "type": "header",
+                    "value": "Spawn Zones"
+                },
+                {
+                    "type": "text",
+                    "value": "Platforms can be grouped into Zones (e.g., City, Forest). You can set them to cycle <b>Sequentially</b> or <b>Randomly</b> using Data Assets (PDA)."
+                }
+            ]
+        },
+        {
+            "title": "Obstacle System",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "Obstacle Families"
+                },
+                {
+                    "type": "text",
+                    "value": "Obstacles are grouped into families to allow variation. <br>• <b>Blocking:</b> Walls, Cars (WorldDynamic collision).<br>• <b>UnderRolls:</b> High barriers (PhysicsBody collision)."
+                },
+                {
+                    "type": "text",
+                    "value": "<b>BP_DynamicObstacles:</b> This class dynamically spawns obstacles from a selected family at specific lane indices."
+                }
+            ]
+        },
+        {
+            "title": "Environment Tools",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "BP_EnvironmentBase"
+                },
+                {
+                    "type": "text",
+                    "value": "This tool allows you to create complex environments using <b>PropsData</b> maps.<br><ul><li><b>UseRandomSeedValues:</b> Randomizes transform within min/max ranges.</li><li><b>AutoUpdatePropsData:</b> Updates viewport in real-time.</li><li><b>PropsData:</b> Supports both Static Meshes (Instanced) and Skeletal Meshes (Animated).</li></ul>"
+                }
+            ]
+        },
+        {
+            "title": "Player Character",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "CBP_SandboxCharacter"
+                },
+                {
+                    "type": "text",
+                    "value": "Handles movement, lane logic, and input detection."
+                },
+                {
+                    "type": "text",
+                    "value": ""
+                },
+                {
+                    "type": "header",
+                    "value": "Attributes Component"
+                },
+                {
+                    "type": "text",
+                    "value": "<b>SpeedUpdateRate:</b> Score required to increase speed.<br><b>Lane Settings:</b> Controls lane width and switching speed.<br><b>Death Logic:</b> Checks for 'DeathTracer' collision and triggers ragdoll."
+                },
+                {
+                    "type": "header",
+                    "value": "Parkour Component"
+                },
+                {
+                    "type": "text",
+                    "value": "Uses <b>Motion Warping</b> to adapt animations. Handles Sliding, Rolling, and Bump reactions based on collision strength."
+                }
+            ]
+        },
+        {
+            "title": "Power-Ups",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "Available Power-Ups"
+                },
+                {
+                    "type": "text",
+                    "value": "<ul><li><b>DoubleCoins:</b> Multiplies coin value by 2.</li><li><b>Invincibility:</b> Phases through obstacles.</li><li><b>Magnet:</b> Increases collection radius.</li><li><b>SuperJump:</b> Allows extremely high jumps.</li></ul>"
+                },
+                {
+                    "type": "header",
+                    "value": "Management"
+                },
+                {
+                    "type": "text",
+                    "value": "Managed by <b>BPC_PowerUpsManager</b>. Only one power-up is active at a time. Picking up a new one overwrites the current effect."
+                }
+            ]
+        },
+        {
+            "title": "Customization",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "Character System"
+                },
+                {
+                    "type": "text",
+                    "value": "All characters must inherit from <b>CBP_SandboxCharacter</b> to preserve running logic. Data is fetched from `DA_PDA_CD` assets."
+                },
+                {
+                    "type": "header",
+                    "value": "Adding New Characters"
+                },
+                {
+                    "type": "text",
+                    "value": "1. Create Child Class of CBP_SandboxCharacter.<br>2. Assign Skeletal Mesh.<br>3. Create new Data Asset and add to `DA_PDA_CSD`.<br>4. Setup sockets (hat, glasses, backpack) on the skeleton."
+                },
+                {
+                    "type": "text",
+                    "value": ""
+                }
+            ]
+        },
+        {
+            "title": "Camera System",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "Modes"
+                },
+                {
+                    "type": "text",
+                    "value": "<b>Third Person (TPS):</b> Standard runner view.<br><b>First Person (FPS):</b> Attached to head bone with dynamic stabilization.<br><b>Rigs:</b> Specific camera rigs are triggered for actions (Slide, Roll) and Menus."
+                }
+            ]
+        },
+        {
+            "title": "UI & Widgets",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "Widget Management"
+                },
+                {
+                    "type": "text",
+                    "value": "Uses <b>WidgetsManagementSystem</b> with reusable elements (E_Button, E_FixedText).<br><b>Workflow:</b> Create Widget -> Define Category in Enum -> Add to Data Asset -> Call `AddWidgetToScreen` interface."
+                },
+                {
+                    "type": "text",
+                    "value": ""
+                }
+            ]
+        },
+        {
+            "title": "Level Setup",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "Play in a New Level"
+                },
+                {
+                    "type": "text",
+                    "value": "1. File -> New Level (Basic).<br>2. Add <b>BP_PlatformManager</b> and <b>PlayerStart</b> at (0,0,0).<br>3. Set GameMode to <b>BP_RunnerGM</b>.<br>4. Press Play."
+                }
+            ]
+        },
+        {
+            "title": "Credits",
+            "content": [
+                {
+                    "type": "text",
+                    "value": "<b>ACTraceTraversal:</b> Special thanks to Umut Faruk.<br><b>RealisticSlideAnimations:</b> Special thanks to Threepeat.<br><b>Paragon Assets:</b> Epic Games."
+                }
+            ]
         }
+    ]
+}

@@ -236,6 +236,57 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 el = wrap;
             }
+            else if (block.type === 'roadmap') {
+                const container = document.createElement('div');
+                container.className = 'roadmap-container';
+
+                block.milestones.forEach(milestone => {
+                    // 1. Wrapper
+                    const item = document.createElement('div');
+                    const statusClass = `status-${milestone.status.toLowerCase().replace(' ', '-')}`;
+                    item.className = `roadmap-item ${statusClass}`; // Default is collapsed
+
+                    // 2. Feature List HTML
+                    const featureList = milestone.features
+                        .map(feat => `<li>${feat}</li>`)
+                        .join('');
+
+                    // 3. Construct Inner HTML
+                    // We split Header (visible) and Details (hidden)
+                    item.innerHTML = `
+                        <div class="roadmap-content">
+                            <div class="roadmap-header-group">
+                                <div class="rm-meta">
+                                    <span class="rm-version">${milestone.version}</span>
+                                    <span class="rm-date">${milestone.date}</span>
+                                </div>
+                                <i class='bx bx-chevron-down rm-toggle-icon'></i>
+                            </div>
+                            
+                            <div class="roadmap-details">
+                                <ul class="rm-features">
+                                    ${featureList}
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+
+                    // 4. Add Click Event for Toggling
+                    // We select the header we just created inside 'item'
+                    const header = item.querySelector('.roadmap-header-group');
+                    header.addEventListener('click', () => {
+                        // Close others? Optional. 
+                        // For now, we allow multiple open. To allow only one, loop all .roadmap-item and remove .expanded
+                        item.classList.toggle('expanded');
+                    });
+
+                    container.appendChild(item);
+                });
+
+                el = container;
+            }
+
+            if (el) mainContent.appendChild(el);
 
             if (el) mainContent.appendChild(el);
         });
