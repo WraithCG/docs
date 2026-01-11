@@ -50,7 +50,6 @@
                                 "Dynamic Obstacles (can be slid under or climbed)"
                             ]
                         },
-                        
                         {
                             "version": "Version 1.1",
                             "date": "October 2025",
@@ -77,6 +76,7 @@
                                 "Added Animation Modification System",
                                 "Added Theme based Spawn Zone System (Sequential & Random)",
                                 "Improved Ragdoll on Death",
+                                "Added Character Customization System",
                                 "Added Stability Controls for First Person Camera",
                                 "Added Roll on Forced Jump Ends",
                                 "Added more toggle controls",
@@ -216,20 +216,14 @@
                     "value": "Game Modes"
                 },
                 {
+                    "type": "image",
+                    "src": "",
+                    "align": "right",
+                    "caption": "Game Modes"
+                },
+                {
                     "type": "text",
                     "value": "<ul><li><b>Normal (Runner) Mode</b> 3 Lane FP/TP Runner</li><li><b>Vector Mode</b> Single Lane Sidescroller Infinite Runner</li></ul>"
-                },
-                {
-                    "type": "image",
-                    "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
-                    "align": "right",
-                    "caption": "Vector Game Mode"
-                },
-                {
-                    "type": "image",
-                    "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
-                    "align": "right",
-                    "caption": "Normal Runner Mode"
                 },
                 {
                     "type": "header",
@@ -237,7 +231,7 @@
                 },
                 {
                     "type": "image",
-                    "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
+                    "src": "",
                     "align": "right",
                     "caption": "Power Ups"
                 },
@@ -250,12 +244,6 @@
                     "value": "Animations"
                 },
                 {
-                    "type": "image",
-                    "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
-                    "align": "right",
-                    "caption": "Animation Modification System"
-                },
-                {
                     "type": "text",
                     "value": "<ul><li>New Character Animation Modification System that can be easily extended to micro-control creation and modification of existing animations for unique character animations by blending each body part with an unique animation during an action.</li><li>The traversal animations chooser has been modified to include only run-related traversal animations.</li><li>A copy of original traversal animation chooser is also present for reference to add new animations.</li></ul>"
                 },
@@ -265,7 +253,7 @@
                 },
                 {
                     "type": "image",
-                    "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
+                    "src": "",
                     "align": "right",
                     "caption": "Camera System"
                 },
@@ -279,7 +267,7 @@
                 },
                 {
                     "type": "image",
-                    "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
+                    "src": "",
                     "align": "right",
                     "caption": "Spawn Zones"
                 },
@@ -292,14 +280,8 @@
                     "value": "Environment Creation Tools:"
                 },
                 {
-                    "type": "image",
-                    "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
-                    "align": "right",
-                    "caption": "Environment Creation Tools"
-                },
-                {
                     "type": "text",
-                    "value": "<ul><li>Environment Creation Tools have been included in the project.</li><li>Support for both static and animatable skeletal meshes.</li><li>Control over how far from the player, the skeletal mesh animation plays.</li><li>Ability to create environments separately and attach them to platforms or you can create environments on the fly unique to a platform.</li></ul>"
+                    "value": "<ul><li>Environment Creation Tools have been included in the project.</li><li>Support for both static and animatable skeletal meshes.</li><li>Control over how far from the player, the skeletal mesh animation plays.</li><li>Ability to create environments separately and attach them to platforms.</li></ul>"
                 },
                 {
                     "type": "header",
@@ -312,12 +294,6 @@
                 {
                     "type": "header",
                     "value": "Quality of Life:"
-                },
-                {
-                    "type": "image",
-                    "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
-                    "align": "right",
-                    "caption": "Toggle Controls"
                 },
                 {
                     "type": "text",
@@ -346,24 +322,18 @@
                     "value": "Platform Architecture"
                 },
                 {
-                    "type": "text",
-                    "value": "The world is built using a hierarchy of blueprints controlled by <b>GM_Runner</b>."
+                    "type": "image",
+                    "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
+                    "align": "right",
+                    "caption": "Base Classes"
                 },
                 {
                     "type": "text",
-                    "value": "<b>BP_Floor:</b> Holds the reference for spawning platforms."
-                },
-                {
-                    "type": "text",
-                    "value": "<b>B P_MapBase:</b> The base class for all platforms (floor and side walls)."
+                    "value": "The world is built using a hierarchy of blueprints controlled by <b>GM_Runner</b>.<ul><li><b>BP_Floor:</b> Holds the reference for spawning platforms.</li><li><b>BP_MapBase:</b> The base class for all platforms (floor and side walls).</li><li><b>BPCC_ObstacleBase:</b> Spawns obstacles via ChildActorComponents (Dynamic Obstacle Families).</li><li><b>BPSP_ObstacleBase:</b> Spawns fixed, pre-configured obstacles (Static).</li></ul>"
                 },
                 {
                     "type": "tip",
-                    "value": "<ul><li>Never spawn BP_MapBase directly.</li><li>Use Child Classes (BPSP_ or BPCC_) to spawn platforms with specific obstacle logic.</li><li>It is intended for common platform properties.</li></ul>"
-                },
-                {
-                    "type": "text",
-                    "value": "<b>BPCC_ObstacleBase:</b> Spawns obstacles via ChildActorComponents (Dynamic Obstacle Families).<br><b>BPSP_ObstacleBase:</b> Spawns fixed, pre-configured obstacles (Static)."
+                    "value": "<ul><li>Never spawn BP_MapBase directly.</li><li>Use Child Classes of (BPSP_ or BPCC_) to spawn platforms with specific obstacle logic.</li><li>It is intended for common platform properties.</li></ul>"
                 },
                 {
                     "type": "header",
@@ -374,29 +344,117 @@
                     "value": "The <b>BP_RunnerGM</b> manages the infinite loop:<br>1. <b>AddFloor:</b> Spawns initial tiles.<br>2. <b>ExtendFloor:</b> Spawns new tile when player overlaps detector.<br>3. <b>DeleteFloor:</b> Removes oldest tile to maintain performance."
                 },
                 {
-                    "type": "header",
-                    "value": "Spawn Zones"
+                    "type": "tip",
+                    "value": "You can change how many floors to add the start of the game & every time extension is requested by changing <i>StartWithFloors</i> & <i>ExtensionCount</i> in <b>BPC_EndlessAttributesComponent</b> respectively.<br> The duration after which a platform is removed can be set in <b>GM_RunnerGameMode</b>."
                 },
                 {
-                    "type": "text",
-                    "value": "Platforms can be grouped into Zones (e.g., City, Forest). You can set them to cycle <b>Sequentially</b> or <b>Randomly</b> using Data Assets (PDA)."
+                    "type": "note",
+                    "value": "The lifespan of any platform does not takes into account player action. This means if player is stuck on any platform for long, it is possible that the platform gets removed and the player falls into oblivion. <br> Only option that remains is restarting the game."
                 }
             ]
         },
         {
-            "title": "Obstacle System",
+            "title": "BPCC Obstacle System",
             "content": [
                 {
                     "type": "header",
                     "value": "Obstacle Families"
                 },
                 {
+                    "type": "image",
+                    "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
+                    "align": "right",
+                    "caption": "Obstacle Families"
+                },
+                {
                     "type": "text",
-                    "value": "Obstacles are grouped into families to allow variation. <br>• <b>Blocking:</b> Walls, Cars (WorldDynamic collision).<br>• <b>UnderRolls:</b> High barriers (PhysicsBody collision)."
+                    "value": "Obstacles are grouped into families to allow variation.<ul><li><b>Blocking:</b>Obstacles must be WorldDynamic or BlockAllDynamic collision (e.g., walls, cars, barriers).</li><li><b>UnderRolls:</b>Obstacles must be PhysicsActor(PhysicsBody) collision that the player can slide under.</li></ul>"
                 },
                 {
                     "type": "text",
                     "value": "<b>BP_DynamicObstacles:</b> This class dynamically spawns obstacles from a selected family at specific lane indices."
+                },
+                {
+                    "type": "note",
+                    "value": "You can create more families for say cars, trains, etc; Depending on the type of parkouring behvaior they allow, you will need to set their type to either Blocking or UnderRoll.<br>Do not use BP_DynamicObstacles directly. Always use child classes BP_DOD_Blockers and BP_DOD_UnderRolls wherever required."
+                },
+                {
+                    "type": "image",
+                    "src": "",
+                    "align": "right",
+                    "caption": "DOD DA"
+                },
+                {
+                    "type": "text",
+                    "value": "<b>Dynamic Obstacle Data Parameters:</b><ul><li><b>ObstacleType:</b>Determines the general category of the obstacles.<li><b>CollisionObjectType:</b>Define the collision behavior of the obstacles in the family.</li></li><li><b>ObstacleData:</b>Contains the Static Mesh (SM) and spawning rules.</li><li><b>SpawnCollectible:</b>Boolean to determine if collectibles appear above this obstacle.</li><li><b>ZOffset:</b>Adjusts the vertical height of the obstacle (including the height of obstacle).</li></ul>"
+                },
+                {
+                    "type": "tip",
+                    "value": "Disable collectibles spawning for thin blockers."
+                },
+                {
+                    "type":"text",
+                    "value":"<b>BP_DynamicObstacles Paramerters:</b><ul><li><b>ObstacleData:</b>Assign the Obstacle Family Data Asset to spawn.</li><li><b>CurrentISMData:</b>Configure properties for collectibles that can be spawned with any obstacle of this family.</li><li><b>SpawnedPowerUpData:</b>Contains the array of powerUp data assets that can be spawned on these obstacles randomly.</li></ul>"
+                },
+                {
+          "type": "tip",
+          "value": "More elements means lesser repetition."
+        },
+                {
+                    "type": "header",
+                    "value": "BPCC_ObstacleBase"
+                },
+                {
+                    "type": "image",
+                    "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
+                    "align": "right",
+                    "caption": "BPCC Parameters"
+                },
+                {
+                    "type": "text",
+                    "value": "<ul><li>These are the platforms where obstacles are spawned using ObstacleFamilies, i.e., BP_DynamicObstacles.</li><li>A random obstacle from any family is spawned in any of the pre-defined spawn indices.</li><li>These are intended for mass generation of two or more different platforms from a single platform by randomly changing the positions of CACs.</li></ul>"
+                }
+            ]
+        },
+        {
+            "title": "BPSP Obstacle System",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "BPSP_ObstacleBase"
+                },
+                {
+                    "type": "image",
+                    "src": "",
+                    "align": "right",
+                    "caption": "BPSP Parameters"
+                },
+                {
+                    "type": "text",
+                    "value": "<ul><li>Used for pre-configured, non-random platforms.</li><li>A fixed obstacle from ObstacleData is spawned at the of the pre-defined spawn index with the given physics behavior.</li><li>These are intended for creation of unique platforms.</li></ul>"
+                }
+            ]
+        },
+        {
+            "title": "Spawn Zones",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "Spawn Zones"
+                },
+                {
+                    "type": "image",
+                    "src": "",
+                    "align": "right",
+                    "caption": "Spawn Zone Parameters"
+                },
+                {
+                    "type": "text",
+                    "value": "<ul><li>Platforms can be grouped into Zones (e.g., City, Forest).</li><li>You can set them to cycle <b>Sequentially</b> or <b>Randomly</b> using Data Assets (PDA).</li><li>The management of current zone platforms and when to switch to new zones also occurs in the Game Mode.</li></ul>"
+                },
+                {
+                    "type": "text",
+                    "value": "<b>Configuration:</b><ul><li>Create Zone Data Assets (DAs) from DA_PDA_FD inside <b>Components > PlatformSystem > PDA > ZonePDA</b> by duplicating existing ones and clearing them.</li><li>Now add your platform obstacle sets of type BP_MapBase.</li><li>Add your newly created platform Zone Data Assets to SpawnZonePDA (e.g., DA_PDA_SZD_FD).</li><li><b>Sequential Mode:</b> If SpawnSequentially is true, the platforms inside any zone will cycle in a fixed order.</li><li><b>Random Mode:</b>Define MinSpawnedPlatforms and MaxSpawnedPlatforms to randomize how long a zone lasts before switching.<br>This prevents the generator from getting stuck in a single zone.</li><li><b>‘BP_Floor’</b> uses the interface function call GetNextFloorClassToSpawn to find the next suitable platform to spawn.</li></ul>"
                 }
             ]
         },

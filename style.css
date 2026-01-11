@@ -304,8 +304,8 @@ body.theme-metal { background-image: linear-gradient(153deg, #445f7a 0%, #c5e4f9
 
 .rm-features li:hover {
     color: var(--status-color);
-    font-size: 1.25rem;
-    text-shadow: 1px 5px 20px rgba(0,0,0,.4) ;
+    font-size: 1.15rem;
+    text-shadow: 1px 5px 20px rgba(59, 59, 59, 0.4) ;
     letter-spacing: 0.36rem;
 }
 
