@@ -450,6 +450,83 @@ p {
     color: var(--text-color);
 }
 
+/* === LAZY LOADING === */
+img {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+/* Initial state for lazy images */
+img.lazy {
+    opacity: 0;
+    filter: blur(10px); /* Optional blur effect while loading */
+    background: rgba(255, 255, 255, 0.05); /* Placeholder background */
+    min-height: 200px; /* Reserve space to prevent layout shift */
+}
+
+img.loaded {
+    opacity: 1;
+    filter: blur(0);
+}
+
+/* === NAVIGATION BUTTONS === */
+.page-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 1rem;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--heading-font);
+    font-size: 1rem;
+    text-align: left;
+    max-width: 45%;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--first-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn i {
+    font-size: 1.5rem;
+    color: var(--first-color);
+}
+
+.nav-label {
+    font-size: 0.8rem;
+    color: var(--text-color-light);
+    display: block;
+    margin-bottom: 2px;
+}
+
+.nav-title {
+    color: var(--first-color);
+    font-weight: bold;
+    display: block;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Utility to push 'Next' button to the right if 'Prev' is missing */
+.nav-btn.next { margin-left: auto; text-align: right; flex-direction: row-reverse; }
+
 /* === IMAGE ALIGNMENT LOGIC === */
 .img-wrap { margin-bottom: 2rem; border-radius: 0.5rem; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
 .img-wrap:hover { border-color: var(--first-color); box-shadow: 0 0 15px rgba(0,0,0,0.5); }
