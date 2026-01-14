@@ -256,23 +256,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 el = document.createElement('h2');
                 el.innerHTML = block.value;
             } 
-            // --- RICH TEXT ---
+           // --- RICH TEXT (Updated for Multi-line Arrays) ---
             else if (block.type === 'text') {
                 el = document.createElement('div');
                 el.className = 'text-block';
-                el.innerHTML = block.value;
+                // Helper: Parse content
+                el.innerHTML = parseRichText(block.value);
             } 
             // --- NOTE BLOCK ---
             else if (block.type === 'note') {
                 el = document.createElement('div');
                 el.className = 'note-block';
-                el.innerHTML = `<i class='bx bx-info-circle'></i> <div>${block.value}</div>`;
+                // Helper: Parse content
+                el.innerHTML = `<i class='bx bx-info-circle'></i> <div>${parseRichText(block.value)}</div>`;
             }
             // --- TIP BLOCK ---
             else if (block.type === 'tip') {
                 el = document.createElement('div');
                 el.className = 'tip-block';
-                el.innerHTML = `<i class='bx bx-bulb'></i> <div>${block.value}</div>`;
+                // Helper: Parse content
+                el.innerHTML = `<i class='bx bx-bulb'></i> <div>${parseRichText(block.value)}</div>`;
             }
             // --- IMAGE BLOCK (Lazy + Zoom) ---
             else if (block.type === 'image') {
@@ -524,4 +527,21 @@ function initStarfield() {
         w = canvas.width = window.innerWidth;
         h = canvas.height = window.innerHeight;
     });
+}
+
+// =========================================================================
+// 10. TEXT PARSING HELPER
+// =========================================================================
+
+/**
+ * Converts JSON input (String or Array) into HTML string.
+ * - If Array: Joins with <br> to preserve line breaks from JSON.
+ * - If String: Returns as is.
+ */
+function parseRichText(content) {
+    if (Array.isArray(content)) {
+        // Join array elements with a line break
+        return content.join("");
+    }
+    return content; // Return plain string if not an array
 }

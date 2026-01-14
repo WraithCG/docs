@@ -1,176 +1,375 @@
 {
-      "id": "character-selection-v1.2",
-      "title": "Character Selection System (v1.2)",
-      "sections": [
+  "id": "character-selection-v1.2",
+  "title": "Character Selection System (v1.2)",
+  "sections": [
+    {
+      "title": "Overview",
+      "content": [
         {
-          "title": "Overview",
-          "content": [
-            {
-              "type": "image",
-              "src": "https://media.fab.com/image_previews/gallery_images/a5fd60f7-cad2-41e0-a7e1-b3b1bd35f6dd/e634bff9-1e80-44aa-9f75-b13f25ac951c.jpg",
-              "align": "full",
-              "caption": "System Title Banner"
-            },
-            {
-              "type": "text",
-              "value": "This document provides a complete guide for integrating the <b>Character Selection System (v1.2)</b> into your Unreal Engine projects. It is designed for modularity, using interface-driven communication and decomposed widgets to ensure effortless integration and extension."
-            },
-            {
-              "type": "tip",
-              "value": "<b>Support:</b> For questions or assistance, please leave a comment on the product page or join the Discord server for faster resolution. Please consider rating and reviewing the asset if it proves useful."
-            }
-          ]
+          "type": "image",
+          "src": "https://media.fab.com/image_previews/gallery_images/a5fd60f7-cad2-41e0-a7e1-b3b1bd35f6dd/e634bff9-1e80-44aa-9f75-b13f25ac951c.jpg",
+          "align": "full",
+          "caption": "System Title Banner"
         },
         {
-          "title": "Architecture & Integration",
-          "content": [
-            {
-              "type": "header",
-              "value": "Integration Strategy"
-            },
-            {
-              "type": "text",
-              "value": "<b>Modular Design:</b> The system is heavily interface-driven. Widgets are decomposed into reusable elements to unify style and logic across different screens .<br><b>GameMode Logic:</b> The <i>BP_GM_CSD</i> GameMode handles the management of on-screen widgets (creation, removal, and updates) .<br><b>Player Controller:</b> The <i>PC_CSD</i> manages current character data and fetch logic (Next/Previous)."
-            },
-            {
-              "type": "note",
-              "value": "<b>World Space UI:</b> Except for the main menu screen, all other screens are accessed and operated around the player in world space."
-            },
-            {
-              "type": "header",
-              "value": "Migration Guide"
-            },
-            {
-              "type": "text",
-              "value": "1. Copy/Migrate the entire <i>CharacterSelectionSystem</i> folder to your project.<br>2. Create data assets for your characters (<i>DA_PDA_CD_xyz</i>) and add them to the master list <i>DA_PDA_CSD</i>.<br>3. Switch your GameMode to <i>BP_GM_CharacterSelection</i> (or copy its logic if using a custom GM).<br>4. Switch your PlayerController to <i>BP_PC_CharacterSelection</i> (or implement the fetch logic/interfaces in your own)."
-            }
-          ]
+          "type": "text",
+          "value": "This document provides a complete guide for integrating the <b>Character Selection System (v1.2)</b> into your Unreal Engine projects. It is designed for modularity, using interface-driven communication and decomposed widgets to ensure effortless integration and extension."
         },
         {
-          "title": "What's New in v1.2",
-          "content": [
-            {
-              "type": "header",
-              "value": "Key Updates"
-            },
-            {
-              "type": "text",
-              "value": "<ul><li><b>Widget Architecture:</b> Screens are now built using Container Frames (exposed layout properties) and reusable Widget Elements (prefixed with E_) .</li><li><b>Emotes:</b> Characters now play emote animations during the selection process .</li><li><b>Circular List:</b> Added support for bidirectional circular character selection (Last ↔ First) .</li><li><b>Quality of Life:</b> Fixed camera rotation during gameplay and cursor visibility issues.</li></ul>"
-            }
-          ]
+          "type": "tip",
+          "value": "<b>Support:</b> For questions or assistance, please leave a comment on the product page or join the Discord server for faster resolution. Please consider rating and reviewing the asset if it proves useful."
+        }
+      ]
+    },
+    {
+      "title": "Development Roadmap",
+      "content": [
+        {
+          "type": "text",
+          "value": "Track the progress as the project upgrades. <ul><li>Green items are live,</li><li>Blue are currently being worked on</li><li>and Yellow are planned for future releases.</li></ul>"
         },
         {
-          "title": "Data Asset Setup",
-          "content": [
+          "type": "roadmap",
+          "milestones": [
             {
-              "type": "header",
-              "value": "Character Data (DA_PDA_CD_xyz)"
+              "version": "Version 1.0",
+              "date": "October 2025",
+              "status": "completed",
+              "features": [
+                "Main Menu",
+                "Character Selection System",
+                "Buttons Change Color on Hover and Click",
+                "Camera System for Different Screens ( Basic )",
+                "Character Attributes",
+                "Character Description",
+                "Character Icon / Game Logo"
+              ]
             },
             {
-              "type": "text",
-              "value": "Create a new Data Asset derived from <i>PDA_CharacterData</i> for each character .<br>• <b>Name:</b> Appears as an attribute on the right side .<br>• <b>Description:</b> Flavor text displayed on the lower left .<br>• <b>Icon:</b> Thumbnail image or game logo."
+              "version": "Version 1.1",
+              "date": "October 2025",
+              "status": "completed",
+              "features": [
+                "Emote System ",
+                "Character Customization System (Separate Free Asset on FAB) ",
+                "<i>Character Selection and Customization system together were becoming slightly complex. As separate systems, it is easier to integrate both together. ",
+                "Unification of elements and styles across the screens "
+              ]
             },
             {
-              "type": "image",
-              "src": "https://placehold.co/800x400/333/FFF?text=Character+Data+Asset",
-              "align": "full",
-              "caption": "DA_PDA_CD Details Panel"
+              "version": "Version 1.2",
+              "date": "November 2025",
+              "status": "completed",
+              "features": [
+                "Circular Character Selection List",
+                "Reorganized Blueprints for better readability",
+                "Simplified Widget Blueprints"
+              ]
             },
             {
-              "type": "header",
-              "value": "Selection List (DA_PDA_CSD)"
-            },
-            {
-              "type": "text",
-              "value": "Derived from <i>PDA_CharacterSelectionData</i>. This contains an array of character data assets. The order in this array determines the order in the selection menu."
-            }
-          ]
-        },
-        {
-          "title": "Blueprint Implementation",
-          "content": [
-            {
-              "type": "header",
-              "value": "Interfaces"
-            },
-            {
-              "type": "text",
-              "value": "The system uses <b>BPI_PlayerInterface</b> across multiple classes:<br>• <b>Widget:</b> Receives messages to disable buttons .<br>• <b>GameMode:</b> Handles construction/deconstruction of widgets .<br>• <b>PlayerController:</b> Fetches character data .<br>• <b>Character:</b> Receives input availability messages."
-            },
-            {
-              "type": "header",
-              "value": "Character Setup"
-            },
-            {
-              "type": "text",
-              "value": "Ensure your blueprint inherits from the standard Character class and implements <i>BPI_PlayerInterface</i>. Add the <b>BPC_PlayerAttributes</b> component to store dummy data (Price, Strength, Rating) for UI display."
-            },
-            {
-              "type": "image",
-              "src": "https://placehold.co/800x400/222/FFF?text=Character+Blueprint+Graph",
-              "align": "full",
-              "caption": "Character Event Graph Setup"
-            }
-          ]
-        },
-        {
-          "title": "UI & Screens",
-          "content": [
-            {
-              "type": "header",
-              "value": "Character Selection Screen"
-            },
-            {
-              "type": "text",
-              "value": "Displays attributes (Name, Strength, Rating) fetched via interfaces. You can toggle <b>CircularList</b> to enable infinite scrolling through the character array. Attributes are editable in the <i>BPC_Attributes</i> component."
-            },
-            {
-              "type": "image",
-              "src": "https://placehold.co/800x400/555/FFF?text=Selection+Screen+UI",
-              "align": "full",
-              "caption": "Character Selection Interface"
-            },
-            {
-              "type": "header",
-              "value": "Main Menu"
-            },
-            {
-              "type": "text",
-              "value": "A refined sample main menu is included. To change styling (buttons, text), modify the elements in the <i>Widgets > Elements</i> folder."
-            }
-          ]
-        },
-        {
-          "title": "Level Setup",
-          "content": [
-            {
-              "type": "header",
-              "value": "World Settings"
-            },
-            {
-              "type": "text",
-              "value": "To initialize the system:<br>1. Set <b>GameMode Override</b> to <i>BP_GM_CharacterSelectionSystem</i>.<br>2. Set <b>Player Controller Class</b> to <i>BP_PC_CharacterSelectionSystem</i>."
-            },
-            {
-              "type": "image",
-              "src": "https://placehold.co/800x400/111/FFF?text=World+Settings+Setup",
-              "align": "full",
-              "caption": "Configuring GameMode and Controller"
-            }
-          ]
-        },
-        {
-          "title": "Camera System",
-          "content": [
-            {
-              "type": "header",
-              "value": "Camera Director"
-            },
-            {
-              "type": "text",
-              "value": "The system uses a component-based camera manager on the character blueprint .<br>• <b>States:</b> Controls properties for MainMenu, Selection, and Gameplay .<br>• <b>Rigs:</b> Specific Data Assets defining camera behavior for each state."
+              "version": "Version 1.3",
+              "date": "TBA",
+              "status": "planned",
+              "features": [
+                "Circular Character Inspection",
+                "Different selection methods in Character Selection Widget"
+              ]
             }
           ]
         }
       ]
-    }
+    },
+    {
+      "title": "Architecture & Integration",
+      "content": [
+        {
+          "type": "header",
+          "value": "Integration Strategy"
+        },
+        {
+          "type": "text",
+          "value": [
+            "<ul><li><b>Modular Design:</b> <ul><li>The system is heavily interface-driven.</li> <li>Widgets are decomposed into reusable elements to unify style and logic across different screens.</li></ul></li>",
+            "<li><b>GameMode Logic:</b> The <i>BP_GM_CSD</i> GameMode handles the management of on-screen widgets (creation, removal, and updates) .<br></li>",
+            "<li><b>Player Controller:</b> The <i>PC_CSD</i> manages current character data and fetch logic (Next/Previous).</li></ul>"
+          ]
+        },
+        {
+          "type": "header",
+          "value": "Migration Guide"
+        },
+        {
+          "type": "text",
+          "value": [
+            "<ul><li>Copy/Migrate the entire <i>CharacterSelectionSystem</i> folder to your project.</li>",
+            "<li>Create data assets for your characters (<i>DA_PDA_CD_xyz</i>) and add them to the master list <i>DA_PDA_CSD</i>.</li>",
+            "<li>Switch your GameMode to <i>BP_GM_CharacterSelection</i> (or copy its logic if using a custom GM).</li>",
+            "<li>Switch your PlayerController to <i>BP_PC_CharacterSelection</i> (or implement the fetch logic/interfaces in your own).</li></ul>"
+          ]
+        },
+        {
+          "type": "note",
+          "value": "If you switched to using your custom GameMode and PlayerController, you may need to fix up some references in character selection widget - W_Selection"
+        }
+      ]
+    },
+    {
+      "title": "What's New in v1.2",
+      "content": [
+        {
+          "type": "header",
+          "value": "Key Updates"
+        },
+        {
+          "type": "text",
+          "value": [
+            "<ul><li><b>Widget Architecture:</b> Screens are simplified by reusable Widget Elements (prefixed with E_).</li>",
+            "<li><b>Emotes:</b> Characters now play emote animations during the selection process.</li>",
+            "<li><b>Bidirection Circular Selection List:</b>",
+            "<ul><li>Circular List means if the player is at first selectable character and clicks the PreviousCharacterButton, they will traverse the selection list in reverse order.",
+            "<li>Similarly, if they are at the last selectable character and click the NextCharacterButton, they will reach the starting of list again.</li>",
+            "<li>If CircularList is False, then the players cannot go to last character from first character and vice versa.",
+            "<li>Get Previous and Next Character buttons are also enabled/disabled accordingly.</li></ul>",
+            "<li><b>Quality of Life:</b> <ul><li>Fixed camera rotation during gameplay</li><li>Fixed cursor visibility issues.</li></ul></li></ul>"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Data Asset Setup",
+      "content": [
+        {
+          "type": "header",
+          "value": "Character Data (DA_PDA_CD_xyz)"
+        },
+        {
+          "type": "image",
+          "src": "https://cdna.artstation.com/p/assets/images/images/095/342/774/large/wraithcg-screenshot-2026-01-13-111706.webp?1768313029",
+          "align": "right",
+          "caption": "DA Character Data"
+        },
+        {
+          "type": "text",
+          "value": [
+            "Create a new Data Asset derived from <i>PDA_CharacterData</i> for each character.</li>",
+            "<li><b>Name:</b> Appears as an attribute on the right side.</li>",
+            "<li><b>Description:</b> Flavor text displayed on the lower left.</li>",
+            "<li><b>Icon:</b> Thumbnail image or game logo."
+          ]
+        },
+        {
+          "type": "header",
+          "value": "Selection List (DA_PDA_CSD)"
+        },
+        {
+          "type": "image",
+          "src": "https://cdna.artstation.com/p/assets/images/images/095/342/770/large/wraithcg-screenshot-2026-01-13-111651.webp?1768313026",
+          "align": "right",
+          "caption": "DA Character Selection Data"
+        },
+        {
+          "type": "text",
+          "value": [
+            "Derived from <i>PDA_CharacterSelectionData</i>.<br>",
+            "This contains an array of character data assets.<br>",
+            "The order in this array determines the order in the selection menu."
+          ]
+        },
+        {
+          "type": "header",
+          "value": "Player Controller Setup (PC_CharacterSelection)"
+        },
+        {
+          "type": "image",
+          "src": "https://cdna.artstation.com/p/assets/images/images/095/342/580/large/wraithcg-screenshot-2026-01-09-010025.webp?1768312701",
+          "align": "right",
+          "caption": "PC Parameters"
+        },
+        {
+          "type": "text",
+          "value": [
+            "<ul><li><b>CharacterData:</b> takes the DA_CharacterSelectionData as input.",
+            "<ul><li>It contains the list of characters available for play.</li>",
+            "<li>The order of characters in this list is the same order in which the characters will appear in the game.</li></ul></li>",
+            "<li><b>CurrentCharacterData:</b> takes as input the data of the first character available in the Character Data list.</li>",
+            "<li><b>CircularList:</b> determines if or not character selection system is linear.</li>",
+            "<ul><li>Circular List means if the player is at first selectable character and clicks the PreviousCharacterButton, they will traverse the selection list in reverse order.</li>",
+            "<li>Similarly if they are last selectable character and click the NextCharacterButton, they will reach the starting of list again.</li>",
+            "<li>If CircularList is False, then the players cannot go to last character from first character and vice versa.</li></ul></li></ul>"
+          ]
+        },
+        {
+          "type": "image",
+          "src": "https://cdnb.artstation.com/p/assets/images/images/095/342/743/large/wraithcg-screenshot-2026-01-13-111905.webp?1768312989",
+          "align": "full",
+          "caption": "Character Selection Widget"
+        }
+      ]
+    },
+    {
+      "title": "Blueprints",
+      "content": [
+        {
+          "type": "header",
+          "value": "Interfaces"
+        },
+        {
+          "type": "text",
+          "value": [
+            "The system uses <b>BPI_PlayerInterface</b> across multiple classes:<ul><li><b>Widget:</b> Receives messages to disable buttons.</li>",
+            "<li><b>GameMode:</b> Handles construction/deconstruction of widgets.</li>",
+            "<li><b>PlayerController:</b> Fetches character data.</li>",
+            "<li><b>Character:</b> Receives input availability messages."
+          ]
+        },
+        {
+          "type": "image",
+          "src": "https://cdna.artstation.com/p/assets/images/images/095/342/582/large/wraithcg-screenshot-2026-01-09-010046.webp?1768312705",
+          "align": "full",
+          "caption": "Interfaces and their Uses"
+        },
+        {
+          "type": "header",
+          "value": "Character Setup"
+        },
+        {
+          "type": "text",
+          "value": [
+            "Ensure your blueprint inherits from the standard Character class and implements <i>BPI_PlayerInterface</i>.",
+            "<ul><li>Add the <b>BPC_PlayerAttributes</b> component to store dummy data (NickName, Strength, Rating) for UI display.</li>",
+            "<li><b>Emotes:</b> contains an array of emote montages that plays on the player character randomly on selection screen.</li>",
+            "<li><b>Waiting Time Before Next Emote:</b> this is the amount of the current player character waits once an emote montage a complete before playing a new one.</li>",
+            "<li><b>Montage Blend Out Time:</b> When gameplay is started, but the character is still playing an emote montage, then this much time is used for smoothly blending out the animation instead of abruptly stopping it. Also it feels weird when you want to play the game but the character won't stop emoting :)"
+          ]
+        },
+        {
+          "type": "image",
+          "src": "https://cdna.artstation.com/p/assets/images/images/095/342/754/large/wraithcg-screenshot-2026-01-13-111231.webp?1768313004",
+          "align": "full",
+          "caption": "Character Event Graph Setup"
+        },
+        {
+          "type":"header",
+          "value":"BPC_PlayerAttributesComponent"
+        },
+        {
+          "type":"image",
+          "src":"https://cdnb.artstation.com/p/assets/images/images/095/342/759/large/wraithcg-screenshot-2026-01-13-111257.webp?1768313010",
+          "align":"full",
+          "caption":"BPC_PlayerAttributes Component Overview"
+        }
+      ]
+    },
+    {
+      "title": "UI & Screens",
+      "content": [
+        {
+          "type": "header",
+          "value": "Character Selection Screen"
+        },
+        {
+          "type": "text",
+          "value": "Displays attributes (Name, Strength, Rating) fetched via interfaces. You can toggle <b>CircularList</b> to enable infinite scrolling through the character array. Attributes are editable in the <i>BPC_Attributes</i> component."
+        },
+        {
+          "type": "image",
+          "src": "https://cdna.artstation.com/p/assets/images/images/095/342/574/large/wraithcg-screenshot-2026-01-09-010143.webp?1768312686",
+          "align": "full",
+          "caption": "Character Selection User Interface"
+        },
+        {
+          "type": "header",
+          "value": "Main Menu"
+        },
+        {
+          "type": "text",
+          "value": "A refined sample main menu is included."
+        },
+        {
+          "type": "tip",
+          "value": "To change styling (buttons, text), modify the elements in the widgets folder."
+        }
+      ]
+    },
+    {
+      "title": "Level Setup",
+      "content": [
+        {
+          "type": "header",
+          "value": "World Settings"
+        },
+        {
+          "type": "text",
+          "value": [
+            "To initialize the system:",
+            "<ul><li>Set <b>GameMode Override</b> to <i>BP_GM_CharSelectSystem</i>.</li>",
+            "<li>Set <b>Player Controller Class</b> to <i>BP_PC_CharSelectSystem</i></li></ul>."
+          ]
+        },
+        {
+          "type": "image",
+          "src": "https://cdna.artstation.com/p/assets/images/images/095/342/748/large/wraithcg-screenshot-2026-01-13-111924.webp?1768312998",
+          "align": "full",
+          "caption": "Configuring World Settings for playing in new level."
+        }
+      ]
+    },
+    {
+      "title": "Camera System",
+      "content": [
+        {
+          "type": "header",
+          "value": "Camera Director"
+        },
+        {
+          "type": "text",
+          "value": [
+            "<ul><li>The system uses a component-based camera manager on the character blueprint.</li>",
+            "<li><b>States:</b> Controls properties for MainMenu, Selection, and Gameplay.</li>",
+            "<li><b>Rigs:</b> Specific Data Assets defining camera behavior for each state.</li></ul>"
+          ]
+        },
+        {
+          "type":"image",
+          "src":"https://cdnb.artstation.com/p/assets/images/images/095/342/761/large/wraithcg-screenshot-2026-01-13-111418.webp?1768313014",
+          "align":"full",
+          "caption":"Camera Director Setup"
+        },
+        {
+          "type":"tip",
+          "value":"Make sure your character has BPC_PlayerAttributes Component otherwise the camera director will throw error!"
+        }
+      ]
+    },
+    {
+      "title": "FAQs",
+      "content": [
+        {
+          "type": "header",
+          "value": "Troubleshooting"
+        },
+        {
+          "type": "text",
+          "value": "<b>Q: Why can't I edit the child widgets in the details panel?</b><br>A: Child widgets added to Frames during <i>Pre-Construct</i> (for live preview) become locked. To edit them, remove them from the slot, compile, make your changes, and add them back."
+        },
+        {
+          "type": "text",
+          "value": "<b>Q: Can I use my own Main Menu?</b><br>A: Yes. The included Main Menu is a sample. You can integrate the selection screen into your own menu by implementing the <i>BPI_MainMenuInterface</i> in your manager class."
+        },
+        {
+          "type": "text",
+          "value": "<b>Q: How do I change the character attributes displayed?</b><br>A: The attributes (Price, Strength, Rating) are dummy data stored in the <i>BPC_PlayerAttributes</i> component. You can modify these variables in the component to suit your game's needs."
+        }
+      ]
+    },
+    {
+                    "title": "Credits",
+                    "content": [
+                        {
+                            "type": "text",
+                            "value": "If there‘s anything missing in this doc or the project, please hit me up on Discord.Thanks and have a wonderful day :) "
+                        }
+                    ]
+                }
+  ]
+}

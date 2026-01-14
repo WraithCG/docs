@@ -215,11 +215,22 @@
                         },
                         {
                             "type": "text",
-                            "value": "The animation blueprint is modified for custom animation modification and stabilizing camera movement .<br>• <b>P_CameraBlended:</b> Outputs poses blended for ThirdPerson/FirstPerson states .<br>• <b>P_AnimModified:</b> Outputs animations after modification .<br>• <b>Logic:</b> When a traversal action occurs or <i>UseCustomAnimationData</i> is false, modification stops . you can plug any animation or custom processed pose at the place of ‘M_Neutral_Stand_Idle_Loop’ for better camera control."
+                            "value": [
+                                "The animation blueprint is modified for custom animation modification and stabilizing camera movement.",
+                                "<ul><li><b>P_CameraBlended:</b> Outputs poses blended for ThirdPerson/FirstPerson states.</li>",
+                                "<li><b>P_AnimModified:</b> Outputs animations after modification.</li>",
+                                "<li><b>Logic:</b> When a traversal action occurs or <i>UseCustomAnimationData</i> is false, modification stops. You can plug any animation or custom processed pose at the place of ‘M_Neutral_Stand_Idle_Loop’ for better camera control.</li></ul>"
+                            ]
                         },
                         {
                             "type": "header",
                             "value": "Animation Modifiers"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://placehold.co/800x400/333/FFF?text=AnimGraph+Logic",
+                            "align": "full",
+                            "caption": "Animation Modification System"
                         },
                         {
                             "type": "text",
@@ -314,6 +325,27 @@
                     ]
                 },
                 {
+      "title": "FAQs",
+      "content": [
+        {
+          "type": "header",
+          "value": "Common Questions"
+        },
+        {
+          "type": "text",
+          "value": "<b>Q: Does this project save game data?</b><br>A: No. The project does not use a <i>GameInstanceClass</i>. Data is not saved between levels or game replays. Any customization items attached to a character are lost if the character is changed."
+        },
+        {
+          "type": "text",
+          "value": "<b>Q: Can I migrate this to my existing project?</b><br>A: It is not recommended. The system is heavily interface-driven and intended to be used as a base starting project. However, the individual systems (Selection, Customization) can be downloaded separately from FAB and integrated."
+        },
+        {
+          "type": "text",
+          "value": "<b>Q: Why are there two UEFN Mannequins?</b><br>A: The white one (<i>UEFN_Mannequin</i>) holds the motion matching logic, while the orange one (<i>NewUEFN_Mannequin</i>) is used for gameplay. This separation prevents engine freezes when modifying sockets."
+        }
+      ]
+    },
+    {
                     "title": "Credits",
                     "content": [
                         {

@@ -1,0 +1,317 @@
+{
+    "id": "widgets-management-system-v1.1",
+    "title": "Widgets Management System (v1.1)",
+    "sections": [
+        {
+            "title": "Overview",
+            "content": [
+                {
+                    "type": "image",
+                    "src": "https://media.fab.com/image_previews/gallery_images/a5fd60f7-cad2-41e0-a7e1-b3b1bd35f6dd/e634bff9-1e80-44aa-9f75-b13f25ac951c.jpg",
+                    "align": "full",
+                    "caption": "System Title Banner"
+                },
+                {
+                    "type": "text",
+                    "value": "This document provides a complete guide for integrating the <b>Widgets Management System (v1.1)</b> into your Unreal Engine projects. It is designed for modularity, using interface-driven communication and decomposed widgets to ensure effortless integration and extension."
+                },
+                {
+                    "type": "tip",
+                    "value": "<b>Support:</b> For questions or assistance, please leave a comment on the product page or join the Discord server for faster resolution. Please consider rating and reviewing the asset if it proves useful."
+                }
+            ]
+        },
+        {
+            "title": "Development Roadmap",
+            "content": [
+                {
+                    "type": "text",
+                    "value": "Track the progress as the project upgrades. <ul><li>Green items are live,</li><li>Blue are currently being worked on</li><li>and Yellow are planned for future releases.</li></ul>"
+                },
+                {
+                    "type": "roadmap",
+                    "milestones": [
+                        {
+                            "version": "Version 1.0",
+                            "date": "October 2025",
+                            "status": "completed",
+                            "features": [
+                                "Widgets Management System",
+                                "Sample Main Menu, Pause Menu, Credits Menu",
+                                "Modular Widgets Elements",
+                                "Camera System for Different Screens ( Basic )"
+                            ]
+                        },
+                        {
+                            "version": "Version 1.1",
+                            "date": "October 2025",
+                            "status": "completed",
+                            "features": [
+                                "Play Level Sequences in background of various widgets",
+                                "Fixed Mouse Cursor visibility on various widget screens",
+                                "Reorganized Blueprints for better readability",
+                                "Simplified Widget Blueprints"
+                            ]
+                        },
+                        {
+                            "version": "Version 1.2",
+                            "date": "TBA",
+                            "status": "planned",
+                            "features": [
+                                "Subtypes for widget categories",
+                                "Drawing widgets of one category over the other",
+                                "Integration of PlayerCameraManager and HUD classes."
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Architecture & Integration",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "Integration Strategy"
+                },
+                {
+                    "type": "text",
+                    "value": [
+                        "<ul><li><b>GameMode Logic:</b> The <i>BP_WMSGameMode</i> GameMode handles the management of on-screen widgets (creation, removal, and updates).<br></li>",
+                        "<li><b>Modular Design:</b> <ul><li>The system is heavily interface-driven.</li>",
+                        "<li>Widgets are decomposed into reusable elements to unify style and logic across different screens.</li>",
+                        "<li><b>AddWidgetToScreen</b>: This interface function is used for drawing widgets with game mode as target.</li></ul></li></ul>"
+                    ]
+                },
+                {
+                    "type": "header",
+                    "value": "Migration Guide"
+                },
+                {
+                    "type": "text",
+                    "value": [
+                        "<ul><li>Copy/Migrate the entire <i>WidgetsManagementSystem</i> folder to your project.</li>",
+                        "Set your game mode to <b>BP_WMSGameMode</b></li>",
+                        "<li>Play!<li></ul>",
+                        "<h5>To use your custom game mode :</h5><br>",
+                        "<li>Add <b>BPI_GameModeInterface</b> to your game mode.</li>",
+                        "<li>Copy the implementation logic from BP_WMSGameMode to your custom game mode.</li>",
+                        "<li>Create required variables and fill necessary data.</li>",
+                        "<li>Done!</li></ul>"
+                    ]
+                },
+                {
+                    "type": "tip",
+                    "value": [
+                        "Make sure <b>BPC_PlayerAttributes Component</b> is added to your character blueprint.<br>",
+                        "It is required for maintaining the camera movement when widget screen is changed."
+                    ]
+                },
+                {
+                    "type": "note",
+                    "value": [
+                        "<ul><li>If you switched to using your custom GameMode, you may need to fix up some references in the demo widgets.</li>",
+                        "<li>Since widgets management is the focus of this system, the player character does not has animation data. It is always stuck in T-Pose.</li>",
+                        "<li>The character and camera movement may be janky.</li>",
+                        "<li>The <i>PauseMenu</i> implementation uses <b>DebugKeyTAB</b> for creating pause menu on screen. It may not work in final game if the debug key is not replaced with actual input key.</li>",
+                        "<li>Also when pause menu is drawn, only the inputs are disabled. Any other activity happening in the background won't stop.",
+                        "<li><b>For example -</b>NPC Activity in the background that does not uses inputs from player character.</li></ul>"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "What's New in v1.1",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "Key Updates"
+                },
+                {
+                    "type": "text",
+                    "value": [
+                        "<ul><li><b>Widget Architecture:</b> Screens are simplified by reusable Widget Elements (prefixed with E_).</li>",
+                        "<li><b>Level Sequences:</b> Level Sequences can now be played in the background of any widget.</li>",
+                        "<li><b>Quality of Life:</b> <ul><li>Fixed camera rotation during gameplay</li><li>Fixed cursor visibility issues.</li><li></li></ul></li></ul>"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Data Asset Setup",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "Widgets Data (DA_PDA_WidgetData)"
+                },
+                {
+                    "type": "image",
+                    "src": "https://cdna.artstation.com/p/assets/images/images/095/342/774/large/wraithcg-screenshot-2026-01-13-111706.webp?1768313029",
+                    "align": "left",
+                    "caption": "Widgets Category Enumeration"
+                },
+                {
+                    "type": "image",
+                    "src": "https://cdna.artstation.com/p/assets/images/images/095/342/774/large/wraithcg-screenshot-2026-01-13-111706.webp?1768313029",
+                    "align": "right",
+                    "caption": "DA Widgets Data"
+                },
+                {
+                    "type": "text",
+                    "value": [
+                        "<ul><li>Add or modify existing categories in the enumeration <b>E_WidgetScreen</b>.</li>",
+                        "<li>Open <b>DA_PDA_WidgetData</b> in DataAsset folder.</li>",
+                        "<li><b>Either empty the array to use your own widgets for each category or click the plus (+) icon to add a new element in the array.</li>",
+                        "<li>Assign your newly created or desired category to the <b>WidgetState</b> variable.</li>",
+                        "<li>Select your required widget blueprint in the <b>WidgetElement</b> category.</li>",
+                        "<li>Select if or not you want level sequences to be played in the background when this category widget is drawn on screen by toggling <b>PlayLevelSequence</b> variable.</li>",
+                        "<li><b>LevelSequences</b> contains the array of level sequences data which can be played in the background of the respective widget.",
+                        "<ul><li><b>PlayableSequence</b> is the level sequence that can be played in the background.</li>",
+                        "<li><b>PlayRate<b> can be used to speed up or down the level sequences.</li>",
+                        "<li><b>Transform</b> data is used to adjusting the position of Level sequence with respect to the player.</li></ul><li></ul>"
+                    ]
+                },
+                {
+                    "type": "note",
+                    "value": [
+                        "<ul><li>It is recommended not to add multiple data elements for same category. In every case, only the earliest found category data will be used.</li>",
+                        "<li>Do not toggle <i>PlayLevelSequence</i> <b>ON</b> if the LevelSequences array is empty.</li>",
+                        "<li>If the LevelSequences array is not empty, then make sure the array elements contain valid data. I haven't implemented check for valid data entry. So you may get some errors if you will do so.</li>",
+                        "<li>The level sequences will always be played relative to player location. So wherever you have placed the <b>PlayerStart<b> in the world, the player character will spawn there and the level sequences will be played in that area.</li>",
+                        "<li>Your level sequences are not affected by anything in the world except the player location. So they may not be suitable for every area in your game.</li>",
+                        "<li>Use the <b>Transform</b> variable for simple adjustments only and not extreme repositioning of the level sequences.</li></ul>"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Widget Blueprints",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "Elements"
+                },
+                {
+                    "type": "text",
+                    "value": [
+                        "<ul><li>The widgets in this system consist of modular elements.</li>",
+                        "<li>All of them perform different functions -",
+                        "<ul><li><b>E_Button:</b> A reusable button element with customization for color, text, state and other properties.</li>",
+                        "<i>Uses <i>SetButtonStatus</i> function to change button status.</i></li>",
+                        "<li><b>E_EmptyHorizontal:</b> Empty widget element intended for E_HorizontallyStackedWidgetElements.</li>",
+                        "<li><b>E_EmptyVertical:</b> Empty widget element intended for E_VerticallyStackedWidgetElements.</li>",
+                        "<li><b>E_FixedText:</b> For text on screen which never changes.</li>",
+                        "<li><b>E_GameTitle:</b> Image widget element. Whever an image is needed, just put it in.",
+                        "<i>Uses <i>SetNewImage</i> function to change image dynamically</i>.</li>",
+                        "<li><b>E_HorizontallyStackedWidgetElements:</b> Similar to HorizontalBox, but with extended functionalities for appending other widget elements dynamically (not during runtime) and control their properties.</li>",
+                        "<li><b>E_PairedElement:</b> Similar to E_HorizontallyStackedWidgetElements but only for two elements.</li>",
+                        "<li><b>E_PairedText:</b> Similar to E_PairedElement but for text only.",
+                        "<i>Uses <i>SetPairTextValue</i> function to change value of right side text in a pair dynamically.</li>",
+                        "<li><b>E_VariableText:</b> For on-screen text that even changes slightly.",
+                        "<i>Uses <i>SetNewText</i> function to change text dynamically.</i></li>",
+                        "<li><b>E_VerticallyStackedWidgetElements:</b> Similar to VerticalBox, but with extended functionalities for appending other widget elements dynamically (not during runtime) and control their properties.</li></ul></li></ul>"
+                    ]
+                },
+                {
+                    "type": "tip",
+                    "value": [
+                        "Child widgets added to Stacked Arrays during Pre-Construct (for live preview) become locked in the Details panel. To edit a child widget, remove it from the slot -> Compile, make your changes, and add it back and Compile again!"
+                    ]
+                },
+                {
+                    "type": "header",
+                    "value": "Properties"
+                },
+                {
+                    "type": "image",
+                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/342/759/large/wraithcg-screenshot-2026-01-13-111257.webp?1768313010",
+                    "align": "full",
+                    "caption": "Widget Properties"
+                },
+                {
+                    "type": "text",
+                    "value": [
+                        "</ul><li>These are recurring set of properties for almost all the elements and they do exactly what the title says.</li>",
+                        "<li>Some elements may or may not utilize all the fields here.</li>",
+                        "<li>Elements such as Buttons, Text etc; once added to SlotWidgetElement will no longer be editable.</li>",
+                        "<li>Remove them the slot and compile the blueprint. Now you can edit the respective element again.</li>",
+                        "<li>Sometimes removing elements from slots or pressing Ctrl+Z during editing the widget blueprint may show many copies of an element even though it has been assigned to a slot element.</li>",
+                        "<li>Worry not. Just compile the blueprint and everything should be normal again.</li></ul>"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "UI & Screens",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "Character Selection Screen"
+                },
+                {
+                    "type": "text",
+                    "value": "Displays attributes (Name, Strength, Rating) fetched via interfaces. You can toggle <b>CircularList</b> to enable infinite scrolling through the character array. Attributes are editable in the <i>BPC_Attributes</i> component."
+                },
+                {
+                    "type": "image",
+                    "src": "https://cdna.artstation.com/p/assets/images/images/095/342/574/large/wraithcg-screenshot-2026-01-09-010143.webp?1768312686",
+                    "align": "full",
+                    "caption": "Included Widget Screens"
+                },
+                {
+                    "type": "tip",
+                    "value": "To change styling (buttons, text), modify the elements in the widgets folder."
+                }
+            ]
+        },
+        {
+            "title": "Level Setup",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "World Settings"
+                },
+                {
+                    "type": "text",
+                    "value": [
+                        "To initialize the system:",
+                        "Just set the <b>GameMode Override</b> to <i>BP_WMSGameMode</i>."
+                    ]
+                },
+                {
+                    "type": "image",
+                    "src": "https://cdna.artstation.com/p/assets/images/images/095/342/748/large/wraithcg-screenshot-2026-01-13-111924.webp?1768312998",
+                    "align": "full",
+                    "caption": "Configuring World Settings for playing in new level."
+                }
+            ]
+        },
+        {
+            "title": "Camera System",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "Camera Director"
+                },
+                {
+                    "type": "text",
+                    "value": [
+                        "<ul><li>The system uses a component-based camera manager on the character blueprint.</li>",
+                        "<li><b>States:</b> Controls properties for MainMenu, Selection, and Gameplay.</li>",
+                        "<li><b>Rigs:</b> Specific Data Assets defining camera behavior for each state.</li></ul>"
+                    ]
+                },
+                {
+                    "type": "image",
+                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/342/761/large/wraithcg-screenshot-2026-01-13-111418.webp?1768313014",
+                    "align": "full",
+                    "caption": "Camera Director Setup"
+                },
+                {
+                    "type": "tip",
+                    "value": "Make sure your character has BPC_PlayerAttributes Component otherwise the camera director will throw error!"
+                }
+            ]
+        }
+    ]
+}

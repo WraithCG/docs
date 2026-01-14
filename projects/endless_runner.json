@@ -17,7 +17,7 @@
                 },
                 {
                     "type": "text",
-                    "value": "This document serves as a comprehensive guide to the <b>Infinite Runner Template</b>, which has been integrated with <b>Motion Matching</b>. The template provides a robust framework for creating endless runner games in Unreal Engine, featuring dynamic obstacle generation, character selection, customization, and power-up systems."
+                    "value": "This document serves as a comprehensive guide to the <b>Infinite Runner Template</b>, which has been integrated with <b>Motion Matching</b>. The template provides a robust framework for creating endless runner games in Unreal Engine, featuring dynamic obstacle generation, character selection, customization, and a power-ups system."
                 },
                 {
                     "type": "tip",
@@ -102,7 +102,8 @@
                                 "Updated Character Customization System to Version 1.1",
                                 "Updated Widgets Management System to Version 1.1",
                                 "Shortened Folder Names",
-                                "Reorganized Blueprints for better readability"
+                                "Reorganized Blueprints for better readability",
+                                "Solved the issue of disappearing mouse cursor on widget screens."
                             ]
                         },
                         {
@@ -117,7 +118,8 @@
                                 "Improving Emote System",
                                 "Improving Vector Game Mode",
                                 "Improving Environment Creation Tools",
-                                "Improving Demo Maps"
+                                "Improving Demo Maps",
+                                "Added Enemies"
                             ]
                         },
                         {
@@ -341,15 +343,24 @@
                 },
                 {
                     "type": "text",
-                    "value": "The <b>BP_RunnerGM</b> manages the infinite loop:<br>1. <b>AddFloor:</b> Spawns initial tiles.<br>2. <b>ExtendFloor:</b> Spawns new tile when player overlaps detector.<br>3. <b>DeleteFloor:</b> Removes oldest tile to maintain performance."
+                    "value": [
+                        "The <b>BP_RunnerGM</b> manages the infinite loop:",
+                        "<ul<li><b>AddFloor:</b> Spawns initial tiles.</li><li><b>ExtendFloor:</b> Spawns new tile when player overlaps detector.</li><li><b>DeleteFloor:</b> Removes oldest tile to maintain performance.</li></ul>"
+                    ]
                 },
                 {
                     "type": "tip",
-                    "value": "You can change how many floors to add the start of the game & every time extension is requested by changing <i>StartWithFloors</i> & <i>ExtensionCount</i> in <b>BPC_EndlessAttributesComponent</b> respectively.<br> The duration after which a platform is removed can be set in <b>GM_RunnerGameMode</b>."
+                    "value": [
+                        "You can change how many floors to add the start of the game & every time extension is requested by changing <i>StartWithFloors</i> & <i>ExtensionCount</i> in <b>BPC_EndlessAttributesComponent</b> respectively.",
+                        "The duration after which a platform is removed can be set in <b>GM_RunnerGameMode</b>."
+                    ]
                 },
                 {
                     "type": "note",
-                    "value": "The lifespan of any platform does not takes into account player action. This means if player is stuck on any platform for long, it is possible that the platform gets removed and the player falls into oblivion. <br> Only option that remains is restarting the game."
+                    "value": [
+                        "The lifespan of any platform does not takes into account player action. This means if player is stuck on any platform for long, it is possible that the platform gets removed and the player falls into oblivion.",
+                        "Only option that remains is restarting the game."
+                    ]
                 }
             ]
         },
@@ -368,7 +379,11 @@
                 },
                 {
                     "type": "text",
-                    "value": "Obstacles are grouped into families to allow variation.<ul><li><b>Blocking:</b>Obstacles must be WorldDynamic or BlockAllDynamic collision (e.g., walls, cars, barriers).</li><li><b>UnderRolls:</b>Obstacles must be PhysicsActor(PhysicsBody) collision that the player can slide under.</li></ul>"
+                    "value": [
+                        "Obstacles are grouped into families to allow variation.",
+                        "<ul><li><b>Blocking:</b>Obstacles must be WorldDynamic or BlockAllDynamic collision (e.g., walls, cars, barriers).</li>",
+                        "<li><b>UnderRolls:</b>Obstacles must be PhysicsActor(PhysicsBody) collision that the player can slide under.</li></ul>"
+                    ]
                 },
                 {
                     "type": "text",
@@ -376,7 +391,12 @@
                 },
                 {
                     "type": "note",
-                    "value": "You can create more families for say cars, trains, etc; Depending on the type of parkouring behvaior they allow, you will need to set their type to either Blocking or UnderRoll.<br>Do not use BP_DynamicObstacles directly. Always use child classes BP_DOD_Blockers and BP_DOD_UnderRolls wherever required."
+                    "value": [
+                        "<ul><li>You can create more families for say cars, trains, etc;</li>",
+                        "<li>Depending on the type of parkouring behvaior they allow, you will need to set their type to either Blocking or UnderRoll.</li>",
+                        "<li>Do not use BP_DynamicObstacles directly.</li>",
+                        "<li>Always use child classes BP_DOD_Blockers and BP_DOD_UnderRolls wherever required.</li></ul>"
+                    ]
                 },
                 {
                     "type": "image",
@@ -386,20 +406,33 @@
                 },
                 {
                     "type": "text",
-                    "value": "<b>Dynamic Obstacle Data Parameters:</b><ul><li><b>ObstacleType:</b>Determines the general category of the obstacles.<li><b>CollisionObjectType:</b>Define the collision behavior of the obstacles in the family.</li></li><li><b>ObstacleData:</b>Contains the Static Mesh (SM) and spawning rules.</li><li><b>SpawnCollectible:</b>Boolean to determine if collectibles appear above this obstacle.</li><li><b>ZOffset:</b>Adjusts the vertical height of the obstacle (including the height of obstacle).</li></ul>"
+                    "value": [
+                        "<b>Dynamic Obstacle Data Parameters:</b>",
+                        "<ul><li><b>ObstacleType:</b>Determines the general category of the obstacles.</li>",
+                        "<li><b>CollisionObjectType:</b>Define the collision behavior of the obstacles in the family.</li>",
+                        "<li><b>ObstacleData:</b><ul><li><b>SM:</b>Contains the Static Mesh (SM).</li>",
+                        "<li><b>SpawnCollectible:</b>Boolean to determine if collectibles appear above this obstacle.</li>",
+                        "<li><b>ZOffset:</b>Adjusts the vertical height of the obstacle (including the height of obstacle).</li></ul></li></ul>"
+                    ]
                 },
                 {
                     "type": "tip",
-                    "value": "Disable collectibles spawning for thin blockers."
+                    "value": "Disable collectibles spawning for thin obstacles."
                 },
                 {
-                    "type":"text",
-                    "value":"<b>BP_DynamicObstacles Paramerters:</b><ul><li><b>ObstacleData:</b>Assign the Obstacle Family Data Asset to spawn.</li><li><b>CurrentISMData:</b>Configure properties for collectibles that can be spawned with any obstacle of this family.</li><li><b>SpawnedPowerUpData:</b>Contains the array of powerUp data assets that can be spawned on these obstacles randomly.</li></ul>"
+                    "type": "image",
+                    "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
+                    "align": "right",
+                    "caption": "BP DOD"
                 },
                 {
-          "type": "tip",
-          "value": "More elements means lesser repetition."
-        },
+                    "type": "text",
+                    "value": "<b>BP_DynamicObstacles Paramerters:</b><ul><li><b>ObstacleData:</b>Assign the Obstacle Family Data Asset to spawn.</li><li><b>CurrentISMData:</b>Configure properties for collectibles that can be spawned with any obstacle of this family.</li><li><b>SpawnedPowerUpData:</b>Contains the array of powerUp data assets that can be spawned on these obstacles randomly.</li></ul>"
+                },
+                {
+                    "type": "tip",
+                    "value": "More elements means lesser repetition."
+                },
                 {
                     "type": "header",
                     "value": "BPCC_ObstacleBase"
@@ -413,6 +446,30 @@
                 {
                     "type": "text",
                     "value": "<ul><li>These are the platforms where obstacles are spawned using ObstacleFamilies, i.e., BP_DynamicObstacles.</li><li>A random obstacle from any family is spawned in any of the pre-defined spawn indices.</li><li>These are intended for mass generation of two or more different platforms from a single platform by randomly changing the positions of CACs.</li></ul>"
+                },
+                {
+                    "type": "text",
+                    "value": [
+                        "<ul><li><b>DynObsData:</b>Assign the class reference of the child classes of type ‘BP_DynamicObstacles’.</li>",
+                        "<li><b>Spawn Positions:</b>An array of indices (0-8) where any obstacle from a obstacle family can be spawned randomly.</li>",
+                        "<li><b>CollectibleDB:</b>An array of structures for configuring properties of more than one or same type of collectibles.",
+                        "<ul><li><b>CollectibleStaticMesh:</b> to spawn via Instanced Static Mesh Component.</li>",
+                        "<li><b>CollectibleCollisionType:</b> must be Collectibles only. Other types are prone to interfere with other gameplay behaviors.</li>",
+                        "<li><b>LaneIdx:</b> controls on which collectibles are spawned here.</li>",
+                        "<li><b>No.OfCollectibles:</b> determine the number of instances to spawn over the obstacles.</li>",
+                        "<li><b>RowLocation:</b> can be used for adjusting spawn point of collectibles for all obstacles in a family.</li>",
+                        "<li><b>Scale:</b> changes the size of obstacles.</li>",
+                        "<li><b>CorrectiveZRotation:</b> is for changing the default rotation of the collectibles if they aren’t facing the desired direction on Z axis.</li>",
+                        "<li><b>Offset:</b> Controls the distance of the obstacles from the start position of the map.</li>",
+                        "<li><b>SpawnCollectibles?:</b> Boolean to toggle whether or not collectibles can be spawned on this platform.<br><i>",
+                        "It doesn’t restricts CACs to spawn collectibles. Only the data present in CollectibleDB remains unused.</i></li>",
+                        "<li><b>NoOfRowSpawners:</b>Decide the number of elements to use for spawning from CollectibleDB.</li></ul>",
+                        "<li><b>LeftEnvironmentData & RightEnvironmentData:</b>are just PropData arrays explained in EnvironmentCreationTools.</li>",
+                        "<li><b>DebugPlatform:</b>It is useful for dubugging the object placement on the platform when game is not running.<br>",
+                        "<li><b>DebugArray:</b>It is useful for checking placement of various obstacles on these lane values when game is not running.<br>",
+                        "<i>When the game is running, lane data from GameMode is used.</i></li>",
+                        "<li><b>Left & Right EnvironmentClass:</b> Select the environment class asset that you wish to spawn here.</li></ul>"
+                    ]
                 }
             ]
         },
@@ -432,6 +489,39 @@
                 {
                     "type": "text",
                     "value": "<ul><li>Used for pre-configured, non-random platforms.</li><li>A fixed obstacle from ObstacleData is spawned at the of the pre-defined spawn index with the given physics behavior.</li><li>These are intended for creation of unique platforms.</li></ul>"
+                },
+                {
+                    "type": "text",
+                    "value": [
+                        "<b>Configuration:</b><br><ul><li>Ensure static meshes have their origin at the bottom-center and collision set to <i>BlockAllDynamic</i>.</li>",
+                        "<li><b>Offset:</b> Controls the distance of the obstacles from the start position of the map.</li>",
+                        "<li><b>SpawnPowerUp:</b> Controls whether or not to spawn powerUps on this platform.</li>",
+                        "<li><b>SpawnCollectibles?:</b> Boolean to toggle whether or not collectibles can be spawned on this platform.</li>",
+                        "<li><b>ObstaclesData:</b> An array of structure for storing the obstacle mesh, its physics behavior and spawn point.<ul><li><b>SM:</b>Contains the Static Mesh (SM).</li>",
+                        "<li><b>SpawnCollectible:</b>Boolean to determine if collectibles appear above this obstacle.</li>",
+                        "<li><b>ZOffset:</b>Adjusts the vertical height of the obstacle (including the height of obstacle).</li></ul></li>",
+                        "<li><b>PowerDB:</b> An array of structures for configuring spawn properties of one or more powerUps.",
+                        "<ul><li><b>PowerUpDA</b> takes a power up data asset as input.</li>",
+                        "<li><b>ZOffset</b> defines how high above the ground the powerUp should be spawned.</li>",
+                        "<li><b>SpawnPointIdx</b> is the location at which the powerUp is spawned.</li></ul>",
+                        "<li><b>CollectibleDB:</b> An array of structures for configuring properties of more than one or same type of collectibles.",
+                        "<ul><li><b>CollectibleStaticMesh:</b> to spawn via Instanced Static Mesh Component.</li>",
+                        "<li><b>CollectibleCollisionType:</b> must be Collectibles only. Other types are prone to interfere with other gameplay behaviors.</li>",
+                        "<li><b>LaneIdx:</b> controls on which collectibles are spawned here.</li>",
+                        "<li><b>No.OfCollectibles:</b> determine the number of instances to spawn over the obstacles.</li>",
+                        "<li><b>RowLocation:</b> can be used for adjusting spawn point of collectibles for all obstacles in a family.</li>",
+                        "<li><b>Scale:</b> changes the size of obstacles.</li>",
+                        "<li><b>CorrectiveZRotation:</b> is for changing the default rotation of the collectibles if they aren’t facing the desired direction on Z axis.</li>",
+                        "<li><b>Offset:</b> Controls the distance of the obstacles from the start position of the map.</li>",
+                        "<li><b>SpawnCollectibles?:</b> Boolean to toggle whether or not collectibles can be spawned on this platform.<br><i>",
+                        "It doesn’t restricts CACs to spawn collectibles. Only the data present in CollectibleDB remains unused.</i></li>",
+                        "<li><b>NoOfRowSpawners:</b>Decide the number of elements to use for spawning from CollectibleDB.</li></ul>",
+                        "<li><b>LeftEnvironmentData & RightEnvironmentData:</b>are just PropData arrays explained in EnvironmentCreationTools.</li>",
+                        "<li><b>DebugPlatform:</b>It is useful for dubugging the object placement on the platform when game is not running.<br>",
+                        "<li><b>DebugArray:</b>It is useful for checking placement of various obstacles on these lane values when game is not running.<br>",
+                        "<i>When the game is running, lane data from GameMode is used.</i></li>",
+                        "<li><b>Left & Right EnvironmentClass:</b> Select the environment class asset that you wish to spawn here.</li></ul>"
+                    ]
                 }
             ]
         },
@@ -454,7 +544,14 @@
                 },
                 {
                     "type": "text",
-                    "value": "<b>Configuration:</b><ul><li>Create Zone Data Assets (DAs) from DA_PDA_FD inside <b>Components > PlatformSystem > PDA > ZonePDA</b> by duplicating existing ones and clearing them.</li><li>Now add your platform obstacle sets of type BP_MapBase.</li><li>Add your newly created platform Zone Data Assets to SpawnZonePDA (e.g., DA_PDA_SZD_FD).</li><li><b>Sequential Mode:</b> If SpawnSequentially is true, the platforms inside any zone will cycle in a fixed order.</li><li><b>Random Mode:</b>Define MinSpawnedPlatforms and MaxSpawnedPlatforms to randomize how long a zone lasts before switching.<br>This prevents the generator from getting stuck in a single zone.</li><li><b>‘BP_Floor’</b> uses the interface function call GetNextFloorClassToSpawn to find the next suitable platform to spawn.</li></ul>"
+                    "value": [
+                        "<b>Configuration:</b>",
+                        "<ul><li>Create Zone Data Assets (DAs) from DA_PDA_FD inside <b>Components > PlatformSystem > PDA > ZonePDA</b> by duplicating existing ones and clearing them.</li>",
+                        "<li>Now add your platform obstacle sets of type BP_MapBase.</li><li>Add your newly created platform Zone Data Assets to SpawnZonePDA (e.g., DA_PDA_SZD_FD).</li>",
+                        "<li><b>Sequential Mode:</b> If SpawnSequentially is true, the platforms inside any zone will cycle in a fixed order.</li>",
+                        "<li><b>Random Mode:</b>Define MinSpawnedPlatforms and MaxSpawnedPlatforms to randomize how long a zone lasts before switching.",
+                        "This prevents the generator from getting stuck in a single zone.</li><li><b>‘BP_Floor’</b> uses the interface function call GetNextFloorClassToSpawn to find the next suitable platform to spawn.</li></ul>"
+                    ]
                 }
             ]
         },
@@ -467,7 +564,12 @@
                 },
                 {
                     "type": "text",
-                    "value": "This tool allows you to create complex environments using <b>PropsData</b> maps.<br><ul><li><b>UseRandomSeedValues:</b> Randomizes transform within min/max ranges.</li><li><b>AutoUpdatePropsData:</b> Updates viewport in real-time.</li><li><b>PropsData:</b> Supports both Static Meshes (Instanced) and Skeletal Meshes (Animated).</li></ul>"
+                    "value": [
+                        "This tool allows you to create complex environments using <b>PropsData</b> maps.<br>",
+                        "<ul><li><b>UseRandomSeedValues:</b> Randomizes transform within min/max ranges.</li>",
+                        "<li><b>AutoUpdatePropsData:</b> Updates viewport in real-time.</li>",
+                        "<li><b>PropsData:</b> Supports both Static Meshes (Instanced) and Skeletal Meshes (Animated).</li></ul>"
+                    ]
                 }
             ]
         },
@@ -592,6 +694,47 @@
                     "value": "1. File -> New Level (Basic).<br>2. Add <b>BP_PlatformManager</b> and <b>PlayerStart</b> at (0,0,0).<br>3. Set GameMode to <b>BP_RunnerGM</b>.<br>4. Press Play."
                 }
             ]
+        },
+        {
+  "title": "FAQs",
+  "content": [
+    {
+      "type": "header",
+      "value": "General & Setup"
+    },
+    {
+      "type": "text",
+      "value": "<b>Q: Does this project use a custom motion matching system?</b><br>A: No. This project uses the default motion matching setup and animations from the <i>GameAnimationSampleProject (GASP)</i>. No custom motion matching setup was created specifically for this template."
+    },
+    {
+      "type": "text",
+      "value": "<b>Q: Is game data saved?</b><br>A: Yes. Unlike the basic game project, this template uses a SaveGame class (<i>SG_Runner</i>). It automatically saves High Scores, Total Coins, Last Selected Character, and Customization Data."
+    },
+    {
+      "type": "text",
+      "value": "<b>Q: What plugins are required?</b><br>A: You must enable AnimationWarping, MotionWarping, AnimationLocomotionLibrary, PoseSearch, Chooser, RigLogic, LiveLink, and LiveLinkControlRig."
+    },
+    {
+      "type": "header",
+      "value": "Gameplay & Customization"
+    },
+    {
+      "type": "text",
+      "value": "<b>Q: How do I add a new character?</b><br>A: You must create a child class of <i>CBP_SandboxCharacter</i> to preserve the running logic. Then, create a Character Data Asset and add it to the <i>DA_PDA_CSD</i> list."
+    },
+    {
+      "type": "text",
+      "value": "<b>Q: Can I create a straight runner without lanes?</b><br>A: Yes. The project includes a GameMode variant called 'Vector' specifically for straight endless runners, alongside the standard 3-Lane 'Runner' mode."
+    },
+    {
+      "type": "text",
+      "value": "<b>Q: How are platforms managed?</b><br>A: The <i>BP_RunnerGM</i> manages the loop. It spawns new platforms when the player overlaps a trigger and deletes old platforms after a set time to maintain performance."
+    },
+    {
+      "type": "text",
+      "value": "<b>Q: Why do my custom animations look wrong?</b><br>A: The default GASP setup is generic. For best results, you need to add specific animations to the chooser or use the <i>CharacterAnimationModification</i> system to layer changes over the base motion matching set."
+    }
+]
         },
         {
             "title": "Credits",
