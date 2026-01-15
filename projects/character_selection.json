@@ -249,14 +249,14 @@
           "caption": "Character Event Graph Setup"
         },
         {
-          "type":"header",
-          "value":"BPC_PlayerAttributesComponent"
+          "type": "header",
+          "value": "BPC_PlayerAttributesComponent"
         },
         {
-          "type":"image",
-          "src":"https://cdnb.artstation.com/p/assets/images/images/095/342/759/large/wraithcg-screenshot-2026-01-13-111257.webp?1768313010",
-          "align":"full",
-          "caption":"BPC_PlayerAttributes Component Overview"
+          "type": "image",
+          "src": "https://cdnb.artstation.com/p/assets/images/images/095/342/759/large/wraithcg-screenshot-2026-01-13-111257.webp?1768313010",
+          "align": "full",
+          "caption": "BPC_PlayerAttributes Component Overview"
         }
       ]
     },
@@ -330,14 +330,14 @@
           ]
         },
         {
-          "type":"image",
-          "src":"https://cdnb.artstation.com/p/assets/images/images/095/342/761/large/wraithcg-screenshot-2026-01-13-111418.webp?1768313014",
-          "align":"full",
-          "caption":"Camera Director Setup"
+          "type": "image",
+          "src": "https://cdnb.artstation.com/p/assets/images/images/095/342/761/large/wraithcg-screenshot-2026-01-13-111418.webp?1768313014",
+          "align": "full",
+          "caption": "Camera Director Setup"
         },
         {
-          "type":"tip",
-          "value":"Make sure your character has BPC_PlayerAttributes Component otherwise the camera director will throw error!"
+          "type": "tip",
+          "value": "Make sure your character has BPC_PlayerAttributes Component otherwise the camera director will throw error!"
         }
       ]
     },
@@ -363,13 +363,13 @@
       ]
     },
     {
-                    "title": "Credits",
-                    "content": [
-                        {
-                            "type": "text",
-                            "value": "If there‘s anything missing in this doc or the project, please hit me up on Discord.Thanks and have a wonderful day :) "
-                        }
-                    ]
-                }
+      "title": "Credits",
+      "content": [
+        {
+          "type": "text",
+          "value": "If there‘s anything missing in this doc or the project, please hit me up on Discord.Thanks and have a wonderful day :) "
+        }
+      ]
+    }
   ]
 }

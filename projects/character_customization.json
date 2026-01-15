@@ -180,13 +180,13 @@
           "type": "text",
           "value": [
             "<ul><li><b>CharacterData:</b> takes the DA_CharacterSelectionData as input.",
-"<ul><li>It contains the list of characters available for play.</li>",
-"<li>The order of characters in this list is the same order in which the characters will appear in the game.</li></ul></li>",
-"<li><b>CurrentCharacterData:</b> takes as input the data of the first character available in the Character Data list.</li>",
-"<li><b>CircularList:</b> determines if or not character selection system is linear.</li>",
-"<ul><li>Circular List means if the player is at first selectable character and clicks the PreviousCharacterButton, they will traverse the selection list in reverse order.</li>",
-"<li>Similarly if they are last selectable character and click the NextCharacterButton, they will reach the starting of list again./li>",
-"<li>If CircularList is False, then the players cannot go to last character from first character and vice versa.</li></ul></li></ul>"
+            "<ul><li>It contains the list of characters available for play.</li>",
+            "<li>The order of characters in this list is the same order in which the characters will appear in the game.</li></ul></li>",
+            "<li><b>CurrentCharacterData:</b> takes as input the data of the first character available in the Character Data list.</li>",
+            "<li><b>CircularList:</b> determines if or not character selection system is linear.</li>",
+            "<ul><li>Circular List means if the player is at first selectable character and clicks the PreviousCharacterButton, they will traverse the selection list in reverse order.</li>",
+            "<li>Similarly if they are last selectable character and click the NextCharacterButton, they will reach the starting of list again./li>",
+            "<li>If CircularList is False, then the players cannot go to last character from first character and vice versa.</li></ul></li></ul>"
           ]
         },
         {
@@ -307,38 +307,38 @@
       ]
     },
     {
-          "title": "FAQs",
-          "content": [
-            {
-              "type": "header",
-              "value": "Common Questions"
-            },
-            {
-              "type": "text",
-              "value": "<b>Q: Can I combine this with the Character Selection System?</b><br>A: Yes, but this asset is designed as standalone to reduce complexity. You will need to manually merge the logic if you require both systems in a single GameMode/Controller."
-            },
-            {
-              "type": "text",
-              "value": "<b>Q: Why is my new customization category not showing?</b><br>A: Ensure you have added the category to the <i>E_AttachmentPoints</i> enumeration and updated the button properties in the UI widget to match the category name exactly."
-            },
-            {
-              "type": "text",
-              "value": "<b>Q: How do I set a default 'None' option?</b><br>A: When adding elements to your Data Asset (DA_PDA_UE5), leave the first element empty. This acts as the default 'unequipped' state."
-            }
-          ]
+      "title": "FAQs",
+      "content": [
+        {
+          "type": "header",
+          "value": "Common Questions"
         },
         {
-          "title": "Credits",
-          "content": [
-            {
-              "type": "header",
-              "value": "Acknowledgements"
-            },
-            {
-              "type": "text",
-              "value": "<b>Development:</b> wRAITH_cg<br><b>Feedback:</b> Please consider rating and reviewing the asset if it proves useful for your project. Good rated and reviewed products are more likely to be recommended to others."
-            }
-          ]
+          "type": "text",
+          "value": "<b>Q: Can I combine this with the Character Selection System?</b><br>A: Yes, but this asset is designed as standalone to reduce complexity. You will need to manually merge the logic if you require both systems in a single GameMode/Controller."
+        },
+        {
+          "type": "text",
+          "value": "<b>Q: Why is my new customization category not showing?</b><br>A: Ensure you have added the category to the <i>E_AttachmentPoints</i> enumeration and updated the button properties in the UI widget to match the category name exactly."
+        },
+        {
+          "type": "text",
+          "value": "<b>Q: How do I set a default 'None' option?</b><br>A: When adding elements to your Data Asset (DA_PDA_UE5), leave the first element empty. This acts as the default 'unequipped' state."
         }
+      ]
+    },
+    {
+      "title": "Credits",
+      "content": [
+        {
+          "type": "header",
+          "value": "Acknowledgements"
+        },
+        {
+          "type": "text",
+          "value": "<b>Development:</b> wRAITH_cg<br><b>Feedback:</b> Please consider rating and reviewing the asset if it proves useful for your project. Good rated and reviewed products are more likely to be recommended to others."
+        }
+      ]
+    }
   ]
 }

@@ -388,11 +388,12 @@ select option { background: #000; color: var(--first-color); }
 
 /* Sidebar */
 .sidebar {
-    padding: 1.5rem;
+    padding: 1rem;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
 }
+
 .sidebar-header {
     font-size: 0.8rem; letter-spacing: 3px; color: var(--first-color);
     margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;
@@ -415,6 +416,130 @@ select option { background: #000; color: var(--first-color); }
     border-color: var(--first-color);
     color: var(--first-color);
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+/* === NESTED SIDEBAR === */
+/* Header for the sidebar item (Title + Arrow) */
+.sidebar-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.sidebar-item-header:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--first-color);
+}
+
+/* Arrow Icon */
+.arrow-icon {
+    font-size: 2rem;
+    color: var(--text-color-light);
+    transition: transform 0.3s ease;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.arrow-icon:hover {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+/* Rotate arrow when open */
+li.open > .sidebar-item-header .arrow-icon {
+    transform: rotate(90deg);
+    color: var(--first-color);
+}
+
+/* Active State (Parent or Child) */
+li.active > .sidebar-item-header, 
+li.sub-active > .sidebar-item-header { /* New class for highlighting clicked sub-items */
+    background: rgba(var(--first-color-rgb), 0.15); /* Adjust opacity if needed or use hex */
+    background: #333; /* Fallback */
+    color: var(--first-color);
+    border-left: 3px solid var(--first-color);
+}
+
+/* Sub-list Container (Hidden by default) */
+.sidebar-sublist {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Expand logic */
+li.open .sidebar-sublist {
+    max-height: 500px; /* Arbitrary large height */
+}
+
+/* Sub-list Items */
+.sidebar-sublist li {
+    padding: 8px 15px 8px 30px; /* Indented */
+    font-size: 0.9rem;
+    color: var(--text-color-light);
+    border-left: 1px solid rgba(255,255,255,0.05);
+    margin-left: 15px;
+}
+
+.sidebar-sublist li:hover {
+    color: #fff;
+    border-left-color: var(--first-color);
+}
+
+.sidebar-sublist li.active {
+    color: var(--first-color);
+    border-left-color: var(--first-color);
+    background: rgba(255,255,255,0.03);
+}
+
+/* === SUBSECTION QUICK LINKS === */
+.subsection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.subsection-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.subsection-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--first-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.subsection-card i {
+    font-size: 1.5rem;
+    color: var(--first-color);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.subsection-card span {
+    font-family: var(--heading-font);
+    font-size: 1rem;
+    color: var(--text-color);
 }
 
 /* Content Area */

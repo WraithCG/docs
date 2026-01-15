@@ -365,6 +365,12 @@
             ]
         },
         {
+      "title": "Obstacle System",
+      "content": [
+        { "type": "text", "value": "The obstacle system is split into two main components..." }
+      ],
+      "subsections": [
+        {
             "title": "BPCC Obstacle System",
             "content": [
                 {
@@ -524,7 +530,9 @@
                     ]
                 }
             ]
-        },
+        }
+      ]
+    },
         {
             "title": "Spawn Zones",
             "content": [
@@ -696,45 +704,45 @@
             ]
         },
         {
-  "title": "FAQs",
-  "content": [
-    {
-      "type": "header",
-      "value": "General & Setup"
-    },
-    {
-      "type": "text",
-      "value": "<b>Q: Does this project use a custom motion matching system?</b><br>A: No. This project uses the default motion matching setup and animations from the <i>GameAnimationSampleProject (GASP)</i>. No custom motion matching setup was created specifically for this template."
-    },
-    {
-      "type": "text",
-      "value": "<b>Q: Is game data saved?</b><br>A: Yes. Unlike the basic game project, this template uses a SaveGame class (<i>SG_Runner</i>). It automatically saves High Scores, Total Coins, Last Selected Character, and Customization Data."
-    },
-    {
-      "type": "text",
-      "value": "<b>Q: What plugins are required?</b><br>A: You must enable AnimationWarping, MotionWarping, AnimationLocomotionLibrary, PoseSearch, Chooser, RigLogic, LiveLink, and LiveLinkControlRig."
-    },
-    {
-      "type": "header",
-      "value": "Gameplay & Customization"
-    },
-    {
-      "type": "text",
-      "value": "<b>Q: How do I add a new character?</b><br>A: You must create a child class of <i>CBP_SandboxCharacter</i> to preserve the running logic. Then, create a Character Data Asset and add it to the <i>DA_PDA_CSD</i> list."
-    },
-    {
-      "type": "text",
-      "value": "<b>Q: Can I create a straight runner without lanes?</b><br>A: Yes. The project includes a GameMode variant called 'Vector' specifically for straight endless runners, alongside the standard 3-Lane 'Runner' mode."
-    },
-    {
-      "type": "text",
-      "value": "<b>Q: How are platforms managed?</b><br>A: The <i>BP_RunnerGM</i> manages the loop. It spawns new platforms when the player overlaps a trigger and deletes old platforms after a set time to maintain performance."
-    },
-    {
-      "type": "text",
-      "value": "<b>Q: Why do my custom animations look wrong?</b><br>A: The default GASP setup is generic. For best results, you need to add specific animations to the chooser or use the <i>CharacterAnimationModification</i> system to layer changes over the base motion matching set."
-    }
-]
+            "title": "FAQs",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "General & Setup"
+                },
+                {
+                    "type": "text",
+                    "value": "<b>Q: Does this project use a custom motion matching system?</b><br>A: No. This project uses the default motion matching setup and animations from the <i>GameAnimationSampleProject (GASP)</i>. No custom motion matching setup was created specifically for this template."
+                },
+                {
+                    "type": "text",
+                    "value": "<b>Q: Is game data saved?</b><br>A: Yes. Unlike the basic game project, this template uses a SaveGame class (<i>SG_Runner</i>). It automatically saves High Scores, Total Coins, Last Selected Character, and Customization Data."
+                },
+                {
+                    "type": "text",
+                    "value": "<b>Q: What plugins are required?</b><br>A: You must enable AnimationWarping, MotionWarping, AnimationLocomotionLibrary, PoseSearch, Chooser, RigLogic, LiveLink, and LiveLinkControlRig."
+                },
+                {
+                    "type": "header",
+                    "value": "Gameplay & Customization"
+                },
+                {
+                    "type": "text",
+                    "value": "<b>Q: How do I add a new character?</b><br>A: You must create a child class of <i>CBP_SandboxCharacter</i> to preserve the running logic. Then, create a Character Data Asset and add it to the <i>DA_PDA_CSD</i> list."
+                },
+                {
+                    "type": "text",
+                    "value": "<b>Q: Can I create a straight runner without lanes?</b><br>A: Yes. The project includes a GameMode variant called 'Vector' specifically for straight endless runners, alongside the standard 3-Lane 'Runner' mode."
+                },
+                {
+                    "type": "text",
+                    "value": "<b>Q: How are platforms managed?</b><br>A: The <i>BP_RunnerGM</i> manages the loop. It spawns new platforms when the player overlaps a trigger and deletes old platforms after a set time to maintain performance."
+                },
+                {
+                    "type": "text",
+                    "value": "<b>Q: Why do my custom animations look wrong?</b><br>A: The default GASP setup is generic. For best results, you need to add specific animations to the chooser or use the <i>CharacterAnimationModification</i> system to layer changes over the base motion matching set."
+                }
+            ]
         },
         {
             "title": "Credits",
