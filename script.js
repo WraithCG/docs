@@ -309,24 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title.textContent = section.title;
         mainContent.appendChild(title);
 
-        // 2. Subsection Quick Links (Grid)
-        if (section.subsections && section.subsections.length > 0) {
-            const subContainer = document.createElement('div');
-            subContainer.className = 'subsection-grid';
-            section.subsections.forEach(sub => {
-                const card = document.createElement('div');
-                card.className = 'subsection-card';
-                card.innerHTML = `<i class='bx bx-subdirectory-right'></i><span>${sub.title}</span>`;
-                
-                card.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    highlightSidebarItem(sub._uuid);
-                    renderContent(sub);
-                });
-                subContainer.appendChild(card);
-            });
-            mainContent.appendChild(subContainer);
-        }
+        
 
         // 3. Render Blocks
         if (section.content) {
@@ -426,6 +409,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (el) mainContent.appendChild(el);
             });
+        }
+
+        // 2. Subsection Quick Links (Grid)
+        if (section.subsections && section.subsections.length > 0) {
+            const subContainer = document.createElement('div');
+            subContainer.className = 'subsection-grid';
+            section.subsections.forEach(sub => {
+                const card = document.createElement('div');
+                card.className = 'subsection-card';
+                card.innerHTML = `<i class='bx bx-subdirectory-right'></i><span>${sub.title}</span>`;
+                
+                card.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    highlightSidebarItem(sub._uuid);
+                    renderContent(sub);
+                });
+                subContainer.appendChild(card);
+            });
+            mainContent.appendChild(subContainer);
         }
 
         // 4. Navigation Buttons (Global Context)

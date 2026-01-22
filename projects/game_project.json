@@ -1,15 +1,15 @@
 {
-    "id": "wraith-game-project-v1-full",
-    "title": "Game Project v1.0",
+    "id": "wraith-game-project-v1.1",
+    "title": "Game Project v1.1",
     "sections": [
         {
             "title": "Introduction",
             "content": [
                 {
                     "type": "image",
-                    "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
-                    "align": "full",
-                    "caption": "wRAiTH_CG’s Game Project (v1.0)"
+                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/853/large/wraithcg-2.jpg?1769069809",
+                    "align": "right",
+                    "caption": "wRAiTH_CG’s Game Project (v1.1)"
                 },
                 {
                     "type": "text",
@@ -18,6 +18,68 @@
                 {
                     "type": "tip",
                     "value": "<b>Support:</b> For questions or assistance, please leave a comment on the product page or join the Discord server for faster resolution. Please consider rating and reviewing the asset if it proves useful for your project."
+                }
+            ]
+        },
+        {
+            "title": "Development Roadmap",
+            "content": [
+                {
+                    "type": "text",
+                    "value": "Track the progress as the project upgrades. <ul><li>Green items are live,</li><li>Blue are currently being worked on</li><li>and Yellow are planned for future releases.</li></ul>"
+                },
+                {
+                    "type": "roadmap",
+                    "milestones": [
+                        {
+                            "version": "Version 1.0",
+                            "date": "October 2025",
+                            "status": "completed",
+                            "features": [
+                                "Basic Menu System",
+                                "Character Death Screen",
+                                "Character Selection System",
+                                "Metahumans Support",
+                                "Dynamic Camera during Parkour",
+                                "Infinite Platforms Spawner",
+                                "Obstacle Spawning",
+                                "Dynamic Obstacles (can be slid under or climbed)"
+                            ]
+                        },
+                        {
+                            "version": "Version 1.1",
+                            "date": "October 2025",
+                            "status": "completed",
+                            "features": [
+                                "Collectibles Counter",
+                                "Upgraded Menu Systems",
+                                "Collectibles Spawning System",
+                                "Spawning Dyanmic Obstacle Families",
+                                "Reorganized Blueprints for better readability",
+                                "Refined Obstacles Spawn System",
+                                "Separated Character Selection Screen",
+                                "Added Toggle Control for various features",
+                                "Improved Camera Blending",
+                                "Add First Person Camera"
+                            ]
+                        },
+                        {
+                            "version": "Version 1.2",
+                            "date": "TBA",
+                            "status": "in-progress",
+                            "features": [
+                                "Curved World System",
+                                "Fixing Collision Issues",
+                                "Revising Game Components",
+                                "Widgets for PowerUps",
+                                "Improving Emote System",
+                                "Improving Vector Game Mode",
+                                "Improving Environment Creation Tools",
+                                "Improving Demo Maps",
+                                "Added Enemies"
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -59,15 +121,25 @@
                 },
                 {
                     "type": "text",
-                    "value": "<b>Development Goal:</b> The project is intended to be used as a base starting project.<br><ul><li><b>GameMode Logic:</b> The <i>GM_Project</i> is responsible for management of platforms (creation and removal).</li><li><b>Player Controller:</b> The <i>PC_Project</i> manages the current character data and handles the logic of fetching character data (Next/Previous).</li></ul>"
+                    "value": [
+                        "<b>Development Goal:</b> The project is intended to be used as a base starting project.<br>",
+                        "<ul><li><b>GameMode Logic:</b> The <i>GM_Project</i> is responsible for management of platforms (creation and removal).</li>",
+                        "<li><b>Player Controller:</b> The <i>PC_Project</i> manages the current character data and handles the logic of fetching character data (Next/Previous).</li></ul>"
+                    ]
+                },
+                {
+                    "type": "tip",
+                    "value": "<b>Migration Guide:</b> The system is heavily interface-driven. Though modular, this project is not intended for migration into existing projects. However, you can easily download and integrate CharacterSelectionSystem, Customization System, and WidgetsManagementSystem selectively from FAB."
                 },
                 {
                     "type": "note",
-                    "value": "<b>Migration Guide:</b> The system is heavily interface-driven. Though modular, this project is not intended for migration into existing projects. However, you can easily download and integrate <i>CharacterSelectionSystem</i>, <i>Customization System</i>, and <i>WidgetsManagementSystem</i> selectively from FAB for free."
-                },
-                {
-                    "type": "text",
-                    "value": "<b>5.7 Version Note:</b> You can open this project with UE 5.7, but the GASP 5.7 project differs slightly, so the CharacterSelectionSystem cannot be directly integrated yet. The 5.7 update will include Mover Component support and more features."
+                    "value": [
+                        "<b>5.7 Version of the Game Project:</b>",
+                        "<ul><li>The 5.7 version of this template is based on GameAnimationSampleProject 5.7. The character locomotion uses Mover Component. Though there is scope for using CMC for locomotion too, I have not added all the features in the CMC Character Blueprint. This is because the main focus of 5.7 version is the Mover character implementation.</li>",
+                        "<li>If you wish to use the CMC character based project, just create 5.6 version project and before opening the project, switch the UE version to your desired version.<br>",
+                        "Because of how Mover component works and my understanding of it, not all features are supported and some do not work the way they work in 5.6 version.</li>",
+                        "<li>Dynamic Camera is buggy and does not dynamically shifts left/right based on your movement in 5.7 version of this project.</li></ul>"
+                    ]
                 }
             ]
         },
@@ -80,7 +152,7 @@
                 },
                 {
                     "type": "text",
-                    "value": "Integrated <b>CharacterSelectionSystemV1.2</b> and <b>CharacterCustomizationSystemV1.1</b> out of the box with <b>WidgetsManagementSystemV1.1</b>."
+                    "value": "Integrated <b>Character Selection System V1.2</b> and <b>Character Customization System V1.1</b> out of the box with <b>Widgets Management System V1.1</b>."
                 },
                 {
                     "type": "header",
@@ -88,19 +160,97 @@
                 },
                 {
                     "type": "text",
-                    "value": "<ul><li><b>Animation:</b> A CharacterAnimationModification system with micro-control to create and modify existing animations for unique character animations.</li><li><b>Camera:</b> Improved blending, transitions, and added a settings toggle. Play LevelSequences in background of widget screens. Includes Normal, Lean (L/R), Crouch, and Sprint cameras.</li><li><b>UI:</b> Revamped layouts, added Pause Menu.</li><li><b>Quality of Life:</b> Reorganized blueprints and commented code for better readability. Improved Emoting System.</li></ul>"
-                },
-                {
-                    "type": "header",
-                    "value": "Death Box"
-                },
-                {
-                    "type": "text",
-                    "value": "A simple trigger that makes the character ragdoll and activates death state. <b>Note:</b> There is no respawn system. The ragdoll is based on the UEFN_Mannequin physics body setup. Different characters do not use different physics bodies. You simply restart the level via the main menu."
+                    "value": [
+                        "<ul><li><b>Animation:</b> A CharacterAnimationModification system with micro-control to create and modify existing animations for unique character animations.</li>",
+                        "<li><b>Camera:</b><ul><li>Improved blending, transitions.</li>",
+                        "<li>Includes Normal, Lean (L/R), Crouch, and Sprint cameras.</li></li></ul>",
+                        "<li><b>UI:</b> <ul><li>Revamped layouts, added Pause Menu.</li>",
+                        "<li>Play LevelSequences in background of widget screens.</li></li></ul>",
+                        "<li><b>Quality of Life:</b><ul><li>Reorganized blueprints and commented code for better readability.</li>",
+                        "<li>Character Selection System in 5.7 version works the same way it works in 5.6 version.</li>",
+                        "<li>Emote System has been revised and broken into modular pieces for easy flow control.</li></ul>",
+                        "<li><b>DeathBox:</b><ul><li>A simple trigger that makes the character ragdoll and activates death state.</li>",
+                        "<li>Note that there is no respawn system.</li>",
+                        "<li>The ragdoll of any character is based on how the UEFN_Mannequin physicsbody is set up.  Different characters do not use different physics bodies.</li>",
+                        "<li>You simply restart the level by going to main menu!</li>",
+                        "<li>In the 5.7 version, not the base UEFN character skeletal mesh but the other retargeted character mesh ragdolls. This is because mover component still moves when the character ragdolls which throws errors.</li></ul>",
+                        "</li></ul>"
+                    ]
                 },
                 {
                     "type": "tip",
                     "value": "<b>UEFN Mannequin Info:</b> There are 2 UEFN Mannequins in the project.<br>1. <b>UEFN_Mannequin (White):</b> Has all motion matching database and logic.<br>2. <b>NewUEFN_Mannequin (Orange):</b> Used for gameplay.<br><i>Reason:</i> Adding/removing sockets on the base mannequin updates all related animations, freezing the engine. The Orange mannequin prevents this."
+                },
+                {
+                    "type": "note",
+                    "value": "I have removed the VisualOverride method for switching between characters which was used in base GASP 5.7. Because of this some of the content present in DemoContent may not work"
+                }
+            ],
+             "subsections": [
+                {
+                    "title": "Images",
+                    "content": [
+                        {
+                            "type": "image",
+                            "src": "https://media.fab.com/image_previews/gallery_images/267e1e8f-e8ad-4ecc-8d0b-dcd4f78b0f98/af251f82-5964-4ec5-95c1-fa7ba501c39f.jpg",
+                            "align": "left",
+                            "caption": "Customized Character"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/627/660/large/wraithcg-screenshot-2026-01-22-000549.jpg?1769069394",
+                            "align": "right",
+                            "caption": "Environment Created With ECT"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/628/935/large/wraithcg-screenshot-2026-01-21-235054.jpg?1769073284",
+                            "align": "left",
+                            "caption": "Main Menu"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/628/932/large/wraithcg-screenshot-2026-01-21-235037.jpg?1769073277",
+                            "align": "right",
+                            "caption": "Selection Screen"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://media.fab.com/image_previews/gallery_images/267e1e8f-e8ad-4ecc-8d0b-dcd4f78b0f98/af251f82-5964-4ec5-95c1-fa7ba501c39f.jpg",
+                            "align": "left",
+                            "caption": "Customization Screen"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/627/664/large/wraithcg-screenshot-2026-01-22-001304.jpg?1769069400",
+                            "align": "right",
+                            "caption": "Organized Folders"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/665/large/wraithcg-screenshot-2026-01-22-001311.jpg?1769069403",
+                            "align": "left",
+                            "caption": "Widget Screens"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/673/large/wraithcg-screenshot-2026-01-22-001332.jpg?1769069414",
+                            "align": "right",
+                            "caption": "Character Data Assets"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/628/930/large/wraithcg-screenshot-2026-01-21-235009.jpg?1769073271",
+                            "align": "left",
+                            "caption": "Emote System"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/627/664/large/wraithcg-screenshot-2026-01-22-001304.jpg?1769069400",
+                            "align": "right",
+                            "caption": "Organized Folders"
+                        }
+                    ]
                 }
             ]
         },
@@ -126,7 +276,7 @@
                 },
                 {
                     "type": "image",
-                    "src": "https://placehold.co/800x400/333/FFF?text=Movement+Graph",
+                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/647/large/wraithcg-screenshot-2026-01-21-235711.jpg?1769069370",
                     "align": "full",
                     "caption": "Character Movement Graph"
                 },
@@ -135,106 +285,392 @@
                     "value": "The graphs and actions are respectfully spread out across different categories so that everything is easier to find and modify. Categories include: EventGraph, MovementGraph, ActionGraph, InterfaceGraph, and WidgetGraph."
                 },
                 {
-                    "type": "header",
-                    "value": "BPC_PlayerAttributesComponent"
-                },
-                {
-                    "type": "image",
-                    "src": "https://placehold.co/300x500/111/FFF?text=Attributes+Panel",
-                    "align": "left",
-                    "caption": "Player Attributes Details"
-                },
-                {
-                    "type": "text",
-                    "value": "This component manages critical character data:"
-                },
-                {
-                    "type": "text",
-                    "value": "<ul><li><b>Décor Data:</b> Used on Character Selection Screen to highlight qualities (modify via <i>S_Attributes</i> struct) .</li><li><b>Ragdoll on Death:</b> Determines if the player character ragdolls when overlapping the death trigger .</li><li><b>Aim Offsets:</b> Adjusts camera translation/rotation when aiming in First Person mode .</li><li><b>Emote - Wait Time:</b> Time to wait before actually emoting .</li><li><b>Emote - Blend Out:</b> Time taken to abruptly stop an emote .</li><li><b>Emote - Delays:</b> Min/Max random delay between emotes when blending out .</li><li><b>Emote - Data:</b> Data asset containing emoting sequences per widget screen .</li><li><b>Debug:</b> Prints Sequence Index or Anim Montage name.</li></ul>"
+                    "type": "note",
+                    "value": "There are separated graphs in 5.7 version also but they could still use some work."
                 }
-            ]
-        },
-        {
-            "title": "Emote System",
-            "content": [
+            ],
+            "subsections": [
                 {
-                    "type": "header",
-                    "value": "Emote Data Asset"
-                },
-                {
-                    "type": "image",
-                    "src": "https://placehold.co/800x400/444/FFF?text=Emote+Data+Structure",
-                    "align": "full",
-                    "caption": "DA_EmoteActionData Setup"
-                },
-                {
-                    "type": "text",
-                    "value": "This map contains emote data respective to widget screens.<br><br><b>Abort Previous:</b> Aborts the current emote montage abruptly to start a fresh sequence.If disabled, the previous sequence completes first .<br><b>AnimationMontages:</b> Define multiple montages (e.g., standing up -> greeting -> sitting down).<br><b>PlaySequentially:</b> If true, plays all montages in order.If false, selects and plays them randomly."
-                }
-            ]
-        },
-        {
-            "title": "Customization",
-            "content": [
-                {
-                    "type": "header",
-                    "value": "System Overview"
-                },
-                {
-                    "type": "text",
-                    "value": "Customization data is fetched from the current character's data asset (<i>DA_PDA_CD_xyz</i>) which contains per-character selection and customization data.In this project, all characters must inherit <b>CBP_SandboxCharacter</b> to preserve running logic."
-                },
-                {
-                    "type": "image",
-                    "src": "https://placehold.co/800x400/222/FFF?text=Customization+Data+Asset",
-                    "align": "full",
-                    "caption": "DA_PDA_CD Details"
-                },
-                {
-                    "type": "header",
-                    "value": "Adding New Characters"
-                },
-                {
-                    "type": "text",
-                    "value": "1.Right Click on <i>CBP_SandboxCharacter</i> -> Create Child Class.<br>2.In the event graph, plug the skeletal mesh component into <b>PlayerSkeletonMesh</b>.<br>3.Create a new character data asset (duplicate existing) and assign your new class.<br>4.Add the new DA to <i>DA_PDA_CSD</i>.<br>5. Setup sockets on your new skeleton.Standard sockets: <i>pu, hat, lenses, armor, shoes_l, shoes_r, neckwrap, chain</i>.You can copy/paste sockets from the UEFN skeleton."
-                }
-            ]
-        },
-        {
-            "title": "Animation",
-            "content": [
-                {
-                    "type": "header",
-                    "value": "ABP_SandboxCharacter"
-                },
-                {
-                    "type": "image",
-                    "src": "https://placehold.co/800x400/333/FFF?text=AnimGraph+Logic",
-                    "align": "full",
-                    "caption": "Animation Blueprint Graph"
-                },
-                {
-                    "type": "text",
-                    "value": [
-                        "The animation blueprint is modified for custom animation modification and stabilizing camera movement.",
-                        "<ul><li><b>P_CameraBlended:</b> Outputs poses blended for ThirdPerson/FirstPerson states.</li>",
-                        "<li><b>P_AnimModified:</b> Outputs animations after modification.</li>",
-                        "<li><b>Logic:</b> When a traversal action occurs or <i>UseCustomAnimationData</i> is false, modification stops. You can plug any animation or custom processed pose at the place of ‘M_Neutral_Stand_Idle_Loop’ for better camera control.</li></ul>"
+                    "title": "Player Attributes Component",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "BPC_PlayerAttributesComponent"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/627/646/large/wraithcg-screenshot-2026-01-21-235545.jpg?1769069366",
+                            "align": "full",
+                            "caption": "Player Attributes Details"
+                        },
+                        {
+                            "type": "text",
+                            "value": "This component manages critical character data:"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li><b>Décor Data:</b> Used on Character Selection Screen to highlight qualities (modify via <i>S_Attributes</i> struct).</li>",
+                                "<li><b>Ragdoll on Death:</b> Determines if the player character ragdolls when overlapping the death trigger.</li>",
+                                "<li><b>Aim Offsets:</b> Adjusts camera translation/rotation when aiming in First Person mode.</li>",
+                                "<li><b>Emote</b>:<ul>",
+                                "<li><b>Wait Time:</b> It is the amount of wait before the player starts to emote on any screen.</li>",
+                                "<li><b>Blend Out Time:</b> Time taken to abruptly stop an emote.</li>",
+                                "<li><b>Min and Max Delays:</b> A random time between these is used to blend out an emote abruptly when there is an another emote sequence to play.</li>",
+                                "<li><b>Emote Data:</b> Data asset containing emoting sequences per widget screen.</li></ul></li>",
+                                "<li><b>Debug:</b>",
+                                "<ul><li><b>Debug Sequence Index:</b>This prints which emote sequence index is currently playing on the character.</li>",
+                                "<li><b>Debug Anim Montage:</b> This prints the name of the emote montage currently playing on the character.</li></ul></li>",
+                                "<li><b>DefaultBoomOffset & DefaultBoomOffset_Crouched:</b> Present in 5.7 version of the project because the gameplay camera rig does not works without boom offset ( I might be wrong though).</li>",
+                                "</li></ul>"
+                            ]
+                        }
                     ]
                 },
                 {
-                    "type": "header",
-                    "value": "Animation Modifiers"
+                    "title": "Emote System",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "Emote Data Asset"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/645/large/wraithcg-screenshot-2026-01-21-235504.jpg?1769069362",
+                            "align": "full",
+                            "caption": "DA_EmoteActionData Setup"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<b>Emote Data Asset:</b> This is a map of emote data with respect to a widget screen.",
+                                "<ul>",
+                                "<li><b>Abort Previous:</b> This aborts the emote montage abruptly and starts a fresh sequence of emote montages available for a widget screen.</li>",
+                                "<li>If the previous emote sequence is not aborted, then the emote sequence related to previous widget screen is completed first and then the new emote sequence is used.</li>",
+                                "<li><b>AnimationMontages:</b> Contains the montage sequences.</li>",
+                                "<li><b>SequenceStart:</b> Contains the montage that is played for starting the sequence.</li>",
+                                "<li><b>SequenceEnd:</b> Mostly used as transition from sequence to another.</li>",
+                                "<li><b>PlaySequentially:</b> Whether or not to play all the montages in a sequential order. If not then any number of montages are selected and played for some time. When one sequence is complete, then another sequence  from AnimationMontages array is searched and selected for playing if available.</li></ul>"
+                            ]
+                        },
+                        {
+                            "type": "tip",
+                            "value": [
+                                "You can define more than one montage sequence like –",
+                                "<ul><li>Standing up -> Greeting the player -> Sitting down</li>",
+                                "<li>Taking out phone -> Using it -> Putting it down</li>"
+                            ]
+                        },
+                        {
+                            "type": "note",
+                            "value": [
+                                "Note that any montage needs time to start and end. If the widget screens are switched a lot, the player character may glitch when playing montages becaues every widget screen on re-initializes the emote system."
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "type": "image",
-                    "src": "https://placehold.co/800x400/333/FFF?text=AnimGraph+Logic",
-                    "align": "full",
-                    "caption": "Animation Modification System"
+                    "title": "Character Selection System",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "System Overview"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/675/large/wraithcg-screenshot-2026-01-22-001339.jpg?1769069417",
+                            "align": "full",
+                            "caption": "DA_CharacterSelectionData Details"
+                        },
+                        {
+                            "type": "text",
+                            "value": "The character data is fetched frome <b>_DA_PDA_CharacterSelectionData</b>. In this project, all characters must inherit <b>CBP_SandboxCharacter</b> to preserve running logic."
+                        },
+                        {
+                            "type": "header",
+                            "value": "Adding New Characters"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/627/676/large/wraithcg-screenshot-2026-01-22-001355.jpg?1769069420",
+                            "align": "full",
+                            "caption": "DA_CharacterData_xyz Details"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul><li>Right Click on <i>CBP_SandboxCharacter</i> -> Create Child Class.</li>",
+                                "<li>In the event graph, plug the skeletal mesh component into <b>PlayerSkeletonMesh</b>.</li>",
+                                "<li>Create a new character data asset ( or duplicate existing) and fill the respective data.</li>",
+                                "<ul><li><b>Name: </b> Name of the character used for decorative purposes on the character selection screen.</li>",
+                                "<li><b>Class: </b> Assign the class of newly created child character blueprint.</li>",
+                                "<li><b>Description: </b> Fill in the lore details, background, or quick history of the character.</li>",
+                                "<li><b>Icon: </b> Assign an icon to your character displayed on the top-left of the screen.</li>",
+                                "<li><b>CustomizationData: </b> Assign the customization data for your character. For more info, check out the Character Customization Section.</li>",
+                                "<li><b>UseCustomAnimationData: </b> This toggle determines whether or not character animations will be modified by the character animation modification system.</li>",
+                                "<li><b>CustomAnimationData: </b> This is a map that contains action based animation modification data.</li>",
+                                "<li>Add the new DA to <i>_DA_PDA_CharacterSelectionData</i>.</li>",
+                                "</ul>"
+                            ]
+                        },
+                        {
+                            "type": "image",
+                            "src": "",
+                            "align": "full",
+                            "caption": "Character Setup Details"
+                        }
+                    ]
                 },
                 {
-                    "type": "text",
-                    "value": "Enable <b>UseCustomAnimationData</b> to modify animations for specific actions (e.g., Running, Jumping) .<br>Define a <i>ModifierAnimation</i>, a <i>BlendValue</i> (0.0–1.0), and a list of <i>BoneToAffect</i> (from E_BonesToModify).Current categories: UpperBody, LeftArm, RightArm, LeftThigh, RightThigh."
+                    "title": "Character Customization System",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "System Overview"
+                        },
+                        {
+                            "type": "text",
+                            "value": "Customization data is fetched from the current character's data asset (<i>DA_PDA_CD_xyz</i>) which contains per-character selection and customization data.In this project, all characters must inherit <b>CBP_SandboxCharacter</b> to preserve running logic."
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li>If you have setup your character class the right way then continue else refer to previous section for more info on Adding New Characters.</li>",
+                                "<li>Open your character's skeletal mesh.</li>",
+                                "<li>Setup sockets on your character skeleton.</li>",
+                                "<li>If you're using skeletal meshes such as clothing items, make sure they are rigged to the same character skeleton and properly weighted.</li>",
+                                "</ul>"
+                            ]
+                        },
+                        {
+                            "type": "tip",
+                            "value": "You can consider checking out how to set up sockets on your character's skeletal mesh on Youtube."
+                        },
+                        {
+                            "type": "header",
+                            "value": "Data Asset Setup"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/677/large/wraithcg-screenshot-2026-01-22-001424.jpg?1769069424",
+                            "align": "full",
+                            "caption": "DA_PDA_CCD_xyz Details"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li>Go inside <i>Components > Customization > DA</i> folder and duplicate any existing data asset. Name it DA_PDA_CCD_yourCharacter.</li>",
+                                "<li>Open the data asset and click on the trash icon to empty the AttachmentData.</li>",
+                                "<li>Click the plus icon to add a new element in the map.</li>",
+                                "<li>The default value will be none. Click on it and select your desired category - Face, Torso, Legs or Shoes.</li>",
+                                "<li>Expand the section and click on plus icon to add items in that category.</li>",
+                                "<li>Always keep the first item in any category empty. This indicates the no attachments state for the character during the customization process.</li>",
+                                "<li>In the next item, fill the appropriate data -",
+                                "<ul>",
+                                "<li><b>isSkeletalMesh: </b> Determines if or not the item to be attached to the character is a skeletal mesh or a static mesh.</li>",
+                                "<li><b>SkeletalMesh: </b> If this item is a skeletal mesh, i.e. <i>isSkeletalMesh</i> is set to true, then select your desired mesh.</li>",
+                                "<li><b>AnimBPSkeletalMesh: </b> If this skeletal mesh has its own animation blueprint, then select it here or leave it empty.</li>",
+                                "<li><b>UseMasterPose: </b> Set this to true if you want this item to follow and character's animation data like clothing assets, else leave it false.</li>",
+                                "<li><b>StaticMesh: </b> Select your static mesh asset if this item is not a skeletal mesh.</li>",
+                                "<li><b>AttachmentCategory: </b> Select the category of this item. This category should be carefully set. The category of the map is used by the widget screen but the inside category is used by the player character.</li>",
+                                "<li><b>SocketName: </b> The socket to which this item will be attached. If <i>UseMasterPose</i> is set to true, then leave it None.</li>",
+                                "<li><b>ItemDescription: </b> This field can be used to write about the item's lore, defining features or properties.</li>",
+                                "</li>",
+                                "</ul>"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Animation Blueprint",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "ABP_SandboxCharacter"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://placehold.co/800x400/333/FFF?text=AnimGraph+Logic",
+                            "align": "full",
+                            "caption": "Animation Blueprint Graph"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "The animation blueprint is modified for custom animation modification and stabilizing camera movement.",
+                                "<ul><li><b>P_CameraBlended:</b> Outputs poses blended for ThirdPerson/FirstPerson states.</li>",
+                                "<li><b>P_AnimModified:</b> Outputs animations after modification.</li>",
+                                "<li><b>Logic:</b> When a traversal action occurs or <i>UseCustomAnimationData</i> is false, modification stops. You can plug any animation or custom processed pose at the place of ‘M_Neutral_Stand_Idle_Loop’ for better camera control.</li></ul>"
+                            ]
+                        },
+                        {
+                            "type": "header",
+                            "value": "Animation Modifiers"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://placehold.co/800x400/333/FFF?text=AnimGraph+Logic",
+                            "align": "full",
+                            "caption": "Animation Modification System"
+                        },
+                        {
+                            "type": "text",
+                            "value": "Enable <b>UseCustomAnimationData</b> to modify animations for specific actions (e.g., Running, Jumping) .<br>Define a <i>ModifierAnimation</i>, a <i>BlendValue</i> (0.0–1.0), and a list of <i>BoneToAffect</i> (from E_BonesToModify).Current categories: UpperBody, LeftArm, RightArm, LeftThigh, RightThigh."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title":"Environment Creation Tool",
+            "content":[
+                {
+                    "type":"header",
+                    "value":"Environment Creation Tool"
+                },
+                {
+                    "type":"text",
+                    "value":"This is a blueprint that can spawn static and skeletal meshes and blueprint actors based on specified spawn rules with randomization options."
+                },
+                {
+                    "type":"note",
+                    "value":" This does not serves any purpose as of present but was included on request of a discord member :)"
+                },
+                {
+                    "type":"header",
+                    "value":"Overview of Environment Creation Tool Blueprint"
+                },
+                {
+                    "type":"image",
+                    "src": "https://cdna.artstation.com/p/assets/images/images/095/627/680/large/wraithcg-screenshot-2026-01-22-001528.jpg?1769069427",
+                    "align":"full",
+                    "caption": "BP_EnvironmentBase"
+                },
+                {
+                    "type":"text",
+                    "value":[
+                        "<b>Properties Configuration: </b>",
+                        "<ul>",
+                        "<li><b>AutoUpdatePropsData: </b>This can be used if you do not want to update the blueprint after every minor update.</li>",
+                        "<li><b>ShowFloor: </b>This can be used to hide the default floor included with the environment. Hiding also turns off its collision properties and vice versa.</li>",
+                        "<li><b>FloorScaleVec: </b>This can be used to scale the default floor in any of the directions.</li>",
+                        "<li><b>StaticPropsData: </b>This is used to populate the environment with static meshes. Instanced Static Meshes are used for optimization purposes.</li>",
+                        "<li><b>SkeletalPropsData: </b>This is used to populate the environment with skeletal meshes. This does not supports instancing, as a result, only one component can be spawned per array element.</li>",
+                        "<li><b>BPPropsData: </b>This is used to populate the environment with blueprint actors. Though this does not supports instancing, you can still array these props.</li>",
+                        "</ul>"
+                    ]
+                }
+            ],
+            "subsections": [
+                {
+                    "title": "Static Mesh Props",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "Static Props Data Configuration"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/627/684/large/wraithcg-screenshot-2026-01-22-001623.jpg?1769069434",
+                            "align": "full",
+                            "caption": "Static Props Structure"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li><b>Transform:</b> This is used the as the base transform of the ISM component which will then spawn static meshes relative to it.</li>",
+                                "<li><b>StaticMeshAsset:</b> This array contains the static mesh assets any of which can be used at a given moment.</li>",
+                                "<li><b>RandomAsset:</b> This boolean toggles whether or not to use a random static mesh from the array.</li>",
+                                "<li><b>AssetIdx:</b> If <i>RandomAsset</i> is false, then element at this index will be used. In case, this is an invalid index, then random static mesh will be used.</li>",
+                                "<li><b>Count:</b> This determines the number of instances of the mesh in X, Y and Z directions respectively. Total number of instances spawned will be equal to the product these three values.</li>",
+                                "<li><b>Offset:</b> This is used to add uniform gap between the instances in X, Y and Z directions respectively.</li>",
+                                "<li><b>InstanceTransform:</b> This is useful for modifying the transforms of any instance.</li>",
+                                "<li><b>RemoveInstances:</b> This is used for removing some of the instances of the static mesh.</li>",
+                                "<li><b>RandomDeletionCount:</b> Based on this count, some of the instances will be deleted.</li>",
+                                "<li><b>RandomSeed:</b> This boolean determines whether or not to use random seed for randomizing spawned instances.</li>",
+                                "<li><b>SeedValue:</b> If <i>RandomSeed</i> is false, then the instances are transformed based on this seed value.</li>",
+                                "<li><b>TransformationMin & MaxRanges:</b> This determines the maxium and minium extent of random transforms of the spawned instances.</li>",
+                                "<li><b>MaterialData:</b> This is useful for randomizing the materials of the static meshes based on material indices.</li>",
+                                "<li><b>CollisionEnabled:</b> This is useful if you want the player to collide with these instances.</li>",
+                                "</ul>"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Skeletal Mesh Props",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "Skeletal Props Data Configuration"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/627/688/large/wraithcg-screenshot-2026-01-22-001659.jpg?1769069437",
+                            "align": "full",
+                            "caption": "Skeletal Props Structure"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li><b>Transform:</b> This is used the as the base transform of the ISM component which will then spawn static meshes relative to it.</li>",
+                                "<li><b>SkeletalMeshAsset:</b> This array contains the skeletal mesh assets any of which can be used at a given moment.</li>",
+                                "<li><b>RandomAsset:</b> This boolean toggles whether or not to use a random static mesh from the array.</li>",
+                                "<li><b>AssetIdx:</b> If <i>RandomAsset</i> is false, then element at this index will be used. In case, this is an invalid index, then random static mesh will be used.</li>",
+                                "<li><b>isAnimated:</b> This determines whether or not to animate the skeletal mesh when player is around. Note that only one of the available animations is stored per skeletal prop and when the player triggers, that one animation will be looped.</li>",
+                                "<li><b>MaterialData:</b> This is useful for randomizing the materials of the mesh based on material indices.</li>",
+                                "<li><b>Animations:</b> List of animations from which any one can be looped repeatedly.</li>",
+                                "<li><b>RandomSeed:</b> This boolean determines whether or not to use random seed for randomizing data for this skeletal mesh asset.</li>",
+                                "<li><b>SeedValue:</b> If <i>RandomSeed</i> is false, then the randomizations occur based on this seed value.</li>",
+                                "<li><b>TransformationMin & MaxRanges:</b> This determines the maxium and minium extent of random transforms of the spawned instances.</li>",
+                                "<li><b>CollisionEnabled:</b> This is useful if you want the player to collide with this mesh.</li>",
+                                "</ul>"
+                            ]
+                        },
+                        {
+                            "type":"tip",
+                            "value":"You can animate these skeletal meshes by using a trigger box and calling AnimateSKProps interface function with a reference to target environment blueprint."
+                        }
+                    ]
+                },
+                {
+                    "title": "BP Prop Actors",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "BP Prop Actors Data Configuration"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/689/large/wraithcg-screenshot-2026-01-22-001738.jpg?1769069440",
+                            "align": "full",
+                            "caption": "BP Props Structure"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li><b>UseDefaultTransform:</b> Toggle this if you wish to keep the base transforms of the original BP otherwise, it may be scaled relative to environment BP default scene root.</li>",
+                                "<li><b>Transform:</b> This is used the as the base transform of the ISM component which will then spawn static meshes relative to it.</li>",
+                                "<li><b>BPAsset:</b> This array contains the BP assets any of which can be used at a given moment. These are of type BP_DecorData but you can change it if you have other assets, otherwise create a child class of BP_DecorData and implement your custom BP logic.</li>",
+                                "<li><b>RandomAsset:</b> This boolean toggles whether or not to use a random static mesh from the array.</li>",
+                                "<li><b>AssetIdx:</b> If <i>RandomAsset</i> is false, then element at this index will be used. In case, this is an invalid index, then random static mesh will be used.</li>",
+                                "<li><b>Count:</b> This determines the number of instances of the mesh in X, Y and Z directions respectively. Total number of instances spawned will be equal to the product these three values.</li>",
+                                "<li><b>Offset:</b> This is used to add uniform gap between the instances in X, Y and Z directions respectively.</li>",
+                                "<li><b>InstanceTransform:</b> This is useful for modifying the transforms of any instance.</li>",
+                                "<li><b>RemoveInstances:</b> This is used for removing some of the instances of the static mesh.</li>",
+                                "<li><b>RandomSeed:</b> This boolean determines whether or not to use random seed for randomizing spawned instances.</li>",
+                                "<li><b>SeedValue:</b> If <i>RandomSeed</i> is false, then the instances are transformed based on this seed value.</li>",
+                                "<li><b>TransformationMin & MaxRanges:</b> This determines the maxium and minium extent of random transforms of the spawned instances.</li>",
+                                "</ul>"
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -247,13 +683,22 @@
                 },
                 {
                     "type": "text",
-                    "value": "The camera system has been re-organized for smoother blending .<br>• <b>Normal Gameplay:</b> Normal Third Person Camera.<br>• <b>Aiming:</b> Attached to player character’s head bone.Offset adjustable in AttributesComponent .<br>• <b>Rigs:</b> Specific camera rigs triggered for actions and menus. Found in <i>Components > CameraSystem > Camera > Rigs</i>."
+                    "value": [
+                        "The camera system has been re-organized for smoother blending.",
+                        "<ul><li><b>Normal Gameplay:</b> Normal Third Person Camera.</li>",
+                        "<li><b>Aiming:</b> Attached to player character’s head bone.Offset adjustable in AttributesComponent.</li>",
+                        "<li><b>Rigs:</b> Specific camera rigs triggered for actions and menus which can be found in <i>Components > CameraSystem > Camera > Rigs</i>.</li></ul>"
+                    ]
                 },
                 {
                     "type": "image",
-                    "src": "https://placehold.co/400x300/333/FFF?text=Camera+Director+Blueprint",
-                    "align": "right",
+                    "src": "https://cdna.artstation.com/p/assets/images/images/095/627/690/large/wraithcg-screenshot-2026-01-22-001813.jpg?1769069444",
+                    "align": "full",
                     "caption": "Camera Director EventGraph"
+                },
+                {
+                    "type": "note",
+                    "value": "It is important that the character has BPC_PlayerAttributesComponent for the camera system to work."
                 }
             ]
         },
@@ -267,41 +712,77 @@
                 {
                     "type": "text",
                     "value": "All widgets use the <b>WidgetsManagementSystem</b>. Reusable elements allow for easy style modification."
-                },
-                {
-                    "type": "header",
-                    "value": "Core Elements"
-                },
-                {
-                    "type": "text",
-                    "value": "<ul><li><b>E_Button:</b> Button with customization for color/text/state.Uses 'SetButtonStatus' .</li><li><b>E_FixedText / E_VariableText:</b> For static or dynamic text (Uses 'SetNewText').</li><li><b>E_GameTitle:</b> Image widget.Uses 'SetNewImage' .</li><li><b>E_Horizontally/VerticallyStackedWidgetElements:</b> Like boxes but allows dynamic appending and property control .</li><li><b>E_PairedElement/Text:</b> For pairs of elements (Uses 'SetPairTextValue').</li></ul>"
-                },
-                {
-                    "type": "tip",
-                    "value": "<b>Editing Tip:</b> Child widgets added to Stacked Arrays during Pre-Construct become locked in the Details panel.To edit them, remove them from the slot, Compile, make changes, and add them back."
                 }
-            ]
-        },
-        {
-            "title": "Adding Widgets",
-            "content": [
+            ],
+            "subsections": [
                 {
-                    "type": "header",
-                    "value": "Workflow"
+                    "title": "Widget Elements",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "Core Elements"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li><b>E_Button:</b> Button with customization for color/text/state.Uses 'SetButtonStatus'.</li>",
+                                "<li><b>E_FixedText / E_VariableText:</b> For static or dynamic text (Uses 'SetNewText').</li>",
+                                "<li><b>E_GameTitle:</b> Image widget.Uses 'SetNewImage'.</li>",
+                                "<li><b>E_Horizontally/VerticallyStackedWidgetElements:</b> Like boxes but allows dynamic appending and property control.</li>",
+                                "<li><b>E_PairedElement/Text:</b> For pairs of elements (Uses 'SetPairTextValue').</li></ul>"
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "type": "text",
-                    "value": "1.Create a new WidgetBlueprint.<br>2.Define a category in <i>E_WidgetScreen</i> (Components > Widgets > Enumeration).<br>3. Add a new element in <i>PDA_DA_WidgetData</i>.Select your widget and category.<br>4.Call the <b>AddWidgetToScreen</b> interface function with GameMode as target."
-                },
-                {
-                    "type": "image",
-                    "src": "https://placehold.co/800x400/444/FFF?text=AddWidgetToScreen+Logic",
-                    "align": "full",
-                    "caption": "Adding Widget to Screen Logic"
-                },
-                {
-                    "type": "text",
-                    "value": "<b>Level Sequences:</b> You can set level sequences to play in the background.Note: These are location-dependent; changing player location affects where the sequence plays."
+                    "title": "Adding Widgets",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "Workflow"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/669/large/wraithcg-screenshot-2026-01-22-001324.jpg?1769069410",
+                            "align": "right",
+                            "caption": "Widget Data Asset Setup"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul><li>Create a new WidgetBlueprint.</li>",
+                                "<li>Define a category in <i>E_WidgetScreen</i> (Components > Widgets > Enumeration).</li>",
+                                "<li>Add a new element in <i>PDA_DA_WidgetData</i>.",
+                                "<ul><li>Select the category of the widget.</li>",
+                                "<li><b>WidgetElement: </b> Assign the respective widget blueprint.</li>",
+                                "<li><b>PlayLevelSequence: </b> This toggle is used to determine whether or not a level sequence will be played in the background.</li>",
+                                "<li>Click on the plus icon to add playable level sequences in the <b>LevelSequences</b> array.</li>",
+                                "<li><b>PlayableLevelSequence: </b> Select your desired level sequence.</li>",
+                                "<li><b>PlayRate: </b> Use this to speed up or slow down your level sequence.</li>",
+                                "<li><b>Transform: </b> Use this to adjust the level sequence with respect to the player.</li></ul></li>",
+                                "<li>Call the <b>AddWidgetToScreen</b> interface function with GameMode as target.</li></ul>",
+                                "",
+                                "Assign this widget DA in the HUD as shown below."
+                            ]
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/649/large/wraithcg-screenshot-2026-01-21-235959.jpg?1769069373",
+                            "align": "full",
+                            "caption": "HUD_Project Setup"
+                        },
+                        {
+                            "type": "image",
+                            "src": "",
+                            "align": "left",
+                            "caption": "Adding Widget to Screen Logic"
+                        },
+                        {
+                            "type": "note",
+                            "value": "Level Sequences here are location-dependent; changing player location affects where the sequence plays. This may cause the camera to clip through some objects if there isn't enough space around the player."
+                        }
+                    ]
                 }
             ]
         },
@@ -314,11 +795,16 @@
                 },
                 {
                     "type": "text",
-                    "value": "1.Go to File -> New Level.<br>2.Select 'Basic' (or any type).<br>3.Go to World Settings and set GameMode to <b>GM_Project</b>.<br>4.Press Play."
+                    "value": [
+                        "<ul><li>Go to File -> New Level.</li>",
+                        "<li>Select 'Basic' (or any type).</li>",
+                        "<li>Go to World Settings and set GameMode to <b>GM_Project</b>.</li>",
+                        "<li>Press Play.</li>"
+                    ]
                 },
                 {
                     "type": "image",
-                    "src": "https://placehold.co/600x400/111/FFF?text=New+Level+Dialog",
+                    "src": "",
                     "align": "full",
                     "caption": "Creating a New Level"
                 }

@@ -134,47 +134,107 @@
           ]
         }
       ]
-    },
-    {
-      "title": "Data Asset Setup",
-      "content": [
-        {
-          "type": "header",
-          "value": "Character Data (DA_PDA_CD_xyz)"
-        },
-        {
-          "type": "image",
-          "src": "https://cdna.artstation.com/p/assets/images/images/095/342/774/large/wraithcg-screenshot-2026-01-13-111706.webp?1768313029",
-          "align": "right",
-          "caption": "DA Character Data"
-        },
-        {
-          "type": "text",
-          "value": [
-            "Create a new Data Asset derived from <i>PDA_CharacterData</i> for each character.</li>",
-            "<li><b>Name:</b> Appears as an attribute on the right side.</li>",
-            "<li><b>Description:</b> Flavor text displayed on the lower left.</li>",
-            "<li><b>Icon:</b> Thumbnail image or game logo."
-          ]
-        },
-        {
-          "type": "header",
-          "value": "Selection List (DA_PDA_CSD)"
-        },
-        {
-          "type": "image",
-          "src": "https://cdna.artstation.com/p/assets/images/images/095/342/770/large/wraithcg-screenshot-2026-01-13-111651.webp?1768313026",
-          "align": "right",
-          "caption": "DA Character Selection Data"
-        },
-        {
-          "type": "text",
-          "value": [
-            "Derived from <i>PDA_CharacterSelectionData</i>.<br>",
-            "This contains an array of character data assets.<br>",
-            "The order in this array determines the order in the selection menu."
-          ]
-        },
+    },{
+            "title": "Player Character",
+            "content": [
+                {
+                    "type": "header",
+                    "value": "CBP_SandboxCharacter"
+                },
+                {
+                    "type": "image",
+                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/647/large/wraithcg-screenshot-2026-01-21-235711.jpg?1769069370",
+                    "align": "full",
+                    "caption": "Character Movement Graph"
+                },
+                {
+                    "type": "text",
+                    "value": "The graphs and actions are respectfully spread out across different categories so that everything is easier to find and modify. Categories include: EventGraph, MovementGraph, ActionGraph, InterfaceGraph, and WidgetGraph."
+                },
+                {
+                    "type": "note",
+                    "value": "There are separated graphs in 5.7 version also but they could still use some work."
+                }
+            ],
+            "subsections": [
+                {
+                    "title": "Player Attributes Component",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "BPC_PlayerAttributesComponent"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/627/646/large/wraithcg-screenshot-2026-01-21-235545.jpg?1769069366",
+                            "align": "full",
+                            "caption": "Player Attributes Details"
+                        },
+                        {
+                            "type": "text",
+                            "value": "This component manages critical character data:"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                               "Ensure your blueprint inherits from the standard Character class and implements <i>BPI_PlayerInterface</i>.",
+            "<ul><li>Add the <b>BPC_PlayerAttributes</b> component to store dummy data (NickName, Strength, Rating) for UI display.</li>",
+            "<li><b>Emotes:</b> contains an array of emote montages that plays on the player character randomly on selection screen.</li>",
+            "<li><b>Waiting Time Before Next Emote:</b> this is the amount of the current player character waits once an emote montage a complete before playing a new one.</li>",
+            "<li><b>Montage Blend Out Time:</b> When gameplay is started, but the character is still playing an emote montage, then this much time is used for smoothly blending out the animation instead of abruptly stopping it. Also it feels weird when you want to play the game but the character won't stop emoting :)</li></ul>"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Character Selection System",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "System Overview"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/675/large/wraithcg-screenshot-2026-01-22-001339.jpg?1769069417",
+                            "align": "full",
+                            "caption": "DA_CharacterSelectionData Details"
+                        },
+                        {
+                            "type": "text",
+                            "value": "The character data is fetched frome <b>_DA_PDA_CharacterSelectionData</b>. In this project, all characters must inherit <b>CharacterClass</b> to preserve running logic."
+                        },
+                        {
+                            "type": "header",
+                            "value": "Adding New Characters"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/627/676/large/wraithcg-screenshot-2026-01-22-001355.jpg?1769069420",
+                            "align": "full",
+                            "caption": "DA_CharacterData_xyz Details"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul><li>Right Click on <i>CBP_SandboxCharacter</i> -> Create Child Class.</li>",
+                                "<li>In the event graph, plug the skeletal mesh component into <b>PlayerSkeletonMesh</b>.</li>",
+                                "<li>Create a new character data asset ( or duplicate existing) and fill the respective data.</li>",
+                                "<ul><li><b>Name: </b> Name of the character used for decorative purposes on the character selection screen.</li>",
+                                "<li><b>Class: </b> Assign the class of newly created child character blueprint.</li>",
+                                "<li><b>Description: </b> Fill in the lore details, background, or quick history of the character.</li>",
+                                "<li><b>Icon: </b> Assign an icon to your character displayed on the top-left of the screen.</li>",
+                                "<li>Add the new DA to <i>_DA_PDA_CharacterSelectionData</i>.</li>",
+                                "</ul>"
+                            ]
+                        },
+                        {
+                            "type": "image",
+                            "src": "",
+                            "align": "full",
+                            "caption": "Character Setup Details"
+                        }
+                    ]
+                },
         {
           "type": "header",
           "value": "Player Controller Setup (PC_CharacterSelection)"

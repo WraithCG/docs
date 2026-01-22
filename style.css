@@ -400,6 +400,7 @@ select option { background: #000; color: var(--first-color); }
 }
 #section-list { list-style: none; padding: 0; }
 #section-list li {
+    list-style: none;
     padding: 0.8rem 1rem;
     margin-bottom: 0.5rem;
     cursor: pointer;
@@ -502,11 +503,11 @@ li.open .sidebar-sublist {
 /* === SUBSECTION QUICK LINKS === */
 .subsection-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 1rem;
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .subsection-card {
@@ -761,7 +762,7 @@ img.loaded {
 .text-block i, i { font-style: italic; color: var(--text-color-light); }
 .text-block u, u { text-decoration-color: var(--first-color); text-underline-offset: 4px; }
 .text-block ul, ul { padding-left: 20px; margin: 10px 0; }
-.text-block li, li { margin-bottom: 5px; list-style-type: disc; }
+.text-block li, li { list-style-type: square; }
 
 /* --- NOTE & TIP BLOCKS --- */
 .note-block, .tip-block { padding: 1.2rem; border-radius: 0.5rem; margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: start; border-left: 4px solid; font-family: var(--content-font); line-height: 1.6; }
