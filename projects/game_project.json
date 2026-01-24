@@ -36,14 +36,12 @@
                             "date": "October 2025",
                             "status": "completed",
                             "features": [
-                                "Basic Menu System",
+                                "Widgets Management System",
                                 "Character Death Screen",
                                 "Character Selection System",
                                 "Metahumans Support",
-                                "Dynamic Camera during Parkour",
-                                "Infinite Platforms Spawner",
-                                "Obstacle Spawning",
-                                "Dynamic Obstacles (can be slid under or climbed)"
+                                "Dynamic Camera System",
+                                "Character Customization System"
                             ]
                         },
                         {
@@ -51,32 +49,22 @@
                             "date": "October 2025",
                             "status": "completed",
                             "features": [
-                                "Collectibles Counter",
                                 "Upgraded Menu Systems",
-                                "Collectibles Spawning System",
-                                "Spawning Dyanmic Obstacle Families",
+                                "Improved Emote System",
+                                "AAA Menu Screen",
                                 "Reorganized Blueprints for better readability",
-                                "Refined Obstacles Spawn System",
-                                "Separated Character Selection Screen",
                                 "Added Toggle Control for various features",
                                 "Improved Camera Blending",
-                                "Add First Person Camera"
+                                "Add First Person Camera",
+                                "Mover Component Support(5.7)"
                             ]
                         },
                         {
                             "version": "Version 1.2",
                             "date": "TBA",
-                            "status": "in-progress",
+                            "status": "planned",
                             "features": [
-                                "Curved World System",
-                                "Fixing Collision Issues",
-                                "Revising Game Components",
-                                "Widgets for PowerUps",
-                                "Improving Emote System",
-                                "Improving Vector Game Mode",
-                                "Improving Environment Creation Tools",
-                                "Improving Demo Maps",
-                                "Added Enemies"
+                                "Features On Demand :)"
                             ]
                         }
                     ]
@@ -216,7 +204,7 @@
                         },
                         {
                             "type": "image",
-                            "src": "https://media.fab.com/image_previews/gallery_images/267e1e8f-e8ad-4ecc-8d0b-dcd4f78b0f98/af251f82-5964-4ec5-95c1-fa7ba501c39f.jpg",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/628/932/large/wraithcg-screenshot-2026-01-21-235037.jpg?1769073277",
                             "align": "left",
                             "caption": "Customization Screen"
                         },
@@ -240,15 +228,15 @@
                         },
                         {
                             "type": "image",
-                            "src": "https://cdna.artstation.com/p/assets/images/images/095/628/930/large/wraithcg-screenshot-2026-01-21-235009.jpg?1769073271",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/689/436/large/wraithcg-screenshot-2026-01-24-110347.jpg?1769232882",
                             "align": "left",
                             "caption": "Emote System"
                         },
                         {
                             "type": "image",
-                            "src": "https://cdna.artstation.com/p/assets/images/images/095/627/664/large/wraithcg-screenshot-2026-01-22-001304.jpg?1769069400",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/627/646/large/wraithcg-screenshot-2026-01-21-235545.jpg?1769069366",
                             "align": "right",
-                            "caption": "Organized Folders"
+                            "caption": "Commented Code"
                         }
                     ]
                 }
@@ -416,7 +404,7 @@
                         },
                         {
                             "type": "image",
-                            "src": "",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/689/413/large/wraithcg-screenshot-2026-01-24-105122.jpg?1769232700",
                             "align": "full",
                             "caption": "Character Setup Details"
                         }
@@ -493,7 +481,7 @@
                         },
                         {
                             "type": "image",
-                            "src": "https://placehold.co/800x400/333/FFF?text=AnimGraph+Logic",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/689/410/large/wraithcg-screenshot-2026-01-24-104836.jpg?1769232697",
                             "align": "full",
                             "caption": "Animation Blueprint Graph"
                         },
@@ -512,7 +500,7 @@
                         },
                         {
                             "type": "image",
-                            "src": "https://placehold.co/800x400/333/FFF?text=AnimGraph+Logic",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/689/406/large/wraithcg-screenshot-2026-01-24-104820.jpg?1769232692",
                             "align": "full",
                             "caption": "Animation Modification System"
                         },
@@ -774,7 +762,7 @@
                         },
                         {
                             "type": "image",
-                            "src": "",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/689/417/large/wraithcg-screenshot-2026-01-24-105428.jpg?1769232704",
                             "align": "left",
                             "caption": "Adding Widget to Screen Logic"
                         },
@@ -804,7 +792,7 @@
                 },
                 {
                     "type": "image",
-                    "src": "",
+                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/689/421/large/wraithcg-screenshot-2026-01-24-105520.jpg?1769232710",
                     "align": "full",
                     "caption": "Creating a New Level"
                 }
@@ -836,7 +824,7 @@
             "content": [
                 {
                     "type": "text",
-                    "value": "If there‘s anything missing in this doc or the project, please hit me up on Discord.Thanks and have a wonderful day :) "
+                    "value": "If there‘s anything missing in this doc or the project, please hit me up on Discord. Thanks and have a wonderful game dev experience :) "
                 }
             ]
         }
