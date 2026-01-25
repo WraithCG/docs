@@ -493,7 +493,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Helper: Parse Rich Text
     function parseRichText(content) {
-        if (Array.isArray(content)) return content.join('<br>');
+        if (Array.isArray(content)) return content.join('');
         return content;
     }
 
