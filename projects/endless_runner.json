@@ -128,7 +128,11 @@
                             "status": "planned",
                             "features": [
                                 "Moving Obstacles",
-                                "Inventory System"
+                                "Inventory System",
+                                "Improved Vector Mode",
+                                "Unified PowerUps",
+                                "Varietal PowerUps",
+                                "Improving PowerUp Animation Modifier"
                             ]
                         }
                     ]
@@ -192,13 +196,13 @@
                 },
                 {
                     "type": "image",
-                    "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
+                    "src": "",
                     "align": "right",
                     "caption": "UI Display"
                 },
                 {
                     "type": "note",
-                    "value": "<b>Migration Guide:</b> The system is heavily interface-driven. Though modular, this project is not intended for migration into existing projects. However, you can easily download and integrate <i>CharacterSelectionSystem</i>, <i>Customization System</i>, and <i>WidgetsManagementSystem</i> selectively from FAB for free."
+                    "value": "<b>Migration Guide:</b> The system is heavily interface-driven. Though modular, this project is not intended for migration into existing projects. However, you can easily download and integrate <i>Character Selection System V1.2</i>, <i>Character Customization System V1.1</i>, and <i>Widgets Management System V1.1</i> selectively from FAB."
                 }
             ]
         },
@@ -210,6 +214,12 @@
                     "value": "Systems"
                 },
                 {
+                    "type": "image",
+                    "src": "https://placehold.co/800x400/222/FFF?text=Game+Variants",
+                    "align": "right",
+                    "caption": "Game Modes"
+                },
+                {
                     "type": "text",
                     "value": "<i>Character Selection System V1.2</i>, <i>Character Customization System V1.1</i>, <i>Widgets Management System V1.1</i> have been improved to align them with the project."
                 },
@@ -218,14 +228,8 @@
                     "value": "Game Modes"
                 },
                 {
-                    "type": "image",
-                    "src": "",
-                    "align": "right",
-                    "caption": "Game Modes"
-                },
-                {
                     "type": "text",
-                    "value": "<ul><li><b>Normal (Runner) Mode</b> 3 Lane FP/TP Runner</li><li><b>Vector Mode</b> Single Lane Sidescroller Infinite Runner</li></ul>"
+                    "value": "There are 2 different infinite runner game variants - <ul><li><b>Normal (Runner) Mode:</b> 3 Lane FP/TP Runner</li><li><b>Vector Mode:</b> Single Lane Sidescroller Infinite Runner</li></ul>"
                 },
                 {
                     "type": "header",
@@ -233,14 +237,14 @@
                 },
                 {
                     "type": "image",
-                    "src": "",
-                    "align": "right",
+                    "src": "https://cdna.artstation.com/p/assets/images/images/095/793/612/large/wraithcg-screenshot-2026-01-27-154133.jpg?1769535304",
+                    "align": "left",
                     "caption": "Power Ups"
                 },
                 {
                     "type": "text",
                     "value": [
-                        "<ul><li> 5 Preset powerUps - SuperJump, Invincibility, Magnet, DoubleCoins, ScoreBooster.</li>",
+                        "<ul><li>5 Preset powerUps - SuperJump, Invincibility, Magnet, DoubleCoins, ScoreBooster.</li>",
                         "<li>PowerUps attachments for visual indication.</li>",
                         "<li>Improved PowerUp management logic.</li>",
                         "<li>Fixed bugs related to invincibility.</li>",
@@ -268,7 +272,7 @@
                 },
                 {
                     "type": "image",
-                    "src": "",
+                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/727/025/large/wraithcg-screenshot-2026-01-25-084328.jpg?1769362245",
                     "align": "right",
                     "caption": "Camera System"
                 },
@@ -287,12 +291,6 @@
                     "value": "Platforms"
                 },
                 {
-                    "type": "image",
-                    "src": "",
-                    "align": "right",
-                    "caption": "Spawn Zones"
-                },
-                {
                     "type": "text",
                     "value": [
                         "<ul><li>SpawnZones based platform spawning (Sequential and Random).</li>",
@@ -303,6 +301,12 @@
                 {
                     "type": "header",
                     "value": "Environment Creation Tools:"
+                },
+                {
+                    "type": "image",
+                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/793/581/large/wraithcg-screenshot-2026-01-27-162230.jpg?1769535263",
+                    "align": "right",
+                    "caption": "Spawn Zones"
                 },
                 {
                     "type": "text",
@@ -326,6 +330,12 @@
                     "value": "Quality of Life:"
                 },
                 {
+                    "type": "image",
+                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/793/675/large/wraithcg-screenshot-2026-01-26-182339.jpg?1769535384",
+                    "align": "right",
+                    "caption": "Toggle Controls"
+                },
+                {
                     "type": "text",
                     "value": [
                         "<ul><li>More toggle controls  over gameplay mechanics,</li>",
@@ -343,6 +353,12 @@
         {
             "title": "Controls",
             "content": [
+                {
+                    "type": "image",
+                    "src": "https://placehold.co/800x400/222/FFF?text=Input+Actions",
+                    "align": "right",
+                    "caption": "Input Actions"
+                },
                 {
                     "type": "header",
                     "value": "Gameplay Controls"
@@ -362,18 +378,124 @@
         {
             "title": "Core Systems",
             "content": [
-                {
-                    "type": "header",
-                    "value": "Game Data"
-                },
+                
                 {
                     "type": "image",
                     "src": "https://cdna.artstation.com/p/assets/images/images/095/727/016/large/wraithcg-screenshot-2026-01-25-084011.jpg?1769362205",
-                    "align": "full",
+                    "align": "right",
                     "caption": "Core Game Systems"
+                },
+                {
+                    "type": "header",
+                    "value": "Game Data"
                 }
             ],
             "subsections": [
+                {
+                    "title": "Runner Character",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "Character Blueprints"
+                        },
+                        {
+                            "type": "image",
+                            "src": "",
+                            "align": "full",
+                            "caption": "Character Blueprints"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li>The main character class is - <i>CBP_SandboxCharacter</i>.</li>",
+                                "<li>The main anim blueprint class is - <i>ABP_SandboxCharacter</i>.</li>",
+                                "<li>The <b>RetargetedCharacters</b> use <i>GenericRetargeter</i> for driving animations off of main character class.</li>",
+                                "</ul>"
+                            ]
+                        }
+                    ],
+                    "subsections": [
+                        {
+                            "title": "Sandbox Character",
+                            "content": [
+                                {
+                                    "type": "header",
+                                    "value": "CBP_SandboxCharacter"
+                                },
+                                {
+                                    "type": "image",
+                                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/793/671/large/wraithcg-screenshot-2026-01-26-192349.jpg?1769535379",
+                                    "align": "full",
+                                    "caption": "CBP_SandboxCharacter"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": "The logic for various actions is separated into different graphs."
+                                },
+                                {
+                                    "type": "header",
+                                    "value": "Setting Up a New Character"
+                                },
+                                {
+                                    "type": "image",
+                                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/793/669/large/wraithcg-screenshot-2026-01-26-192420.jpg?1769535375",
+                                    "align": "full",
+                                    "caption": "RetargetedCharacterBlueprint"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<ul><li>In the <i>EventGraph</i>, add <i>Event_BeginPlay</i> node.</li>",
+                                        "<li>Right-click on the node and select <i>AddCallToParent</i> node.</li>",
+                                        "<li>Now right-click and search for - <i>Set PlayerSkeletalMesh</i> node.</li>",
+                                        "<li>Bring in your retargeted character skeletal mesh and connect it to <i>PlayerSkeletalMesh</i> node.</li></ul>"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Animation Blueprint",
+                            "content": [
+                                {
+                                    "type": "header",
+                                    "value": "ABP_SandboxCharacter"
+                                },
+                                {
+                                    "type": "image",
+                                    "src": "https://cdna.artstation.com/p/assets/images/images/095/793/662/large/wraithcg-screenshot-2026-01-26-194216.jpg?1769535368",
+                                    "align": "full",
+                                    "caption": "Animation Blueprint Graph"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "The animation blueprint is modified for custom animation modification and stabilizing camera movement.",
+                                        "<ul><li><b>P_CameraBlended:</b> Outputs poses blended for ThirdPerson/FirstPerson states. It is the final blended state.</li>",
+                                        "<li><b>P_PowerBlended:</b> Outputs animation data after modification/layering from other animations on targeted bones according to equipped higher priority powerUp.</li>",
+                                        "<li><b>P_AnimModified:</b> Outputs animation data after modification/layering from other animations on targeted bones.</li>",
+                                        "<li><b>P_MotionMatched:</b> Outputs motion matched animation data.</li>",
+                                        "<li><b>Logic:</b> When a traversal action occurs or <i>UseCustomAnimationData</i> is false, modification stops. You can plug any animation or custom processed pose at the place of ‘M_Neutral_Stand_Idle_Loop’ for better camera control.</li></ul>"
+                                    ]
+                                },
+                                {
+                                    "type": "header",
+                                    "value": "Animation Modifiers"
+                                },
+                                {
+                                    "type": "image",
+                                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/793/653/large/wraithcg-screenshot-2026-01-26-194245.jpg?1769535352",
+                                    "align": "full",
+                                    "caption": "Animation Modification System"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": "Enable <b>UseCustomAnimationData</b> to modify animations for specific actions (e.g., Running, Jumping) .<br>Define a <i>ModifierAnimation</i>, a <i>BlendValue</i> (0.0–1.0), and a list of <i>BoneToAffect</i> (from E_BonesToModify).Current categories: UpperBody, LeftArm, RightArm, LeftThigh, RightThigh."
+                                }
+                            ]
+                        }
+                    ]
+                },
                 {
                     "title": "Game Mode",
                     "content": [
@@ -530,28 +652,272 @@
                     ],
                     "subsections": [
                         {
-                            "title": "UI & Widgets",
+                            "title": "Setup",
                             "content": [
                                 {
-                                    "type": "header",
-                                    "value": "Widgets Setup"
+                                    "type": "image",
+                                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/793/681/large/wraithcg-screenshot-2026-01-26-123736.jpg?1769535409",
+                                    "align": "left",
+                                    "caption": "E_WidgetScreen"
                                 },
                                 {
-                                    "type": "image",
-                                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/727/011/large/wraithcg-screenshot-2026-01-25-083957.jpg?1769362200",
-                                    "align": "full",
-                                    "caption": "Widgets Setup"
+                                    "type": "header",
+                                    "value": "Adding New Widget Screen"
                                 },
                                 {
                                     "type": "text",
                                     "value": [
                                         "<ul>",
-                                        "<li>Responsible for managing platform spawn data based on the selected game mode variant.</li>",
-                                        "<li><i>AddWidgetToScreen</i> interface call is executed by the game mode which in turn asks the <i>HUD_RunnerManager</i> to add the requested widget.</li>",
-                                        "<li>Also manages game variant based <i>CurvedWorldShading</i>.</li>",
-                                        "<li>Dummy implementation for saving player run stats.</li>",
-                                        "<li>Lifecycle of a platform: <ul><li><b>AddFloor:</b> Spawns initial tiles.</li><li><b>ExtendFloor:</b> Spawns new tile when player overlaps detector.</li><li><b>DeleteFloor:</b> Removes oldest tile to maintain performance.</li></ul></li>",
+                                        "<li>Create a new widget blueprint of your choice.</li>",
+                                        "<li>Go to <i>MM_Runner > Components > Widgets > Enumeration</i> and open <b>E_WidgetScreen</b>.</li>",
+                                        "<li>Add a new enumeration value and rename it to your desired category.</li>",
+                                        "<li>Click Save.</li>",
+                                        "<li>Now go to <i>MM_Runner > Components > Widgets > DataAsset</i> and open <b>DA_PDA_WidgetData</b>.</li>",
+                                        "<li>Add a new element by clicking the plus icon.</li>",
+                                        "</ul>",
+                                        "<br>"
+                                    ]
+                                },
+                                {
+                                    "type": "tip",
+                                    "value": "You can also create a new camera rig and assign it in the <i>CameraDirector_SandboxCharacter's</i> \"WidgetController\" code block on switch enum to further elevate your game :)"
+                                },
+                                {
+                                    "type": "header",
+                                    "value": "Properties"
+                                },
+                                {
+                                    "type": "image",
+                                    "src": "https://cdna.artstation.com/p/assets/images/images/095/793/680/large/wraithcg-screenshot-2026-01-26-124213.jpg?1769535403",
+                                    "align": "right",
+                                    "caption": "DA_PDA_WidgetData"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<ul>",
+                                        "<li><b>WidgetScreen:</b> Select your widget category.</li>",
+                                        "<li><b>WidgetElement:</b> Assign the widget blueprint relative to this category.</li>",
+                                        "<li><b>PlayLevelSequence:</b> This toggle determines whether or not level sequences will be played in the background of this widget.</li>",
+                                        "<li><b>LevelSequences:</b> Add the level sequences that can be played in this array. Only required if <i>PlayLevelSequence</i> boolean is <i>True</i>.",
+                                        "<ul>",
+                                        "<li><b>PlayableSequence:</b> Assign a valid level sequence.</li>",
+                                        "<li><b>PlayRate:</b> Adjust the play rate of this level sequence.</li>",
+                                        "<li><b>Transform:</b> By default, all level sequences are played relative to the player. Use these transform values to adjust the sequence relative to player.</li>",
+                                        "</ul></li>",
                                         "</ul>"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Widget Elements",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "value": "These widget elements have been used to create the existing widget blueprints. The widgets management is not tied to them and you can use your own custom widgets too."
+                                },
+                                {
+                                    "type": "image",
+                                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/793/677/large/wraithcg-screenshot-2026-01-26-130021.jpg?1769535392",
+                                    "align": "left",
+                                    "caption": "Widget Elements"
+                                }
+                            ],
+                            "subsections": [
+                                {
+                                    "title": "E_Button",
+                                    "content": [
+                                        {
+                                            "type": "image",
+                                            "src": "",
+                                            "align": "left",
+                                            "caption": "E_Button"
+                                        },
+                                        {
+                                            "type": "header",
+                                            "value": "Properties"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "value": [
+                                                "<ul>",
+                                                "<li><b>Name:</b> Assign the name of the button.</li>",
+                                                "<li><b>Typeface:</b> The text can be either Regular or Bold.</li>",
+                                                "<li><b>FontFamily:</b> Change the font family of this button text.</li>",
+                                                "<li><b>FontSize:</b> Set the font size.",
+                                                "<li><b>SkewText:</b> Skew the text using float value.</li>",
+                                                "<li><b>Spacing:</b> Adjust the letter spacing.</li>",
+                                                "<li><b>Scale:</b> Change the render scale of the text in X and Y directions.</li>",
+                                                "<li><b>ColorData:</b> Assign the colors of this button during various events - normal, hovered, clicked, passive, etc;</li>",
+                                                "<li><b>MonoSpacing:</b> Toggle for whether or not to use monospacing for this button text.</li>",
+                                                "<li><b>MonoSpacingWidth:</b> Adjust the monospacing width.</li>",
+                                                "<li><b>ShadowColor:</b> Customize the shadow color for this button text.</li>",
+                                                "<li><b>ShadowOffset:</b> Adjust the shadow offset.</li>",
+                                                "<li><b>Status:</b> Whether or not the button the active on start. Depending on the status, the assigned colors will appear.</li>",
+                                                "<li><b>WarpText:</b> Whether or not to adjust the text within the bounds of the button.</li>",
+                                                "<li><b>BackgroundBlur:</b> Adjust the strength of the background blur behind the text.</li>",
+                                                "</ul>"
+                                            ]
+                                        },
+                                        {
+                                            "type": "header",
+                                            "value": "Functions & Dispatchers"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "value": [
+                                                "<ul>",
+                                                "<li><b>SetButtonStatus:</b> This function is used to toggle between the active and passive states.</li>",
+                                                "<li><b>ButtonIsClicked:</b> This event dispatcher is used to simulate button click action.</li>",
+                                                "</ul>"
+                                            ]
+                                        },
+                                        {
+                                            "type": "note",
+                                            "value": [
+                                                "These properties are used in some other widget elements. It is possible that not all of these properties are used for any element and you may have to manually customize it."
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "E_EmptyElement",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "value": "This is simply an empty element that occupies space. I created this because I was finding it hard to keep track of many horizontal and vertical boxes in the widgets. It serves no actual purpose related to gameplay."
+                                        },
+                                        {
+                                            "type": "header",
+                                            "value": "Properties"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "value": [
+                                                "<ul>",
+                                                "<li><b>SlotWidgetElement:</b> Leave this empty.</li>",
+                                                "<li><b>Size:</b> Change if you want the empty to occupy all the space or part of it.</li>",
+                                                "<li><b>Padding:</b> Adjust the padding of this empty in the 4 directions.</li>",
+                                                "<li><b>Horizontal & Vertical Alignment:</b> Adjust the empty's alignment.",
+                                                "</ul>"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "E_FixedText",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "value": "This is for on-screen text that never changes."
+                                        },
+                                        {
+                                            "type": "header",
+                                            "value": "Properties"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "value": "<ul><li>It uses all the same text properties as to <i>E_Button</i> element.</li></ul>"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "E_VariableText",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "value": "This is for on-screen text that changes based on player actions."
+                                        },
+                                        {
+                                            "type": "header",
+                                            "value": "Properties"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "value": [
+                                                "<ul><li>It uses all the same text properties as to <i>E_Button</i> element.</li>",
+                                                "<li>It uses <i>SetNewText</i> function to change on-screen text.</li></ul>"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "E_GameTitle",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "value": "This is an image based widget element. Wherever an image was needed, this was used."
+                                        },
+                                        {
+                                            "type": "header",
+                                            "value": "Properties"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "value": [
+                                                "<ul><li>It uses <i>SetNewImage</i> function to change on-screen image. Takes a Texture2D format file as input.</li></ul>"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "E_PairedElement",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "value": "This is an element where you can plug in 2 different widget elements in the key value pair form. <br> <i>e.g. Score(E_FixedText) & ScoreVal(E_VariableText)</i>."
+                                        },
+                                        {
+                                            "type": "header",
+                                            "value": "Properties"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "value": [
+                                                "<ul><li>It uses <i>SetKeyElement</i> function to change on-screen image. Takes a Texture2D format file as input.</li></ul>"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "E_PairedText",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "value": "This is an element where you can plug in 2 different text data in the key value pair form. <br> <i>e.g. Score(Key) & ScoreVal(Value)</i>."
+                                        },
+                                        {
+                                            "type": "header",
+                                            "value": "Properties"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "value": [
+                                                "<ul><li>It uses <i>SetPairKeyText</i> & <i>SetPairValueText</i> function to change key-value data independently during runtime.</li>",
+                                                "<li>It uses <i>SetPairKeyText</i> & <i>SetPairValueText</i> function to change key-value data independently during runtime.</li></ul>"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "E_RuntimeIcon",
+                                    "content": [
+                                        {
+                                            "type": "text",
+                                            "value": "This is an image based element with text at the bottom. It is used for active powerUp indicators."
+                                        },
+                                        {
+                                            "type": "header",
+                                            "value": "Properties"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "value": [
+                                                "<ul><li>It uses <i>SetPairKeyText</i> & <i>SetPairValueText</i> function to change key-value data independently during runtime.</li>",
+                                                "<li>It uses <i>SetPairKeyText</i> & <i>SetPairValueText</i> function to change key-value data independently during runtime.</li></ul>"
+                                            ]
+                                        }
                                     ]
                                 }
                             ]
@@ -610,54 +976,960 @@
             ]
         },
         {
-            "title": "Core Systems",
+            "title": "Components",
             "content": [
                 {
-                    "type": "header",
-                    "value": "Platform Architecture"
+                    "type": "text",
+                    "value": "This template has been built with modular architecture in mind. Everything is organized in its own isolated space. Interfaces and player pawn reference serve as the communication channels :)"
                 },
                 {
                     "type": "image",
-                    "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
+                    "src": "",
                     "align": "right",
-                    "caption": "Base Classes"
-                },
+                    "caption": "Components"
+                }
+            ],
+            "subsections": [
                 {
-                    "type": "text",
-                    "value": [
-                        "The world is built using a hierarchy of blueprints controlled by <b>GM_Runner</b>.<ul><li><b>BP_Floor:</b> Holds the reference for spawning platforms.</li>",
-                        "<li><b>BP_MapBase:</b> The base class for all platforms (floor and side walls).<br> <li>It is intended for common platform properties.</li> ",
-                        "<li><b>BPCC_ObstacleBase:</b> Spawns obstacles via ChildActorComponents (Dynamic Obstacle Families).</li>",
-                        "<li><b>BPSP_ObstacleBase:</b> Spawns fixed, pre-configured obstacles (Static).</li></ul>"
+                    "title": "Runner Attributes Component",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "BPC_EndlessRunnerAttributes"
+                        },
+                        {
+                            "type": "image",
+                            "src": "",
+                            "align": "full",
+                            "caption": "BPC_EndlessRunnerAttributes"
+                        },
+                        {
+                            "type": "text",
+                            "value": "This component manages critical character and gameplay data."
+                        },
+                        {
+                            "type": "header",
+                            "value": "Speed"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li><b>SpeedUpdateRate:</b> The rate at which player speed is updated. <br> <i> If set to say 1000, then at every 1000 added to score, the speed will be increased.</i></li>",
+                                "<li><b>MaxWalkSpeed:</b> The maximum walk speed the player can attain after multiple speed updates.</li>",
+                                "<li><b>WalkSpeedUpdateRate:</b> The factor by which the character's walking speed is increased.</li>",
+                                "</ul>"
+                            ]
+                        },
+                        {
+                            "type": "header",
+                            "value": "Score"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li><b>ScoreUpdateTimer:</b> The interval at which score is updated on screen.</li>",
+                                "<li><b>MinScoreIncrease:</b> The minimum value that can be added to score at any instant.</li>",
+                                "<li><b>MaxScoreIncrease:</b> The maximum value that can be added to score at any instant.</li>",
+                                "</ul>"
+                            ]
+                        },
+                        {
+                            "type": "header",
+                            "value": "Game"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li><b>StartWithFloors:</b> The number of platforms which will be spawned for the first time when the player starts running.</li>",
+                                "<li><b>DeathTracerRadius:</b> The radius of the collision sphere for checking potential collisions.</li>",
+                                "<li><b>DeathTracerLoopTimer:</b> The timer duration in seconds at which death sphere will check for collision.</li>",
+                                "<li><b>ForwardTraceDistance:</b> The distance from the player till which the sphere checks for collision.</li>",
+                                "<li><b>DeathMontages:</b> An array of animation montages any of which is randomly played on death screen if <i>RagdollOnDeath</i> is set to <i>False</i>.</li>",
+                                "</ul>"
+                            ]
+                        },
+                        {
+                            "type": "header",
+                            "value": "Debug"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li><b>DrawDebugDeathTracer:</b> Useful for drawing collision sphere.</li>",
+                                "<li><b>DebugEmoteSequenceIndex:</b> This prints which emote sequence index is currently playing on the character.</li>",
+                                "<li><b>DebugEmoteAnimMontage:</b> This prints the name of the emote montage currently playing on the character.</li>",
+                                "</ul>"
+                            ]
+                        },
+                        {
+                            "type": "header",
+                            "value": "Emote"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li><b>AllowEmotes:</b> Determines whether or not the character can emote at all.</li>",
+                                "<li><b>Wait Time:</b> It is the amount of wait before the player starts to emote on any screen.</li>",
+                                "<li><b>Blend Out Time:</b> Time taken to abruptly stop an emote.</li>",
+                                "<li><b>Min and Max Delays:</b> A random time between these is used to blend out an emote abruptly when there is an another emote sequence to play.</li>",
+                                "<li><b>Emote Data:</b> Data asset containing emoting sequences per widget screen.</li>",
+                                "</ul>"
+                            ]
+                        },
+                        {
+                            "type": "header",
+                            "value": "Character"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li><b>Attributes (Title/Strength/Weakness):</b> Decor data for displaying on <i>CharacterSelection</i> & <i>CharacterCustomization</i> screens.</li>",
+                                "<li><b>ToggleInBetweenLanes:</b> Useful if you want the character to be able to toggle lanes in the midst of previous lane change action.</li>",
+                                "<li><b>SideWayMovementScale:</b> This is usef to drive the intensity of sideways leaning animation when changing lanes.</li>",
+                                "<li><b>DriveLeaningAnimations:</b> This toggle is used to determine whether or not to drive leaning animations at all.</li>",
+                                "<li><b>PlayRagdollOnDeath:</b> This enables the character body to be able to ragdoll on colliding with the obstacles. If false, then any random valid animation montage from the <i>DeathMontages</i> array is played.</li>",
+                                "<li><b>PlayReactionOnBump:</b> This toggle is supposed to determine whether the character should play hit reaction on bumping any obstacle sideways. It is yet to be implemented correctly.</li>",
+                                "<li><b>RespawnKeyCount:</b> This is useful if you want the character to have few keys at the start of the game already.</li>",
+                                "</ul>"
+                            ]
+                        },
+                        {
+                            "type": "header",
+                            "value": "Camera"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li><b>CameraSystem:</b> Determines the primary camera type for the player.</li>",
+                                "<li><b>FP DynamicTranslationOffset:</b> Useful for adjusting the camera location relative to character's head in FirstPerson mode.</li>",
+                                "<li><b>FP DynamicRotationOffset:</b> Useful for adjusting the camera rotation relative to character's head in FirstPerson mode.</li>",
+                                "<li><b>High&Low SensitivityHeadBlend:</b> Respectively determine the extent of head wobbling of running and other animations on the player character's head to stabilize the motion during various actions.</li>",
+                                "<li><b>SlowDownTime:</b> To further control the head wobbling, you can adjust the time dilation on the player character.</li>",
+                                "</ul>"
+                            ]
+                        },
+                        {
+                            "type": "note",
+                            "value": [
+                                "<ul>",
+                                "<li><i>RespawnKeyCount</i> variable should not be directly updated. Use the functions <i>Get_RespawnKeyCount</i>, <i>IncrementRespawnKeys</i> & <i>DecrementRespawnKeys</i>. </li>",
+                                "<li>It is recommended not to crank up the number of floors to spawn at the start of the game very high.</li>",
+                                "<li>Some of the toggles and features have been removed from previous version because they were bugging the game. They will likely be added later with improved & isolated logic.</li>",
+                                "</ul>"
+                            ]
+                        }
                     ]
                 },
                 {
-                    "type": "tip",
-                    "value": "<ul><li>Never spawn any <b>BP_xyzBase</b> directly.</li><li>Always use Child Classes to spawn any BP logic.</li></ul>"
-                },
-                {
-                    "type": "header",
-                    "value": "Spawning Logic"
-                },
-                {
-                    "type": "text",
-                    "value": [
-                        "The <b>BP_RunnerGM</b> manages the infinite loop:",
-                        "<ul<li><b>AddFloor:</b> Spawns initial tiles.</li><li><b>ExtendFloor:</b> Spawns new tile when player overlaps detector.</li><li><b>DeleteFloor:</b> Removes oldest tile to maintain performance.</li></ul>"
+                    "title": "Emote System",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "Emote Data Asset"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/645/large/wraithcg-screenshot-2026-01-21-235504.jpg?1769069362",
+                            "align": "full",
+                            "caption": "DA_EmoteActionData Setup"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<b>Emote Data Asset:</b> This is a map of emote data with respect to a widget screen.",
+                                "<ul>",
+                                "<li><b>Abort Previous:</b> This aborts the emote montage abruptly and starts a fresh sequence of emote montages available for a widget screen.</li>",
+                                "<li>If the previous emote sequence is not aborted, then the emote sequence related to previous widget screen is completed first and then the new emote sequence is used.</li>",
+                                "<li><b>AnimationMontages:</b> Contains the montage sequences.</li>",
+                                "<li><b>SequenceStart:</b> Contains the montage that is played for starting the sequence.</li>",
+                                "<li><b>SequenceEnd:</b> Mostly used as transition from sequence to another.</li>",
+                                "<li><b>PlaySequentially:</b> Whether or not to play all the montages in a sequential order. If not then any number of montages are selected and played for some time. When one sequence is complete, then another sequence  from AnimationMontages array is searched and selected for playing if available.</li></ul>"
+                            ]
+                        },
+                        {
+                            "type": "tip",
+                            "value": [
+                                "You can define more than one montage sequence like –",
+                                "<ul><li>Standing up -> Greeting the player -> Sitting down</li>",
+                                "<li>Taking out phone -> Using it -> Putting it down</li>"
+                            ]
+                        },
+                        {
+                            "type": "note",
+                            "value": [
+                                "Note that any montage needs time to start and end. If the widget screens are switched a lot, the player character may glitch when playing montages becaues every widget screen on re-initializes the emote system."
+                            ]
+                        }
                     ]
                 },
                 {
-                    "type": "tip",
-                    "value": [
-                        "You can change how many floors to add the start of the game & every time extension is requested by changing <i>StartWithFloors</i> & <i>ExtensionCount</i> in <b>BPC_EndlessAttributesComponent</b> respectively.",
-                        "The duration after which a platform is removed can be set in <b>GM_RunnerGameMode</b>."
+                    "title": "Character Selection System",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "System Overview"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/675/large/wraithcg-screenshot-2026-01-22-001339.jpg?1769069417",
+                            "align": "full",
+                            "caption": "DA_CharacterSelectionData Details"
+                        },
+                        {
+                            "type": "text",
+                            "value": "The character data is fetched frome <b>_DA_PDA_CharacterSelectionData</b>. In this project, all characters must inherit <b>CBP_SandboxCharacter</b> to preserve running logic."
+                        },
+                        {
+                            "type": "header",
+                            "value": "Adding New Characters"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/627/676/large/wraithcg-screenshot-2026-01-22-001355.jpg?1769069420",
+                            "align": "full",
+                            "caption": "DA_CharacterData_xyz Details"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul><li>Right Click on <i>CBP_SandboxCharacter</i> -> Create Child Class.</li>",
+                                "<li>In the event graph, plug the skeletal mesh component into <b>PlayerSkeletonMesh</b>.</li>",
+                                "<li>Create a new character data asset ( or duplicate existing) and fill the respective data.</li>",
+                                "<ul><li><b>Name: </b> Name of the character used for decorative purposes on the character selection screen.</li>",
+                                "<li><b>Class: </b> Assign the class of newly created child character blueprint.</li>",
+                                "<li><b>Description: </b> Fill in the lore details, background, or quick history of the character.</li>",
+                                "<li><b>Icon: </b> Assign an icon to your character displayed on the top-left of the screen.</li>",
+                                "<li><b>CustomizationData: </b> Assign the customization data for your character. For more info, check out the Character Customization Section.</li>",
+                                "<li><b>UseCustomAnimationData: </b> This toggle determines whether or not character animations will be modified by the character animation modification system.</li>",
+                                "<li><b>CustomAnimationData: </b> This is a map that contains action based animation modification data.</li>",
+                                "<li>Add the new DA to <i>_DA_PDA_CharacterSelectionData</i>.</li>",
+                                "</ul>"
+                            ]
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/793/669/large/wraithcg-screenshot-2026-01-26-192420.jpg?1769535375",
+                            "align": "full",
+                            "caption": "Character Setup Details"
+                        }
                     ]
                 },
                 {
-                    "type": "note",
-                    "value": [
-                        "The lifespan of any platform does not takes into account player action. This means if player is stuck on any platform for long, it is possible that the platform gets removed and the player falls into oblivion.",
-                        "Only option that remains is restarting the game."
+                    "title": "Character Customization System",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "System Overview"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/793/622/large/wraithcg-screenshot-2026-01-26-194805.jpg?1769535319",
+                            "align": "right",
+                            "caption": "E_AttachmentPoints"
+                        },
+                        {
+                            "type": "text",
+                            "value": "You can add/rename categories by modifying the enumeration <i>E_AttachmentPoints</i> in <i>MM_Runner > Components > Customization > Enumeration</i>."
+                        },
+                        {
+                            "type": "text",
+                            "value": "Customization data is fetched from the current character's data asset (<i>DA_PDA_CD_xyz</i>) which contains per-character selection and customization data. In this project, all characters must inherit <b>CBP_SandboxCharacter</b> to preserve running logic."
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li>If you have setup your character class the right way then continue else refer to previous section for more info on Adding New Characters.</li>",
+                                "<li>Open your character's skeletal mesh.</li>",
+                                "<li>Setup sockets on your character skeleton.</li>",
+                                "<li>If you're using skeletal meshes such as clothing items, make sure they are rigged to the same character skeleton and properly weighted.</li>",
+                                "</ul>"
+                            ]
+                        },
+                        {
+                            "type": "tip",
+                            "value": "You can consider checking out how to set up sockets on your character's skeletal mesh on Youtube."
+                        },
+                        {
+                            "type": "header",
+                            "value": "Data Asset Setup"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/677/large/wraithcg-screenshot-2026-01-22-001424.jpg?1769069424",
+                            "align": "full",
+                            "caption": "DA_PDA_CCD_xyz Details"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li>Go inside <i>Components > Customization > DA</i> folder and duplicate any existing data asset. Name it DA_PDA_CCD_yourCharacter.</li>",
+                                "<li>Open the data asset and click on the trash icon to empty the AttachmentData.</li>",
+                                "<li>Click the plus icon to add a new element in the map.</li>",
+                                "<li>The default value will be none. Click on it and select your desired category - Face, Torso, Legs or Shoes.</li>",
+                                "<li>Expand the section and click on plus icon to add items in that category.</li>",
+                                "<li>Always keep the first item in any category empty. This indicates the no attachments state for the character during the customization process.</li>",
+                                "<li>In the next item, fill the appropriate data -",
+                                "<ul>",
+                                "<li><b>isSkeletalMesh: </b> Determines if or not the item to be attached to the character is a skeletal mesh or a static mesh.</li>",
+                                "<li><b>SkeletalMesh: </b> If this item is a skeletal mesh, i.e. <i>isSkeletalMesh</i> is set to true, then select your desired mesh.</li>",
+                                "<li><b>AnimBPSkeletalMesh: </b> If this skeletal mesh has its own animation blueprint, then select it here or leave it empty.</li>",
+                                "<li><b>UseMasterPose: </b> Set this to true if you want this item to follow and character's animation data like clothing assets, else leave it false.</li>",
+                                "<li><b>StaticMesh: </b> Select your static mesh asset if this item is not a skeletal mesh.</li>",
+                                "<li><b>AttachmentCategory: </b> Select the category of this item. This category should be carefully set. The category of the map is used by the widget screen but the inside category is used by the player character.</li>",
+                                "<li><b>SocketName: </b> The socket to which this item will be attached. If <i>UseMasterPose</i> is set to true, then leave it None.</li>",
+                                "<li><b>ItemDescription: </b> This field can be used to write about the item's lore, defining features or properties.</li>",
+                                "</li>",
+                                "</ul>"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Collection Component",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "BPC_CollectorComponent"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/793/642/large/wraithcg-screenshot-2026-01-26-194422.jpg?1769535339",
+                            "align": "full",
+                            "caption": "BPC_CollectorComponent"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li><b>CollectionRadius:</b> Radius of the sphere tracer that works independently from death tracer.</li>",
+                                "<li><b>ForwardCollectionTraceDistance:</b> Forward offset/end point of the sphere trace slightly ahead of the player.</li>",
+                                "<li><b>DrawDebugType:</b> Useful for debugging collection tracer sphere.</li>",
+                                "<li><b>CollectionTimer:</b> Timer looping value for collection tracer.</li>",
+                                "<li><b>CollectibleDisappearanceFX:</b> Plays when any collectible is collected by the player.</li>",
+                                "<li><b>CollectiblePickUpSFX:</b> SoundFX that plays when character collects the collectible.</li>",
+                                "</ul>"
+                            ]
+                        },
+                        {
+                            "type": "note",
+                            "value": [
+                                "<ul><li>The below set of properties are used for spawning collectibles on platform.</li>",
+                                "<li>Collectibles are Instanced Static Meshes (ISMs) and do not currently animate towards the player.</li>"
+                            ]
+                        },
+                        {
+                            "type": "header",
+                            "value": "CurrentISMData"
+                        },
+                        {
+                            "type": "image",
+                            "src": "",
+                            "align": "full",
+                            "caption": "CurrentISMData"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li><b>CollectibleMesh:</b> Static Mesh to spawn via Instanced Static Mesh Component.</li>",
+                                "<li><b>CollectibleCollisionType:</b> This must be <i>Collectibles</i> only unless you wish to use a new object type for further extension. Other types are prone to interfere with other gameplay behaviors.</li>",
+                                "<li><b>LaneIdx:</b> This controls on which lane collectibles are spawned depending on lane data fetched from game mode.</li>",
+                                "<li><b>No.OfCollectibles:</b> This determines the number of instances to spawn over the obstacles.</li>",
+                                "<li><b>RowLocation:</b> This is for adjusting the the collectibles in a lane.</li>",
+                                "<li><b>Scale:</b> This changes the size of obstacles.</li>",
+                                "<li><b>CorrectiveZRotation:</b> This is for changing the default rotation of the collectibles if they aren’t facing the desired direction on Z axis.</li>",
+                                "<li><b>GapBetweenInstances:</b> This controls how far apart the collectibles instances will be from one another.</li>",
+                                "</ul>"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Curve World Shader",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "MPC_CurvedWorldShader"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/793/635/large/wraithcg-screenshot-2026-01-26-194541.jpg?1769535334",
+                            "align": "full",
+                            "caption": "MPC_CurvedWorldShader"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li><b>FlatDistance:</b> Distance from the camera that is not curved.</li>",
+                                "<li><b>BaseDistance:</b> Distance to curve.</li>",
+                                "<li><b>CurveExp:</b> The rate/power of curve.</li>",
+                                "<li><b>CurveBool:</b> Enables/Disables curved world shading.</li>",
+                                "<li><b>DirectionVector:</b> Each component represents a respective XYZ direction. Alpha plays no role.</li>",
+                                "</ul>"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Parkour Component",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "BPC_ParkourComponent"
+                        },
+                        {
+                            "type": "image",
+                            "src": "",
+                            "align": "full",
+                            "caption": "BPC_ParkourComponent"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li><b>CheckCollisionDuringParkour:</b> This is the duration of new death sphere tracer timer that is activated during parkour actions.</li>",
+                                "<li><b>CollisionTraceDebug:</b> Useful for debugging purposes.</li>",
+                                "<li><b>Rolling</b> & <b>Sliding</b> -",
+                                "<ul><li><b>SafeStop:</b> Useful for avoiding collision during parkour action by calculating a safe stopping distance from any obstacle and giving players some time to change their strategy.</li>",
+                                "<li><b>ObstacleOffset Min&Max:</b> The minimum and maximum distance from the obstacle at which the player should come to a stop safely.</li>",
+                                "<li><b>DrawDebugType:</b> Useful for drawing the safe stop tracer for debugging purposes.</li>",
+                                "<li><b>OffsetTraceDistanceCover:</b> This is the distance ahead of the player to start trace from.</li>",
+                                "<li><b>DistanceCover:</b> This is the distance covered during any parkour action.</li>",
+                                "<li><b>WarpTargetName:</b> Sliding action uses - <i>Slide</i> and Rolling action uses - <i>Roll</i> as warp target name.</li>",
+                                "<li><b>Montages:</b> A random montage from the given array is played during the action.</li></ul>",
+                                "</ul>"
+                            ]
+                        },
+                        {
+                            "type": "note",
+                            "value": [
+                                "<ul><li>The standard death tracer is turned off during parkour actions and a separate new collision tracer is initialized to allow selective collision behaviour during parkour.</li>",
+                                "<li>It is recommended to setup your parkour montages correctly by taking reference of the closest parkour action montage already present in the project.</li>",
+                                "<li>The rolling animation used here is clipped from jump landing roll montages. Due to its short length, the state switch from rolling to running has been delayed by a second in <i>BPC_EndlessRunnerAttributesComponent</i>.</ul>"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Environment Creation Tool",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "Environment Creation Tool"
+                        },
+                        {
+                            "type": "text",
+                            "value": "This is a blueprint that can spawn static and skeletal meshes and blueprint actors based on specified spawn rules with randomization options."
+                        },
+                        {
+                            "type": "note",
+                            "value": " This does not serves any purpose as of present but was included on request of a discord member :)"
+                        },
+                        {
+                            "type": "header",
+                            "value": "Overview of Environment Creation Tool Blueprint"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/627/680/large/wraithcg-screenshot-2026-01-22-001528.jpg?1769069427",
+                            "align": "full",
+                            "caption": "BP_EnvironmentBase"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<b>Properties Configuration: </b>",
+                                "<ul>",
+                                "<li><b>AutoUpdatePropsData: </b>This can be used if you do not want to update the blueprint after every minor update.</li>",
+                                "<li><b>ShowFloor: </b>This can be used to hide the default floor included with the environment. Hiding also turns off its collision properties and vice versa.</li>",
+                                "<li><b>FloorScaleVec: </b>This can be used to scale the default floor in any of the directions.</li>",
+                                "<li><b>StaticPropsData: </b>This is used to populate the environment with static meshes. Instanced Static Meshes are used for optimization purposes.</li>",
+                                "<li><b>SkeletalPropsData: </b>This is used to populate the environment with skeletal meshes. This does not supports instancing, as a result, only one component can be spawned per array element.</li>",
+                                "<li><b>BPPropsData: </b>This is used to populate the environment with blueprint actors. Though this does not supports instancing, you can still array these props.</li>",
+                                "</ul>"
+                            ]
+                        }
+                    ],
+                    "subsections": [
+                        {
+                            "title": "Static Mesh Props",
+                            "content": [
+                                {
+                                    "type": "header",
+                                    "value": "Static Props Data Configuration"
+                                },
+                                {
+                                    "type": "image",
+                                    "src": "https://cdna.artstation.com/p/assets/images/images/095/627/684/large/wraithcg-screenshot-2026-01-22-001623.jpg?1769069434",
+                                    "align": "full",
+                                    "caption": "Static Props Structure"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<ul>",
+                                        "<li><b>Transform:</b> This is used the as the base transform of the ISM component which will then spawn static meshes relative to it.</li>",
+                                        "<li><b>StaticMeshAsset:</b> This array contains the static mesh assets any of which can be used at a given moment.</li>",
+                                        "<li><b>RandomAsset:</b> This boolean toggles whether or not to use a random static mesh from the array.</li>",
+                                        "<li><b>AssetIdx:</b> If <i>RandomAsset</i> is false, then element at this index will be used. In case, this is an invalid index, then random static mesh will be used.</li>",
+                                        "<li><b>Count:</b> This determines the number of instances of the mesh in X, Y and Z directions respectively. Total number of instances spawned will be equal to the product these three values.</li>",
+                                        "<li><b>Offset:</b> This is used to add uniform gap between the instances in X, Y and Z directions respectively.</li>",
+                                        "<li><b>InstanceTransform:</b> This is useful for modifying the transforms of any instance.</li>",
+                                        "<li><b>RemoveInstances:</b> This is used for removing some of the instances of the static mesh.</li>",
+                                        "<li><b>RandomDeletionCount:</b> Based on this count, some of the instances will be deleted.</li>",
+                                        "<li><b>RandomSeed:</b> This boolean determines whether or not to use random seed for randomizing spawned instances.</li>",
+                                        "<li><b>SeedValue:</b> If <i>RandomSeed</i> is false, then the instances are transformed based on this seed value.</li>",
+                                        "<li><b>TransformationMin & MaxRanges:</b> This determines the maxium and minium extent of random transforms of the spawned instances.</li>",
+                                        "<li><b>MaterialData:</b> This is useful for randomizing the materials of the static meshes based on material indices.</li>",
+                                        "<li><b>CollisionEnabled:</b> This is useful if you want the player to collide with these instances.</li>",
+                                        "</ul>"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Skeletal Mesh Props",
+                            "content": [
+                                {
+                                    "type": "header",
+                                    "value": "Skeletal Props Data Configuration"
+                                },
+                                {
+                                    "type": "image",
+                                    "src": "https://cdna.artstation.com/p/assets/images/images/095/627/688/large/wraithcg-screenshot-2026-01-22-001659.jpg?1769069437",
+                                    "align": "full",
+                                    "caption": "Skeletal Props Structure"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<ul>",
+                                        "<li><b>Transform:</b> This is used the as the base transform of the ISM component which will then spawn static meshes relative to it.</li>",
+                                        "<li><b>SkeletalMeshAsset:</b> This array contains the skeletal mesh assets any of which can be used at a given moment.</li>",
+                                        "<li><b>RandomAsset:</b> This boolean toggles whether or not to use a random static mesh from the array.</li>",
+                                        "<li><b>AssetIdx:</b> If <i>RandomAsset</i> is false, then element at this index will be used. In case, this is an invalid index, then random static mesh will be used.</li>",
+                                        "<li><b>isAnimated:</b> This determines whether or not to animate the skeletal mesh when player is around.</li>",
+                                        "<li><b>MaterialData:</b> This is useful for randomizing the materials of the mesh based on material indices.</li>",
+                                        "<li><b>Animations:</b> List of animations from which any one can be looped repeatedly.</li>",
+                                        "<li><b>RandomSeed:</b> This boolean determines whether or not to use random seed for randomizing data for this skeletal mesh asset.</li>",
+                                        "<li><b>SeedValue:</b> If <i>RandomSeed</i> is false, then the randomizations occur based on this seed value.</li>",
+                                        "<li><b>TransformationMin & MaxRanges:</b> This determines the maxium and minium extent of random transforms of the spawned instances.</li>",
+                                        "<li><b>CollisionEnabled:</b> This is useful if you want the player to collide with this mesh.</li>",
+                                        "</ul>"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "BP Prop Actors",
+                            "content": [
+                                {
+                                    "type": "header",
+                                    "value": "BP Prop Actors Data Configuration"
+                                },
+                                {
+                                    "type": "image",
+                                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/689/large/wraithcg-screenshot-2026-01-22-001738.jpg?1769069440",
+                                    "align": "full",
+                                    "caption": "BP Props Structure"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<ul>",
+                                        "<li><b>UseDefaultTransform:</b> Toggle this if you wish to keep the base transforms of the original BP otherwise, it may be scaled relative to environment BP default scene root.</li>",
+                                        "<li><b>Transform:</b> This is used the as the base transform of the ISM component which will then spawn static meshes relative to it.</li>",
+                                        "<li><b>BPAsset:</b> This array contains the BP assets any of which can be used at a given moment. These are of type BP_DecorData but you can change it if you have other assets, otherwise create a child class of BP_DecorData and implement your custom BP logic.</li>",
+                                        "<li><b>RandomAsset:</b> This boolean toggles whether or not to use a random static mesh from the array.</li>",
+                                        "<li><b>AssetIdx:</b> If <i>RandomAsset</i> is false, then element at this index will be used. In case, this is an invalid index, then random static mesh will be used.</li>",
+                                        "<li><b>Count:</b> This determines the number of instances of the mesh in X, Y and Z directions respectively. Total number of instances spawned will be equal to the product these three values.</li>",
+                                        "<li><b>Offset:</b> This is used to add uniform gap between the instances in X, Y and Z directions respectively.</li>",
+                                        "<li><b>InstanceTransform:</b> This is useful for modifying the transforms of any instance.</li>",
+                                        "<li><b>RemoveInstances:</b> This is used for removing some of the instances of the static mesh.</li>",
+                                        "<li><b>RandomSeed:</b> This boolean determines whether or not to use random seed for randomizing spawned instances.</li>",
+                                        "<li><b>SeedValue:</b> If <i>RandomSeed</i> is false, then the instances are transformed based on this seed value.</li>",
+                                        "<li><b>TransformationMin & MaxRanges:</b> This determines the maxium and minium extent of random transforms of the spawned instances.</li>",
+                                        "</ul>"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Power Up Component",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "PDA_PowerData"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/793/612/large/wraithcg-screenshot-2026-01-27-154133.jpg?1769535304",
+                            "align": "full",
+                            "caption": "PDA_PowerData"
+                        }
+                    ],
+                    "subsections": [
+                        {
+                            "title": "Component",
+                            "content": [
+                                {
+                                    "type": "header",
+                                    "value": "BPC_PowerUpsManager"
+                                },
+                                {
+                                    "type": "image",
+                                    "src": "",
+                                    "align": "full",
+                                    "caption": "BPC_PowerUpsManager"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<ul>",
+                                        "<li>This component handles duration and effects of the equipped powerUps.</li>",
+                                        "<li>Execution logic for any powerUp depends on its category, present in its respective EventGraph.</li>",
+                                        "<li>Version 1.4 introduces resetting powerUps. When one powerUp that is equipped already is equipped again, then the previous one is instantly terminated and new one is started.</li>",
+                                        "</ul>"
+                                    ]
+                                },
+                                {
+                                    "type": "header",
+                                    "value": "PowerUpTypes"
+                                },
+                                {
+                                    "type": "image",
+                                    "src": "",
+                                    "align": "right",
+                                    "caption": "E_PowerType"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<ul>",
+                                        "<li>You can create one or more different powerUps by adding/modifying <i>E_PowerType</i> present in <i>MM_Runner > Components > PowerUps > Enumeration</i> folder.</li>",
+                                        "<li>Based on the powerUpType, any powerUp will be implemented.",
+                                        "<i> e.g. Even if Invincibility data asset changes the variables related to Score, Counter or Jump powerUps, none of those variables will affect the gameplay if the powerUp category is marked as Invincibility.</i>.</li>",
+                                        "</ul>"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Data Assets",
+                            "content": [
+                                {
+                                    "type": "image",
+                                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/793/615/large/wraithcg-screenshot-2026-01-27-154018.jpg?1769535310",
+                                    "align": "right",
+                                    "caption": "PDA_PowerData"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<ul>",
+                                        "<li>There are over 5+ powerUp presets already present in the project - ",
+                                        "<ul>",
+                                        "<li><b>DA_DoubleCoins:</b> Multiplies the value of every collectible by a factor of 2.</li>",
+                                        "<li><b>DA_Invincibility:</b> Allows the player to phase through obstacles. Any obstacle the player collides with is also destroyed(visibility turned off).</li>",
+                                        "<li><b>DA_Magnet:</b> Increases the collection radius of collectibles.</li>",
+                                        "<li><b>DA_Regular:</b> It is nothing but an empty powerUp. It is intended for duplication and modification to create a new powerUp.</li>",
+                                        "<li><b>DA_ScoreMultiplier:</b> Not exactly a multiplier but changes the range of values that are added to the score every frame(according to <i>ScoreUpdateTimer</i> set in player's <i>BPC_EndlessRunnerAttributesComponent</i>.</li>",
+                                        "<li><b>DA_SuperJump:</b> Current configuration allows the player to do superJump for a fixed duration. It also has many different jump configurations available say - manual one time jumper, jump pad, auto jumper, etc; by mixing-matching jumpType and jumpFreq categories.</li>",
+                                        "</ul>"
+                                    ]
+                                },
+                                {
+                                    "type": "tip",
+                                    "value": [
+                                        "<ul>",
+                                        "<li>Lowering the perks in these data assets will negatively impact the player performance like - slow score increase, unable to collect collectibles, etc;</li>",
+                                        "<li>These negative powerUps can serve as another type of obstacles that the player should avoid.</li>",
+                                        "</ul>"
+                                    ]
+                                },
+                                {
+                                    "type": "header",
+                                    "value": "Data Asset Configuration"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<ul>",
+                                        "<li><b>PowerType:</b> Assign a unique category of powerUp.</li>",
+                                        "<li><b>PowerUpName:</b> Assign a name to the powerUp.</li>",
+                                        "<li><b>Priority:</b> Only used for layering animation data on the player character.</li>",
+                                        "<li><b>Duration:</b> The duration for which this powerUp will remain active.</li>",
+                                        "<li><b>DescriptionData:</b> Write a description, for decoration only (will be used on store page when implemented).</li>",
+                                        "<li><b>Icon:</b> PowerUp icon that will be displayed on widgets.</li>",
+                                        "<li><b>PickUpFX:</b> The niagara FX that plays when the player picks this powerUp.</li>",
+                                        "<li><b>PickUpSound:</b> The SFX that plays when this powerUp is equipped.</li>",
+                                        "<li><b>CharacterFX:</b> The niagara FX that will be attached to the player for the duration of this powerUp.</li>",
+                                        "<li><b>PickUpColor:</b> Assign a color for uniquely identifying any powerUp from a distance.</li>",
+                                        "<li><b>AttachementData:</b> Based on the same logic as of <i>CHaracterCustomizationSystem</i>, useful adding character gear for powerUp visibility.",
+                                        "<ul>",
+                                        "<li><b>isSkeletalMesh:</b> Determines whether to attach a new static or skeletal mesh component to the player character.</li>",
+                                        "<li><b>UseMasterPose:</b> Set it to <i>True</i> if the skeletal mesh to be attached to the player uses the same animation data and is based off of the same skeleton as the player character.</li>",
+                                        "<li><b>CharacterBasedSkeletalMesh:</b> This map contains the skeletal mesh to be attached to each player character. Here the key is a string(Tag) present on the character skeletal mesh. This is the same used by <i>GenericRetargeter</i>.</li>",
+                                        "<li><b>StandaloneSkeletalMesh:</b> This is the general purpose skeletal mesh that can be attached to any character.</li>",
+                                        "<li><b>StaticMesh:</b> This is used as a 3D display icon for spawned powerUp component. This will be attached to the player if <i>isSkeletalMesh</i> is set to False.</li>",
+                                        "<li><b>SocketName:</b> Leave it empty(None) if <i>UseMasterPose</i> is <i>True</i> else assign the socket name where the static/skeletal mesh should be attached.</li>",
+                                        "</li></ul>",
+                                        "<li><b>ModifyAnimation:</b> This determines whether or not equipping any powerUp affects the character's movement animation data.</li>",
+                                        "<li><b>AnimationData:</b> Similar to <i>AnimationModificationSystem</i> animation data block -",
+                                        "<ul>",
+                                        "<li><b>AnimSeq:</b> The animation sequence to use for modifying character's animations.</li>",
+                                        "<li><b>Blending:</b> In range 0 to 1, determines the intensity of layering the new animation sequence.</li>",
+                                        "<li><b>Slot:</b> The body slot to apply the animation to.</li>",
+                                        "</li></ul>",
+                                        "<li><b>MinScoreIncrease:</b> The minimum value that can be added to score at any instant.</li>",
+                                        "<li><b>MaxScoreIncrease:</b> The maximum value that can be added to score at any instant.</li>",
+                                        "<li><b>JumpType:</b> Determines if whether or not the player should jump automatically on equipping any Jump based powerUp or manually on input pressed while not performing any traversal parkour action.</li>",
+                                        "<li><b>JumpFreq:</b> Determines whether the powerUp is for single use during its duration or for multiple uses.</li>",
+                                        "<li><b>JumpCount:</b> Determines the number of concurrent jumps the player can have.</li>",
+                                        "<li><b>JumpZVelocity Min&Max:</b> The upward velocity with which the player jumps is in this range.</li>",
+                                        "<li><b>AttractionRadius:</b> Determines the radius of the collectible tracer when magnet powerUp is active.</li>",
+                                        "<li><b>CollectibleMultiplier:</b> Determines the number of collectibles collected per collectible instance when counter powerUp is active.</li>",
+                                        "</ul>"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "PowerUp Spawner",
+                            "content": [
+                                {
+                                    "type": "image",
+                                    "src": "https://cdna.artstation.com/p/assets/images/images/095/727/006/large/wraithcg-screenshot-2026-01-25-190910.jpg?1769362195",
+                                    "align": "right",
+                                    "caption": "BP_SpawnPowerUp"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<ul>",
+                                        "<li><b>OverlapRadius:</b> The radius of the sphere overlap that detects if player equipped the powerUp.</li>",
+                                        "<li><b>PowerUpData:</b> The data asset that this spawner represents.</li>",
+                                        "</ul>"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Platforms",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "World Generation"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/793/598/large/wraithcg-screenshot-2026-01-27-161055.jpg?1769535288",
+                            "align": "full",
+                            "caption": "Platforms Overview"
+                        }
+                    ],
+                    "subsections": [
+                        {
+                            "title": "Floor/Platform",
+                            "content": [
+                                {
+                                    "type": "header",
+                                    "value": "BP_Floor"
+                                },
+                                {
+                                    "type": "image",
+                                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/793/595/large/wraithcg-screenshot-2026-01-27-161251.jpg?1769535284",
+                                    "align": "full",
+                                    "caption": "BP_Floor"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<ul>",
+                                        "<li>This is the base blueprint that is spawned infinitely.</li>",
+                                        "<li>It internally has a child actor component that is assigned a platform<i>(BP_MapBase Class)</i> by the gameMode<i>(BP_RunnerGM)</i> when it is constructed.</li>",
+                                        "<li>The gameMode<i>(BP_RunnerGM)</i> keeps track of the platform to spawn based on defined rules.</li>",
+                                        "</ul>"
+                                    ]
+                                },
+                                {
+                                    "type": "header",
+                                    "value": "BP_Floor_Temp_Use"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "This is a blank copy of <i>BP_Floor</i> for scale reference. It serves no real use in the game or any other system."
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Data Assets",
+                            "content": [
+                                {
+                                    "type": "image",
+                                    "src": "",
+                                    "align": "right",
+                                    "caption": "PDA_PowerData"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<ul>",
+                                        "<li>There are over 5+ powerUp presets already present in the project - ",
+                                        "<ul>",
+                                        "<li><b>DA_DoubleCoins:</b> Multiplies the value of every collectible by a factor of 2.</li>",
+                                        "<li><b>DA_Invincibility:</b> Allows the player to phase through obstacles. Any obstacle the player collides with is also destroyed(visibility turned off).</li>",
+                                        "<li><b>DA_Magnet:</b> Increases the collection radius of collectibles.</li>",
+                                        "<li><b>DA_Regular:</b> It is nothing but an empty powerUp. It is intended for duplication and modification to create a new powerUp.</li>",
+                                        "<li><b>DA_ScoreMultiplier:</b> Not exactly a multiplier but changes the range of values that are added to the score every frame(according to <i>ScoreUpdateTimer</i> set in player's <i>BPC_EndlessRunnerAttributesComponent</i>.</li>",
+                                        "<li><b>DA_SuperJump:</b> Current configuration allows the player to do superJump for a fixed duration. It also has many different jump configurations available say - manual one time jumper, jump pad, auto jumper, etc; by mixing-matching jumpType and jumpFreq categories.</li>",
+                                        "</ul>"
+                                    ]
+                                },
+                                {
+                                    "type": "tip",
+                                    "value": [
+                                        "<ul>",
+                                        "<li>Lowering the perks in these data assets will negatively impact the player performance like - slow score increase, unable to collect collectibles, etc;</li>",
+                                        "<li>These negative powerUps can serve as another type of obstacles that the player should avoid.</li>",
+                                        "</ul>"
+                                    ]
+                                },
+                                {
+                                    "type": "header",
+                                    "value": "Data Asset Configuration"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<ul>",
+                                        "<li><b>PowerType:</b> Assign a unique category of powerUp.</li>",
+                                        "<li><b>PowerUpName:</b> Assign a name to the powerUp.</li>",
+                                        "<li><b>Priority:</b> Only used for layering animation data on the player character.</li>",
+                                        "<li><b>Duration:</b> The duration for which this powerUp will remain active.</li>",
+                                        "<li><b>DescriptionData:</b> Write a description, for decoration only (will be used on store page when implemented).</li>",
+                                        "<li><b>Icon:</b> PowerUp icon that will be displayed on widgets.</li>",
+                                        "<li><b>PickUpFX:</b> The niagara FX that plays when the player picks this powerUp.</li>",
+                                        "<li><b>PickUpSound:</b> The SFX that plays when this powerUp is equipped.</li>",
+                                        "<li><b>CharacterFX:</b> The niagara FX that will be attached to the player for the duration of this powerUp.</li>",
+                                        "<li><b>PickUpColor:</b> Assign a color for uniquely identifying any powerUp from a distance.</li>",
+                                        "<li><b>AttachementData:</b> Based on the same logic as of <i>CHaracterCustomizationSystem</i>, useful adding character gear for powerUp visibility.",
+                                        "<ul>",
+                                        "<li><b>isSkeletalMesh:</b> Determines whether to attach a new static or skeletal mesh component to the player character.</li>",
+                                        "<li><b>UseMasterPose:</b> Set it to <i>True</i> if the skeletal mesh to be attached to the player uses the same animation data and is based off of the same skeleton as the player character.</li>",
+                                        "<li><b>CharacterBasedSkeletalMesh:</b> This map contains the skeletal mesh to be attached to each player character. Here the key is a string(Tag) present on the character skeletal mesh. This is the same used by <i>GenericRetargeter</i>.</li>",
+                                        "<li><b>StandaloneSkeletalMesh:</b> This is the general purpose skeletal mesh that can be attached to any character.</li>",
+                                        "<li><b>StaticMesh:</b> This is used as a 3D display icon for spawned powerUp component. This will be attached to the player if <i>isSkeletalMesh</i> is set to False.</li>",
+                                        "<li><b>SocketName:</b> Leave it empty(None) if <i>UseMasterPose</i> is <i>True</i> else assign the socket name where the static/skeletal mesh should be attached.</li>",
+                                        "</li></ul>",
+                                        "<li><b>ModifyAnimation:</b> This determines whether or not equipping any powerUp affects the character's movement animation data.</li>",
+                                        "<li><b>AnimationData:</b> Similar to <i>AnimationModificationSystem</i> animation data block -",
+                                        "<ul>",
+                                        "<li><b>AnimSeq:</b> The animation sequence to use for modifying character's animations.</li>",
+                                        "<li><b>Blending:</b> In range 0 to 1, determines the intensity of layering the new animation sequence.</li>",
+                                        "<li><b>Slot:</b> The body slot to apply the animation to.</li>",
+                                        "</li></ul>",
+                                        "<li><b>MinScoreIncrease:</b> The minimum value that can be added to score at any instant.</li>",
+                                        "<li><b>MaxScoreIncrease:</b> The maximum value that can be added to score at any instant.</li>",
+                                        "<li><b>JumpType:</b> Determines if whether or not the player should jump automatically on equipping any Jump based powerUp or manually on input pressed while not performing any traversal parkour action.</li>",
+                                        "<li><b>JumpFreq:</b> Determines whether the powerUp is for single use during its duration or for multiple uses.</li>",
+                                        "<li><b>JumpCount:</b> Determines the number of concurrent jumps the player can have.</li>",
+                                        "<li><b>JumpZVelocity Min&Max:</b> The upward velocity with which the player jumps is in this range.</li>",
+                                        "<li><b>AttractionRadius:</b> Determines the radius of the collectible tracer when magnet powerUp is active.</li>",
+                                        "<li><b>CollectibleMultiplier:</b> Determines the number of collectibles collected per collectible instance when counter powerUp is active.</li>",
+                                        "</ul>"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Dynamic Obstacles",
+                            "content": [
+                                {
+                                    "type": "image",
+                                    "src": "https://cdna.artstation.com/p/assets/images/images/095/793/586/large/wraithcg-screenshot-2026-01-27-162144.jpg?1769535270",
+                                    "align": "full",
+                                    "caption": "Overview"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<ul>",
+                                        "<li>Dynamic Obstacles serve as obstacle family containers that spawn a random obstacle from a list of similar obstacles.</li>",
+                                        "<li>It is useful for spawning obstacles with collectibles and powerUps.</li>",
+                                        "</ul>"
+                                    ]
+                                },
+                                {
+                                    "type": "header",
+                                    "value": "Properties"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<ul>",
+                                        "<li><b>ObstacleData:</b> This takes a data asset of type - <i>PDA_DynamicObsData</i> as input.",
+                                        "<ul>",
+                                        "<li><b>ObstacleType:</b> This determines the type of the obstacles in this family.</li>",
+                                        "<li><b>CollisionObjectType:</b> This determines the collision property of the obstacles in this family.</li>",
+                                        "<li><b>ObstaclesData:</b> This is an array that contains static mesh obstacles with their spawn properties.",
+                                        "<ul>",
+                                        "<li><b>SM:</b> Assign the obstacle static mesh here.</li>",
+                                        "<li><b>SpawnCollectibles:</b> Whether or not to spawn collectibles with this obstacle.</li>",
+                                        "<li><b>ZOffset:</b> Adjust the height of the collectibles from the top of the obstacle.</li>",
+                                        "<li><b>ChanceToSpawn:</b> This is the chances of spawning a powerUp on top of this obstacle.</li>",
+                                        "</li></ul>",
+                                        "</li></ul>",
+                                        "<li><b>PowerDataSet:</b> This takes data aset of type - <i>PDA_PowerUpSets</i> as input. These are simply just different groups of powerUps. These groups make it easy for the player to predict upcoming powerUp.</li>",                                        
+                                        "<li><b>PowerUpScale:</b> This allows for adjusting the scale of any powerUp that will spawn on any obstacle in this family.</li>",                                        
+                                        "<li><b>PowerUpZOffset:</b> This is useful for adjusting the height of the spawned powerUp from the top of the obstacles.</li>",                                        
+                                        "<li><b>CollectibleData:</b> See <i>BPC_CollectibleComponent</i> for more details.</li>",                                        
+                                        "<li><b>DebugIndex:</b> For any obstacle family DA, you can visualize the properties based on its index.</li>",                                        
+                                        "<li><b>DebugObstacle:</b> Toggle this to visualize the properties of obstacle at index <i>DebugIndex</i> in terms of how any obstacle is feeling with collectibles and powerUps spawned.</li>",                                        
+                                        "</ul>"
+                                    ]
+                                },
+                                {
+                                    "type": "note",
+                                    "value": [
+                                        "<ul>",
+                                        "<li>The properties in BP_DynamicObstacles are global properties. All the obstacles spawned from <i>ObstacleData</i> will have same spawning patterns for powerUps and collectibles.</li>",
+                                        "<li>Avoid spawning collectibles on thin obstacles.</li>",
+                                        "</ul>"
+                                    ]
+                                },
+                                {
+                                    "type":"tip",
+                                    "value":[
+                                        "<li><b>Blocking</b> obstacles must be of type - <i>WorldDynamic</i>.",
+                                        "<ul>",
+                                        "<li>Blocking obstacles are those which allow climbing, vaulting, mantling, etc; traversals.",
+                                        "</li></ul>",
+                                        "<li><b>UnderRoll</b> obstacles must be of type - <i>PhysicsBody</i>.",
+                                        "<ul>",
+                                        "<li>UnderRoll obstacles are those which allow sliding, rolling etc; traversals.",
+                                        "</li></ul>",                                        
+                                        "</ul>"
+                                    ]
+                                }
+                            ]
+                        }
                     ]
                 }
             ]
@@ -1188,40 +2460,45 @@
             "title": "FAQs",
             "content": [
                 {
-                    "type": "header",
-                    "value": "General & Setup"
+                    "type": "text",
+                    "value": "<b>Q: Does this project use a custom motion matching system?</b><br><b>A:</b> No. This project uses the default motion matching setup and animations from the <i>GameAnimationSampleProject (GASP)</i>. No custom motion matching setup was created specifically for this template."
                 },
                 {
                     "type": "text",
-                    "value": "<b>Q: Does this project use a custom motion matching system?</b><br>A: No. This project uses the default motion matching setup and animations from the <i>GameAnimationSampleProject (GASP)</i>. No custom motion matching setup was created specifically for this template."
+                    "value": "<b>Q: Is game data saved?</b><br><b>A:</b> Yes. Unlike the basic game project, this template uses a SaveGame class (<i>SG_Runner</i>). It automatically saves High Scores, Total Coins, Last Selected Character, and Customization Data."
                 },
                 {
                     "type": "text",
-                    "value": "<b>Q: Is game data saved?</b><br>A: Yes. Unlike the basic game project, this template uses a SaveGame class (<i>SG_Runner</i>). It automatically saves High Scores, Total Coins, Last Selected Character, and Customization Data."
+                    "value": "<b>Q: What plugins are required?</b><br><b>A:</b> You must enable AnimationWarping, MotionWarping, AnimationLocomotionLibrary, PoseSearch, Chooser, RigLogic, LiveLink, and LiveLinkControlRig."
                 },
                 {
                     "type": "text",
-                    "value": "<b>Q: What plugins are required?</b><br>A: You must enable AnimationWarping, MotionWarping, AnimationLocomotionLibrary, PoseSearch, Chooser, RigLogic, LiveLink, and LiveLinkControlRig."
-                },
-                {
-                    "type": "header",
-                    "value": "Gameplay & Customization"
+                    "value": "<b>Q: How do I add a new character?</b><br><b>A:</b> You must create a child class of <i>CBP_SandboxCharacter</i> to preserve the running logic. Then, create a Character Data Asset and add it to the <i>DA_PDA_CSD</i> list."
                 },
                 {
                     "type": "text",
-                    "value": "<b>Q: How do I add a new character?</b><br>A: You must create a child class of <i>CBP_SandboxCharacter</i> to preserve the running logic. Then, create a Character Data Asset and add it to the <i>DA_PDA_CSD</i> list."
+                    "value": "<b>Q: Can I create a straight runner without lanes?</b><br><b>A:</b> Yes. The project includes a GameMode variant called 'Vector' specifically for straight endless runners, alongside the standard 3-Lane 'Runner' mode."
                 },
                 {
                     "type": "text",
-                    "value": "<b>Q: Can I create a straight runner without lanes?</b><br>A: Yes. The project includes a GameMode variant called 'Vector' specifically for straight endless runners, alongside the standard 3-Lane 'Runner' mode."
+                    "value": "<b>Q: How are platforms managed?</b><br><b>A:</b> The <i>BP_RunnerGM</i> manages the loop. It spawns new platforms when the player overlaps a trigger and deletes old platforms after a set time to maintain performance."
                 },
                 {
                     "type": "text",
-                    "value": "<b>Q: How are platforms managed?</b><br>A: The <i>BP_RunnerGM</i> manages the loop. It spawns new platforms when the player overlaps a trigger and deletes old platforms after a set time to maintain performance."
+                    "value": "<b>Q: Why do my custom animations look wrong?</b><br><b>A:</b> The default GASP setup is generic. For best results, you need to add specific animations to the chooser or use the <i>CharacterAnimationModification</i> system to layer changes over the base motion matching set."
                 },
                 {
-                    "type": "text",
-                    "value": "<b>Q: Why do my custom animations look wrong?</b><br>A: The default GASP setup is generic. For best results, you need to add specific animations to the chooser or use the <i>CharacterAnimationModification</i> system to layer changes over the base motion matching set."
+                    "type":"text",
+                    "value": [
+                        "<b>Q: Why do my custom animations look wrong?</b><br>",
+                        "<b>A:</b> Even if <i>SpawnCollectibles (in PDA_DynamicObsData)</i> is set to true, it may happen that collectibles are not spawning with the obstacle in the viewport of BP_DynamicObstacles -",
+                        "<ul>",
+                        "<li>Set <i>DebugIndex</i> to that obstacle's index from <i>ObstacleData</i>.</li>",
+                        "<li>Set <i>DebugObstacle</i> to True.</li>",
+                        "<li>Play the game.</li>",
+                        "<li>In my testing, collectibles were not visible in the viewport, but were spawning correctly during gameplay. This is most likely to do with how world transforms and relative transforms work and I might be using the wrong ones in the wrong places.</li>",
+                        "</ul>"
+                    ]
                 }
             ]
         },
