@@ -48,6 +48,14 @@
               "status": "completed",
               "features": [
                 "Emote System ",
+                "New Customization Assets",
+              "New Customization Assets",
+"Rewritten logic for better functionality",
+"Support for paired and weighted skeletal meshes",
+"Instead of creating a data asset for different categories, now each character has single data asset containing all the data",
+"Fixed Disappearing mouse pointer on menu screens",
+"Fixed camera rotation",
+"Added camera rig for each customization category",
                 "Simplified Widget Blueprints",
                 "Unification of elements and styles across the screens "
               ]
@@ -58,7 +66,8 @@
               "status": "planned",
               "features": [
                 "Circular Character Customization List",
-                "Save Customizations Per Character"
+                "Save Customizations Per Character",
+                "Item Inspection"
               ]
             }
           ]
@@ -116,217 +125,158 @@
           "value": [
             "<ul><li><b>Widget Architecture:</b> Screens are simplified by reusable Widget Elements (prefixed with E_).</li>",
             "<li><b>Emotes:</b> Characters now play emote animations during the selection process.</li>",
-            "<li><b>Bidirection Circular Selection List:</b>",
-            "<ul><li>Circular List means if the player is at first selectable character and clicks the PreviousCharacterButton, they will traverse the selection list in reverse order.",
-            "<li>Similarly, if they are at the last selectable character and click the NextCharacterButton, they will reach the starting of list again.</li>",
-            "<li>If CircularList is False, then the players cannot go to last character from first character and vice versa.",
-            "<li>Get Previous and Next Character buttons are also enabled/disabled accordingly.</li></ul>",
-            "<li><b>Quality of Life:</b> <ul><li>Fixed camera rotation during gameplay</li><li>Fixed cursor visibility issues.</li></ul></li></ul>"
+            "<li><b>Quality of Life:</b> <ul><li>Fixed camera rotation during gameplay</li>",
+            "<li>Fixed cursor visibility issues.</li></ul>"
           ]
         }
       ]
     },
     {
-            "title": "Player Character",
-            "content": [
-                {
-                    "type": "header",
-                    "value": "Player Character Blueprint"
-                },
-                {
-                    "type": "image",
-                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/647/large/wraithcg-screenshot-2026-01-21-235711.jpg?1769069370",
-                    "align": "full",
-                    "caption": "Character Interfaces Graph"
-                },
-                {
-                    "type": "text",
-                    "value": "The graphs and actions are respectfully spread out across different categories so that everything is easier to find and modify. Categories include: EventGraph, and InterfaceGraph."
-                }
-            ],
-            "subsections": [
-                {
-                    "title": "Player Attributes Component",
-                    "content": [
-                        {
-                            "type": "header",
-                            "value": "BPC_PlayerAttributesComponent"
-                        },
-                        {
-                            "type": "image",
-                            "src": "https://cdna.artstation.com/p/assets/images/images/095/627/646/large/wraithcg-screenshot-2026-01-21-235545.jpg?1769069366",
-                            "align": "full",
-                            "caption": "Player Attributes Details"
-                        },
-                        {
-                            "type": "text",
-                            "value": "This component manages critical character data:"
-                        },
-                        {
-                            "type": "text",
-                            "value": [
-                                "<ul>",
-                                "<li><b>Décor Data:</b> Used on Character Selection Screen to highlight qualities (modify via <i>S_Attributes</i> struct).</li>",
-                                "<li><b>Ragdoll on Death:</b> Determines if the player character ragdolls when overlapping the death trigger.</li>",
-                                "<li><b>Aim Offsets:</b> Adjusts camera translation/rotation when aiming in First Person mode.</li>",
-                                "<li><b>Emote</b>:<ul>",
-                                "<li><b>Wait Time:</b> It is the amount of wait before the player starts to emote on any screen.</li>",
-                                "<li><b>Blend Out Time:</b> Time taken to abruptly stop an emote.</li>",
-                                "<li><b>Min and Max Delays:</b> A random time between these is used to blend out an emote abruptly when there is an another emote sequence to play.</li>",
-                                "<li><b>Emote Data:</b> Data asset containing emoting sequences per widget screen.</li></ul></li>",
-                                "<li><b>Debug:</b>",
-                                "<ul><li><b>Debug Sequence Index:</b>This prints which emote sequence index is currently playing on the character.</li>",
-                                "<li><b>Debug Anim Montage:</b> This prints the name of the emote montage currently playing on the character.</li></ul></li>",
-                                "<li><b>DefaultBoomOffset & DefaultBoomOffset_Crouched:</b> Present in 5.7 version of the project because the gameplay camera rig does not works without boom offset ( I might be wrong though).</li>",
-                                "</li></ul>"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "title": "Emote System",
-                    "content": [
-                        {
-                            "type": "header",
-                            "value": "Emote Data Asset"
-                        },
-                        {
-                            "type": "image",
-                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/645/large/wraithcg-screenshot-2026-01-21-235504.jpg?1769069362",
-                            "align": "full",
-                            "caption": "DA_EmoteActionData Setup"
-                        },
-                        {
-                            "type": "text",
-                            "value": [
-                                "<b>Emote Data Asset:</b> This is a map of emote data with respect to a widget screen.",
-                                "<ul>",
-                                "<li><b>Abort Previous:</b> This aborts the emote montage abruptly and starts a fresh sequence of emote montages available for a widget screen.</li>",
-                                "<li>If the previous emote sequence is not aborted, then the emote sequence related to previous widget screen is completed first and then the new emote sequence is used.</li>",
-                                "<li><b>AnimationMontages:</b> Contains the montage sequences.</li>",
-                                "<li><b>SequenceStart:</b> Contains the montage that is played for starting the sequence.</li>",
-                                "<li><b>SequenceEnd:</b> Mostly used as transition from sequence to another.</li>",
-                                "<li><b>PlaySequentially:</b> Whether or not to play all the montages in a sequential order. If not then any number of montages are selected and played for some time. When one sequence is complete, then another sequence  from AnimationMontages array is searched and selected for playing if available.</li></ul>"
-                            ]
-                        },
-                        {
-                            "type": "tip",
-                            "value": [
-                                "You can define more than one montage sequence like –",
-                                "<ul><li>Standing up -> Greeting the player -> Sitting down</li>",
-                                "<li>Taking out phone -> Using it -> Putting it down</li>"
-                            ]
-                        },
-                        {
-                            "type": "note",
-                            "value": [
-                                "Note that any montage needs time to start and end. If the widget screens are switched a lot, the player character may glitch when playing montages becaues every widget screen on re-initializes the emote system."
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "title": "Character Customization System",
-                    "content": [
-                        {
-                            "type": "header",
-                            "value": "System Overview"
-                        },
-                        {
-                            "type": "text",
-                            "value": "Customization data is fetched from the current character's data asset (<i>DA_PDA_CD_xyz</i>) which contains per-character selection and customization data.In this project, all characters must inherit <b>CBP_SandboxCharacter</b> to preserve running logic."
-                        },
-                        {
-                            "type": "text",
-                            "value": [
-                                "<ul>",
-                                "<li>If you have setup your character class the right way then continue else refer to previous section for more info on Adding New Characters.</li>",
-                                "<li>Open your character's skeletal mesh.</li>",
-                                "<li>Setup sockets on your character skeleton.</li>",
-                                "<li>If you're using skeletal meshes such as clothing items, make sure they are rigged to the same character skeleton and properly weighted.</li>",
-                                "</ul>"
-                            ]
-                        },
-                        {
-                            "type": "tip",
-                            "value": "You can consider checking out how to set up sockets on your character's skeletal mesh on Youtube."
-                        },
-                        {
-                            "type": "header",
-                            "value": "Data Asset Setup"
-                        },
-                        {
-                            "type": "image",
-                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/677/large/wraithcg-screenshot-2026-01-22-001424.jpg?1769069424",
-                            "align": "full",
-                            "caption": "DA_PDA_CCD_xyz Details"
-                        },
-                        {
-                            "type": "text",
-                            "value": [
-                                "<ul>",
-                                "<li>Go inside <i>Components > Customization > DA</i> folder and duplicate any existing data asset. Name it DA_PDA_CCD_yourCharacter.</li>",
-                                "<li>Open the data asset and click on the trash icon to empty the AttachmentData.</li>",
-                                "<li>Click the plus icon to add a new element in the map.</li>",
-                                "<li>The default value will be none. Click on it and select your desired category - Face, Torso, Legs or Shoes.</li>",
-                                "<li>Expand the section and click on plus icon to add items in that category.</li>",
-                                "<li>Always keep the first item in any category empty. This indicates the no attachments state for the character during the customization process.</li>",
-                                "<li>In the next item, fill the appropriate data -",
-                                "<ul>",
-                                "<li><b>isSkeletalMesh: </b> Determines if or not the item to be attached to the character is a skeletal mesh or a static mesh.</li>",
-                                "<li><b>SkeletalMesh: </b> If this item is a skeletal mesh, i.e. <i>isSkeletalMesh</i> is set to true, then select your desired mesh.</li>",
-                                "<li><b>AnimBPSkeletalMesh: </b> If this skeletal mesh has its own animation blueprint, then select it here or leave it empty.</li>",
-                                "<li><b>UseMasterPose: </b> Set this to true if you want this item to follow and character's animation data like clothing assets, else leave it false.</li>",
-                                "<li><b>StaticMesh: </b> Select your static mesh asset if this item is not a skeletal mesh.</li>",
-                                "<li><b>AttachmentCategory: </b> Select the category of this item. This category should be carefully set. The category of the map is used by the widget screen but the inside category is used by the player character.</li>",
-                                "<li><b>SocketName: </b> The socket to which this item will be attached. If <i>UseMasterPose</i> is set to true, then leave it None.</li>",
-                                "<li><b>ItemDescription: </b> This field can be used to write about the item's lore, defining features or properties.</li>",
-                                "</li>",
-                                "</ul>"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "title": "Animation Blueprint",
-                    "content": [
-                        {
-                            "type": "header",
-                            "value": "ABP_SandboxCharacter"
-                        },
-                        {
-                            "type": "image",
-                            "src": "https://placehold.co/800x400/333/FFF?text=AnimGraph+Logic",
-                            "align": "full",
-                            "caption": "Animation Blueprint Graph"
-                        },
-                        {
-                            "type": "text",
-                            "value": [
-                                "The animation blueprint is modified for custom animation modification and stabilizing camera movement.",
-                                "<ul><li><b>P_CameraBlended:</b> Outputs poses blended for ThirdPerson/FirstPerson states.</li>",
-                                "<li><b>P_AnimModified:</b> Outputs animations after modification.</li>",
-                                "<li><b>Logic:</b> When a traversal action occurs or <i>UseCustomAnimationData</i> is false, modification stops. You can plug any animation or custom processed pose at the place of ‘M_Neutral_Stand_Idle_Loop’ for better camera control.</li></ul>"
-                            ]
-                        },
-                        {
-                            "type": "header",
-                            "value": "Animation Modifiers"
-                        },
-                        {
-                            "type": "image",
-                            "src": "https://placehold.co/800x400/333/FFF?text=AnimGraph+Logic",
-                            "align": "full",
-                            "caption": "Animation Modification System"
-                        },
-                        {
-                            "type": "text",
-                            "value": "Enable <b>UseCustomAnimationData</b> to modify animations for specific actions (e.g., Running, Jumping) .<br>Define a <i>ModifierAnimation</i>, a <i>BlendValue</i> (0.0–1.0), and a list of <i>BoneToAffect</i> (from E_BonesToModify).Current categories: UpperBody, LeftArm, RightArm, LeftThigh, RightThigh."
-                        }
-                    ]
-                }
-            ]
+      "title": "Player Character",
+      "content": [
+        {
+          "type": "header",
+          "value": "Player Character Blueprint"
         },
+        {
+          "type": "image",
+          "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/647/large/wraithcg-screenshot-2026-01-21-235711.jpg?1769069370",
+          "align": "full",
+          "caption": "Character Interfaces Graph"
+        },
+        {
+          "type": "text",
+          "value": "The graphs and actions are respectfully spread out across different categories so that everything is easier to find and modify. Categories include: EventGraph, and InterfaceGraph."
+        }
+      ],
+      "subsections": [
+        {
+          "title": "Player Attributes Component",
+          "content": [
+            {
+              "type": "header",
+              "value": "BPC_PlayerAttributesComponent"
+            },
+            {
+              "type": "image",
+              "src": "https://cdna.artstation.com/p/assets/images/images/095/627/646/large/wraithcg-screenshot-2026-01-21-235545.jpg?1769069366",
+              "align": "full",
+              "caption": "Player Attributes Details"
+            },
+            {
+              "type": "text",
+              "value": "This component manages critical character data:"
+            },
+            {
+              "type": "text",
+              "value": [
+                "<ul>",
+                "<li><b>Décor Data:</b> Used on Character Selection Screen to highlight qualities (modify via <i>S_Attributes</i> struct).</li>",
+                "<li><b>Ragdoll on Death:</b> Determines if the player character ragdolls when overlapping the death trigger.</li>",
+                "<li><b>Aim Offsets:</b> Adjusts camera translation/rotation when aiming in First Person mode.</li>",
+                "<li><b>Emote</b>:<ul>",
+                "<li><b>Wait Time:</b> It is the amount of wait before the player starts to emote on any screen.</li>",
+                "<li><b>Blend Out Time:</b> Time taken to abruptly stop an emote.</li>",
+                "<li><b>Min and Max Delays:</b> A random time between these is used to blend out an emote abruptly when there is an another emote sequence to play.</li>",
+                "<li><b>Emote Data:</b> Data asset containing emoting sequences per widget screen.</li></ul></li>",
+                "<li><b>Debug:</b>",
+                "<ul><li><b>Debug Sequence Index:</b>This prints which emote sequence index is currently playing on the character.</li>",
+                "<li><b>Debug Anim Montage:</b> This prints the name of the emote montage currently playing on the character.</li></ul></li>",
+                "<li><b>DefaultBoomOffset & DefaultBoomOffset_Crouched:</b> Present in 5.7 version of the project because the gameplay camera rig does not works without boom offset ( I might be wrong though).</li>",
+                "</li></ul>"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Character Customization System",
+          "content": [
+            {
+              "type": "header",
+              "value": "System Overview"
+            },
+            {
+              "type": "text",
+              "value": "Customization data is fetched from the current character's data asset (<i>DA_PDA_CD_xyz</i>) which contains per-character selection and customization data.In this project, all characters must inherit <b>CBP_SandboxCharacter</b> to preserve running logic."
+            },
+            {
+              "type": "text",
+              "value": [
+                "<ul>",
+                "<li>If you have setup your character class the right way then continue else refer to previous section for more info on Adding New Characters.</li>",
+                "<li>Open your character's skeletal mesh.</li>",
+                "<li>Setup sockets on your character skeleton.</li>",
+                "<li>If you're using skeletal meshes such as clothing items, make sure they are rigged to the same character skeleton and properly weighted.</li>",
+                "</ul>"
+              ]
+            },
+            {
+              "type": "tip",
+              "value": "You can consider checking out how to set up sockets on your character's skeletal mesh on Youtube."
+            },
+            {
+              "type": "header",
+              "value": "Data Asset Setup"
+            },
+            {
+              "type": "image",
+              "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/677/large/wraithcg-screenshot-2026-01-22-001424.jpg?1769069424",
+              "align": "full",
+              "caption": "DA_PDA_CCD_xyz Details"
+            },
+            {
+              "type": "text",
+              "value": [
+                "<ul>",
+                "<li>Go inside <i>Components > Customization > DA</i> folder and duplicate any existing data asset. Name it DA_PDA_CCD_yourCharacter.</li>",
+                "<li>Open the data asset and click on the trash icon to empty the AttachmentData.</li>",
+                "<li>Click the plus icon to add a new element in the map.</li>",
+                "<li>The default value will be none. Click on it and select your desired category - Face, Torso, Legs or Shoes.</li>",
+                "<li>Expand the section and click on plus icon to add items in that category.</li>",
+                "<li>Always keep the first item in any category empty. This indicates the no attachments state for the character during the customization process.</li>",
+                "<li>In the next item, fill the appropriate data -",
+                "<ul>",
+                "<li><b>isSkeletalMesh: </b> Determines if or not the item to be attached to the character is a skeletal mesh or a static mesh.</li>",
+                "<li><b>SkeletalMesh: </b> If this item is a skeletal mesh, i.e. <i>isSkeletalMesh</i> is set to true, then select your desired mesh.</li>",
+                "<li><b>AnimBPSkeletalMesh: </b> If this skeletal mesh has its own animation blueprint, then select it here or leave it empty.</li>",
+                "<li><b>UseMasterPose: </b> Set this to true if you want this item to follow and character's animation data like clothing assets, else leave it false.</li>",
+                "<li><b>StaticMesh: </b> Select your static mesh asset if this item is not a skeletal mesh.</li>",
+                "<li><b>AttachmentCategory: </b> Select the category of this item. This category should be carefully set. The category of the map is used by the widget screen but the inside category is used by the player character.</li>",
+                "<li><b>SocketName: </b> The socket to which this item will be attached. If <i>UseMasterPose</i> is set to true, then leave it None.</li>",
+                "<li><b>ItemDescription: </b> This field can be used to write about the item's lore, defining features or properties.</li>",
+                "</li>",
+                "</ul>"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Camera System",
+          "content": [
+            {
+              "type": "header",
+              "value": "Camera Director"
+            },
+            {
+              "type": "text",
+              "value": [
+                "<ul>",
+                "<li>The system uses a component-based camera manager on the character blueprint.</li",
+                "<li><b>States:</b> Controls properties for MainMenu, Selection, and Gameplay.</li",
+                "<li><b>Rigs:</b> Specific Data Assets defining camera behavior for each state.</li>",
+                "</ul>"
+              ]
+            },
+            {
+              "type": "image",
+              "src": "https://placehold.co/800x400/111/FFF?text=World+Settings+Setup",
+              "align": "full",
+              "caption": "Camera System Overview"
+            }
+          ]
+        }
+      ]
+    },
     {
       "title": "Blueprint Implementation",
       "content": [
@@ -337,9 +287,11 @@
         {
           "type": "text",
           "value": [
-            "The system uses <b>BPI_PlayerInterface</b> across multiple classes:<ul><li><b>Widget:</b> Receives messages to disable buttons.</li>",
+            "The system uses <b>BPI_PlayerInterface</b> across multiple classes:</li",
+                "<ul><li><b>Widget:</b> Receives messages to disable buttons.</li>",
             "<li><b>GameMode:</b> Handles construction/deconstruction of widgets.</li>",
-            "<li><b>Character:</b> Receives input availability messages."
+            "<li><b>Character:</b> Receives input availability messages.</li",
+                "</ul>"
           ]
         },
         {
@@ -352,7 +304,8 @@
             "Ensure your blueprint inherits from the standard Character class and implements <i>BPI_PlayerInterface</i>.",
             "Add the <b>BPC_PlayerAttributes</b> component to store CustomizationData data assets.",
             "Config:",
-            "<ul><li>Create data assets of type DA_PDA_xyz"
+            "<ul><li>Create data assets of type <i>DA_PDA_xyz</i>.</li",
+                "<li>"
           ]
         },
         {
@@ -378,7 +331,7 @@
           "type": "image",
           "src": "https://placehold.co/800x400/555/FFF?text=Selection+Screen+UI",
           "align": "full",
-          "caption": "Character Customization Usesr Interface"
+          "caption": "Character Customization User Interface"
         },
         {
           "type": "header",
@@ -414,25 +367,6 @@
           "src": "https://placehold.co/800x400/111/FFF?text=World+Settings+Setup",
           "align": "full",
           "caption": "Configuring World Settings for playing in new level."
-        }
-      ]
-    },
-    {
-      "title": "Camera System",
-      "content": [
-        {
-          "type": "header",
-          "value": "Camera Director"
-        },
-        {
-          "type": "text",
-          "value": "The system uses a component-based camera manager on the character blueprint .<br>• <b>States:</b> Controls properties for MainMenu, Selection, and Gameplay .<br>• <b>Rigs:</b> Specific Data Assets defining camera behavior for each state."
-        },
-        {
-          "type": "image",
-          "src": "https://placehold.co/800x400/111/FFF?text=World+Settings+Setup",
-          "align": "full",
-          "caption": "Camera System Overview"
         }
       ]
     },

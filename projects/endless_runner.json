@@ -1,13 +1,13 @@
 {
     "id": "endless-runner-mm-v1.4",
-    "title": "Endless Runner Template (Motion Matching)",
+    "title": "Endless Runner Template (Motion Matching) WIP",
     "sections": [
         {
             "title": "Introduction",
             "content": [
                 {
                     "type": "image",
-                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/151/215/large/wraithcg-edsplash.webp?1767767615",
+                    "src": "https://media.fab.com/image_previews/gallery_images/b636b9c7-6030-4cfc-a191-984a9521039d/48dfb330-2ddc-40ee-98cf-f5685cf34c7a.jpg",
                     "align": "full",
                     "caption": "Endless Runner Game Template with Motion Matching (v1.4)"
                 },
@@ -18,6 +18,18 @@
                 {
                     "type": "text",
                     "value": "This document serves as a comprehensive guide to the <b>Infinite Runner Template</b>, which has been integrated with <b>Motion Matching</b>. The template provides a robust framework for creating endless runner games in Unreal Engine, featuring dynamic obstacle generation, character selection, customization, and a power-ups system."
+                },
+                {
+                    "type":"text",
+                    "value":[
+                        "<b>Showcase Videos</b>:",
+                        "<ul>",
+                        "<li><a id=\"link\" href=\"https://youtu.be/rBk-THbrwZw?si=R4loV-GOLNUfO3IA\">Version 1.3</a></li>",
+                        "<li><a id=\"link\" href=\"https://youtu.be/6Qa-VcjqNEQ?si=2MGE5pFnEhQg6_1V\">Version 1.2</a></li>",
+                        "<li><a id=\"link\" href=\"https://youtu.be/bw_BQr_kRls?si=3gg5rXyBBd7KaOnU\">Version 1.1</a></li>",
+                        "<li><a id=\"link\" href=\"https://youtu.be/K-krpW_bsBU?si=Nhzo6mmJOQ3qbzhd\">Version 1.0</a></li>",
+                        "</ul>"
+                    ]
                 },
                 {
                     "type": "tip",
@@ -196,7 +208,7 @@
                 },
                 {
                     "type": "image",
-                    "src": "",
+                    "src": "https://media.fab.com/image_previews/gallery_images/c9babf88-20de-41b8-b032-fed5836433f4/54d0f005-6df6-4015-8be7-ba16cc74d9fe.jpg",
                     "align": "right",
                     "caption": "UI Display"
                 },
@@ -215,7 +227,7 @@
                 },
                 {
                     "type": "image",
-                    "src": "https://placehold.co/800x400/222/FFF?text=Game+Variants",
+                    "src": "https://media.fab.com/image_previews/gallery_images/b8623b31-617f-411c-9d37-fae3a06874b3/e6535139-8102-4bcf-aae3-21098e58ea3a.jpg",
                     "align": "right",
                     "caption": "Game Modes"
                 },
@@ -311,10 +323,12 @@
                 {
                     "type": "text",
                     "value": [
-                        "<ul><li>Environment Creation Tools have been included in the project.</li>",
+                        "<ul>",
+                        "<li>Environment Creation Tools have been included in the project.</li>",
                         "<li>Support for both static and animatable skeletal meshes.</li>",
                         "<li>Control over how far from the player, the skeletal mesh animation plays.</li>",
-                        "<li>Ability to create environments separately and attach them to platforms.</li></ul>"
+                        "<li>Ability to create environments separately and attach them to platforms.</li>",
+                        "</ul>"
                     ]
                 },
                 {
@@ -378,7 +392,6 @@
         {
             "title": "Core Systems",
             "content": [
-                
                 {
                     "type": "image",
                     "src": "https://cdna.artstation.com/p/assets/images/images/095/727/016/large/wraithcg-screenshot-2026-01-25-084011.jpg?1769362205",
@@ -1413,9 +1426,24 @@
                         {
                             "type": "note",
                             "value": [
-                                "<ul><li>The standard death tracer is turned off during parkour actions and a separate new collision tracer is initialized to allow selective collision behaviour during parkour.</li>",
+                                "<ul>",
+                                "<li>The standard death tracer is turned off during parkour actions and a separate new collision tracer is initialized to allow selective collision behaviour during parkour.</li>",
                                 "<li>It is recommended to setup your parkour montages correctly by taking reference of the closest parkour action montage already present in the project.</li>",
-                                "<li>The rolling animation used here is clipped from jump landing roll montages. Due to its short length, the state switch from rolling to running has been delayed by a second in <i>BPC_EndlessRunnerAttributesComponent</i>.</ul>"
+                                "<li>The rolling animation used here is clipped from jump landing roll montages. Due to its short length, the state switch from rolling to running has been delayed by a second in <i>BPC_EndlessRunnerAttributesComponent</i>.</li>",
+                                "</ul>"
+                            ]
+                        },
+                        {
+                            "type": "header",
+                            "value": "AN_FullHeadBlend"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li>Use this notify on parkour montages like Sliding, Rolling where when the player is in FirstPerson mode, camera stabilization mechanics do not interfere with the montage.</li>",
+                                "<li>See sliding and rolling montages present in the project for more details.</li>",
+                                "</ul>"
                             ]
                         }
                     ]
@@ -1430,10 +1458,6 @@
                         {
                             "type": "text",
                             "value": "This is a blueprint that can spawn static and skeletal meshes and blueprint actors based on specified spawn rules with randomization options."
-                        },
-                        {
-                            "type": "note",
-                            "value": " This does not serves any purpose as of present but was included on request of a discord member :)"
                         },
                         {
                             "type": "header",
@@ -1559,6 +1583,31 @@
                                         "<li><b>RandomSeed:</b> This boolean determines whether or not to use random seed for randomizing spawned instances.</li>",
                                         "<li><b>SeedValue:</b> If <i>RandomSeed</i> is false, then the instances are transformed based on this seed value.</li>",
                                         "<li><b>TransformationMin & MaxRanges:</b> This determines the maxium and minium extent of random transforms of the spawned instances.</li>",
+                                        "</ul>"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Decor Data",
+                            "content": [
+                                {
+                                    "type": "header",
+                                    "value": "BP_DecorData"
+                                },
+                                {
+                                    "type": "image",
+                                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/689/large/wraithcg-screenshot-2026-01-22-001738.jpg?1769069440",
+                                    "align": "full",
+                                    "caption": "BP_DecorData"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<ul>",
+                                        "<li>These are custom blueprints that contain custom logic/assets etc;</li>",
+                                        "<li>These are spawned in the environment for increasing immersion.</li>",
+                                        "<i> e.g. flickering lights, randomized street sign spawner, etc;",
                                         "</ul>"
                                     ]
                                 }
@@ -1779,86 +1828,6 @@
                             ]
                         },
                         {
-                            "title": "Data Assets",
-                            "content": [
-                                {
-                                    "type": "image",
-                                    "src": "",
-                                    "align": "right",
-                                    "caption": "PDA_PowerData"
-                                },
-                                {
-                                    "type": "text",
-                                    "value": [
-                                        "<ul>",
-                                        "<li>There are over 5+ powerUp presets already present in the project - ",
-                                        "<ul>",
-                                        "<li><b>DA_DoubleCoins:</b> Multiplies the value of every collectible by a factor of 2.</li>",
-                                        "<li><b>DA_Invincibility:</b> Allows the player to phase through obstacles. Any obstacle the player collides with is also destroyed(visibility turned off).</li>",
-                                        "<li><b>DA_Magnet:</b> Increases the collection radius of collectibles.</li>",
-                                        "<li><b>DA_Regular:</b> It is nothing but an empty powerUp. It is intended for duplication and modification to create a new powerUp.</li>",
-                                        "<li><b>DA_ScoreMultiplier:</b> Not exactly a multiplier but changes the range of values that are added to the score every frame(according to <i>ScoreUpdateTimer</i> set in player's <i>BPC_EndlessRunnerAttributesComponent</i>.</li>",
-                                        "<li><b>DA_SuperJump:</b> Current configuration allows the player to do superJump for a fixed duration. It also has many different jump configurations available say - manual one time jumper, jump pad, auto jumper, etc; by mixing-matching jumpType and jumpFreq categories.</li>",
-                                        "</ul>"
-                                    ]
-                                },
-                                {
-                                    "type": "tip",
-                                    "value": [
-                                        "<ul>",
-                                        "<li>Lowering the perks in these data assets will negatively impact the player performance like - slow score increase, unable to collect collectibles, etc;</li>",
-                                        "<li>These negative powerUps can serve as another type of obstacles that the player should avoid.</li>",
-                                        "</ul>"
-                                    ]
-                                },
-                                {
-                                    "type": "header",
-                                    "value": "Data Asset Configuration"
-                                },
-                                {
-                                    "type": "text",
-                                    "value": [
-                                        "<ul>",
-                                        "<li><b>PowerType:</b> Assign a unique category of powerUp.</li>",
-                                        "<li><b>PowerUpName:</b> Assign a name to the powerUp.</li>",
-                                        "<li><b>Priority:</b> Only used for layering animation data on the player character.</li>",
-                                        "<li><b>Duration:</b> The duration for which this powerUp will remain active.</li>",
-                                        "<li><b>DescriptionData:</b> Write a description, for decoration only (will be used on store page when implemented).</li>",
-                                        "<li><b>Icon:</b> PowerUp icon that will be displayed on widgets.</li>",
-                                        "<li><b>PickUpFX:</b> The niagara FX that plays when the player picks this powerUp.</li>",
-                                        "<li><b>PickUpSound:</b> The SFX that plays when this powerUp is equipped.</li>",
-                                        "<li><b>CharacterFX:</b> The niagara FX that will be attached to the player for the duration of this powerUp.</li>",
-                                        "<li><b>PickUpColor:</b> Assign a color for uniquely identifying any powerUp from a distance.</li>",
-                                        "<li><b>AttachementData:</b> Based on the same logic as of <i>CHaracterCustomizationSystem</i>, useful adding character gear for powerUp visibility.",
-                                        "<ul>",
-                                        "<li><b>isSkeletalMesh:</b> Determines whether to attach a new static or skeletal mesh component to the player character.</li>",
-                                        "<li><b>UseMasterPose:</b> Set it to <i>True</i> if the skeletal mesh to be attached to the player uses the same animation data and is based off of the same skeleton as the player character.</li>",
-                                        "<li><b>CharacterBasedSkeletalMesh:</b> This map contains the skeletal mesh to be attached to each player character. Here the key is a string(Tag) present on the character skeletal mesh. This is the same used by <i>GenericRetargeter</i>.</li>",
-                                        "<li><b>StandaloneSkeletalMesh:</b> This is the general purpose skeletal mesh that can be attached to any character.</li>",
-                                        "<li><b>StaticMesh:</b> This is used as a 3D display icon for spawned powerUp component. This will be attached to the player if <i>isSkeletalMesh</i> is set to False.</li>",
-                                        "<li><b>SocketName:</b> Leave it empty(None) if <i>UseMasterPose</i> is <i>True</i> else assign the socket name where the static/skeletal mesh should be attached.</li>",
-                                        "</li></ul>",
-                                        "<li><b>ModifyAnimation:</b> This determines whether or not equipping any powerUp affects the character's movement animation data.</li>",
-                                        "<li><b>AnimationData:</b> Similar to <i>AnimationModificationSystem</i> animation data block -",
-                                        "<ul>",
-                                        "<li><b>AnimSeq:</b> The animation sequence to use for modifying character's animations.</li>",
-                                        "<li><b>Blending:</b> In range 0 to 1, determines the intensity of layering the new animation sequence.</li>",
-                                        "<li><b>Slot:</b> The body slot to apply the animation to.</li>",
-                                        "</li></ul>",
-                                        "<li><b>MinScoreIncrease:</b> The minimum value that can be added to score at any instant.</li>",
-                                        "<li><b>MaxScoreIncrease:</b> The maximum value that can be added to score at any instant.</li>",
-                                        "<li><b>JumpType:</b> Determines if whether or not the player should jump automatically on equipping any Jump based powerUp or manually on input pressed while not performing any traversal parkour action.</li>",
-                                        "<li><b>JumpFreq:</b> Determines whether the powerUp is for single use during its duration or for multiple uses.</li>",
-                                        "<li><b>JumpCount:</b> Determines the number of concurrent jumps the player can have.</li>",
-                                        "<li><b>JumpZVelocity Min&Max:</b> The upward velocity with which the player jumps is in this range.</li>",
-                                        "<li><b>AttractionRadius:</b> Determines the radius of the collectible tracer when magnet powerUp is active.</li>",
-                                        "<li><b>CollectibleMultiplier:</b> Determines the number of collectibles collected per collectible instance when counter powerUp is active.</li>",
-                                        "</ul>"
-                                    ]
-                                }
-                            ]
-                        },
-                        {
                             "title": "Dynamic Obstacles",
                             "content": [
                                 {
@@ -1896,12 +1865,12 @@
                                         "<li><b>ChanceToSpawn:</b> This is the chances of spawning a powerUp on top of this obstacle.</li>",
                                         "</li></ul>",
                                         "</li></ul>",
-                                        "<li><b>PowerDataSet:</b> This takes data aset of type - <i>PDA_PowerUpSets</i> as input. These are simply just different groups of powerUps. These groups make it easy for the player to predict upcoming powerUp.</li>",                                        
-                                        "<li><b>PowerUpScale:</b> This allows for adjusting the scale of any powerUp that will spawn on any obstacle in this family.</li>",                                        
-                                        "<li><b>PowerUpZOffset:</b> This is useful for adjusting the height of the spawned powerUp from the top of the obstacles.</li>",                                        
-                                        "<li><b>CollectibleData:</b> See <i>BPC_CollectibleComponent</i> for more details.</li>",                                        
-                                        "<li><b>DebugIndex:</b> For any obstacle family DA, you can visualize the properties based on its index.</li>",                                        
-                                        "<li><b>DebugObstacle:</b> Toggle this to visualize the properties of obstacle at index <i>DebugIndex</i> in terms of how any obstacle is feeling with collectibles and powerUps spawned.</li>",                                        
+                                        "<li><b>PowerDataSet:</b> This takes data aset of type - <i>PDA_PowerUpSets</i> as input. These are simply just different groups of powerUps. These groups make it easy for the player to predict upcoming powerUp.</li>",
+                                        "<li><b>PowerUpScale:</b> This allows for adjusting the scale of any powerUp that will spawn on any obstacle in this family.</li>",
+                                        "<li><b>PowerUpZOffset:</b> This is useful for adjusting the height of the spawned powerUp from the top of the obstacles.</li>",
+                                        "<li><b>CollectibleData:</b> See <i>BPC_CollectibleComponent</i> for more details.</li>",
+                                        "<li><b>DebugIndex:</b> For any obstacle family DA, you can visualize the properties based on its index.</li>",
+                                        "<li><b>DebugObstacle:</b> Toggle this to visualize the properties of obstacle at index <i>DebugIndex</i> in terms of how any obstacle is feeling with collectibles and powerUps spawned.</li>",
                                         "</ul>"
                                     ]
                                 },
@@ -1911,12 +1880,13 @@
                                         "<ul>",
                                         "<li>The properties in BP_DynamicObstacles are global properties. All the obstacles spawned from <i>ObstacleData</i> will have same spawning patterns for powerUps and collectibles.</li>",
                                         "<li>Avoid spawning collectibles on thin obstacles.</li>",
+                                        "<li>Keep the <i>ChancesToSpawnPowerUp</i> low to avoid accumulation of powerUps with the player.</li>",
                                         "</ul>"
                                     ]
                                 },
                                 {
-                                    "type":"tip",
-                                    "value":[
+                                    "type": "tip",
+                                    "value": [
                                         "<li><b>Blocking</b> obstacles must be of type - <i>WorldDynamic</i>.",
                                         "<ul>",
                                         "<li>Blocking obstacles are those which allow climbing, vaulting, mantling, etc; traversals.",
@@ -1924,522 +1894,315 @@
                                         "<li><b>UnderRoll</b> obstacles must be of type - <i>PhysicsBody</i>.",
                                         "<ul>",
                                         "<li>UnderRoll obstacles are those which allow sliding, rolling etc; traversals.",
-                                        "</li></ul>",                                        
+                                        "</li></ul>",
                                         "</ul>"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Enemies",
+                            "content": [
+                                {
+                                    "type": "image",
+                                    "src": "https://cdna.artstation.com/p/assets/images/images/095/793/586/large/wraithcg-screenshot-2026-01-27-162144.jpg?1769535270",
+                                    "align": "full",
+                                    "caption": "Overview"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<ul>",
+                                        "<li>Enemies are custom logic defined obstacle blueprints of type <i>BP_BaseEnemyType</i>.</li>",
+                                        "<li>It is useful for spawning obstacles such as rolling blades, bouncing balls, character enemies and others.</li>",
+                                        "</ul>"
+                                    ]
+                                }
+                            ],
+                            "subsections": [
+                                {
+                                    "title": "Character Enemy",
+                                    "content": [
+                                        {
+                                            "type": "header",
+                                            "value": "BP_CharacterEnemyBase"
+                                        },
+                                        {
+                                            "type": "image",
+                                            "src": "",
+                                            "align": "full",
+                                            "caption": "BP_CharacterEnemyBase"
+                                        },
+                                        {
+                                            "type": "header",
+                                            "value": "Properties"
+                                        },
+                                        {
+                                            "type": "image",
+                                            "src": "",
+                                            "align": "left",
+                                            "caption": "ABP_CharacterEnemy"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "value": [
+                                                "<ul>",
+                                                "<li><b>EnemyMeshAsset:</b> Assign the skeletal mesh asset.</li>",
+                                                "<li><b>EnemyABP:</b> Assign the enemy animation blueprint. In this project, for character enemies, <i>ABP_CharacterEnemy</i> is used.</li>",
+                                                "<li><b>IdleAnimSequences:</b> An array of animation sequences representing idle state of the enemy.</li>",
+                                                "<li><b>AttackMontages:</b> An array of attack montages for the enemy to play when enemy collides with the death tracer sphere.</li>",
+                                                "<li><b>TauntMontages:</b> An array of taunt montages for the enemy from which a random one is played when player is running in different lane other than the enemy.</li>",
+                                                "<li><b>SphereRadius:</b> The radius of the sphere tracer that detects if the player is running in the same/different lane than that of enemy.</li>",
+                                                "<li><b>DeathSphereRadius:</b> The radius of the death sphere tracer that kills the player. Attack montage of the enemy is just for visual indication and does not uses traces to hit the player.</li>",
+                                                "<li><b>ActorTickIntervalWhenFarAway:</b> The tick interval of the enemy when the player is far away. On colliding with the detection sphere, the tick interval is reset to zero.</li>",
+                                                "</ul>"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "Timeline Enemy",
+                                    "content": [
+                                        {
+                                            "type": "header",
+                                            "value": "BP_AdvObstaclesBase"
+                                        },
+                                        {
+                                            "type": "image",
+                                            "src": "",
+                                            "align": "full",
+                                            "caption": "BP_AdvObstaclesBase"
+                                        },
+                                        {
+                                            "type": "image",
+                                            "src": "",
+                                            "align": "left",
+                                            "caption": "BP_AOB_BallUpDown"
+                                        },
+                                        {
+                                            "type": "image",
+                                            "src": "",
+                                            "align": "right",
+                                            "caption": "BP_AOB_RollingBlade"
+                                        },
+                                        {
+                                            "type": "header",
+                                            "value": "Properties"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "value": [
+                                                "<ul>",
+                                                "<li>These are custom enemy types other than character.</li>",
+                                                "<li>These use timeline based translation, rotation and scaling to define hit, idle and other states.</li>",
+                                                "<li>Simply create a child class of <i>BP_AdvObstaclesBase</i>, add your desired components and set up logic similar to the images <i>BP_AOB_BallUpDown</i> and <i>BP_AOB_RollingBlade</i>.</li>",
+                                                "</ul>"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Obstacle System",
+                            "content": [
+                                {
+                                    "type": "image",
+                                    "src": "https://cdna.artstation.com/p/assets/images/images/095/793/598/large/wraithcg-screenshot-2026-01-27-161055.jpg?1769535288",
+                                    "align": "full",
+                                    "caption": "Base Platform Classes"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "The obstacle system is split into two main components - ",
+                                        "<ul>",
+                                        "<li><b>BPCC_ObstacleBase:</b> Use for dynamic platforms generation where obstacles can occupy one of many defined positions.</li>",
+                                        "<li><b>BPSP_ObstacleBase:</b> Use for static and uniquely designed platforms.</li>",
+                                        "</ul>"
+                                    ]
+                                }
+                            ],
+                            "subsections": [
+                                {
+                                    "title": "BPCC Obstacle System",
+                                    "content": [
+                                        {
+                                            "type": "header",
+                                            "value": "BPCC_ObstacleBase"
+                                        },
+                                        {
+                                            "type": "image",
+                                            "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
+                                            "align": "full",
+                                            "caption": "BPCC Parameters"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "value": [
+                                                "<ul>",
+                                                "<li>These are the platforms where obstacles are spawned using obstacle families, i.e., BP_DynamicObstacles.</li>",
+                                                "<li>A random obstacle from any family is spawned in any of the pre-defined spawn indices.</li>",
+                                                "<li>These are intended for mass generation of two or more different platforms from a single platform by randomly changing the positions of CACs.</li>",
+                                                "</ul>"
+                                            ]
+                                        },
+                                        {
+                                            "type": "header",
+                                            "value": "Properties"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "value": [
+                                                "<ul>",
+                                                "<li><b>DynObsData:</b> An array of elements that configure spawn properties for a dynamic obstacle.",
+                                                "<ul>",
+                                                "<li><b>DynObsData:</b> Assign the class reference of the child classes of type <i>BP_DynamicObstacles</i>.</li>",
+                                                "<li><b>BanPositionAdjustment:</b> Normally if the <i>SpawnPositions</i> array for any dynamic obstacle contains less than 2 positions, then element '0' is added to the array and the positions are randomized. Banning position adjustment spawns the obstacle only on the indices present in the array.</li>",
+                                                "<li><b>Spawn Positions:</b> An array of indices (0-8) where any obstacle from a obstacle family can be spawned randomly.</li>",
+                                                "</li></ul>",
+                                                "<li><b>EnemySpawnDB:</b> An array for adding enemies/obstacle classes of type <i>BP_BaseEnemyType</i>.",
+                                                "<ul>",
+                                                "<li><b>EnemyClass:</b> Assign any enemy of type <i>BP_BaseEnemyType</i>.</li>",
+                                                "<li><b>LaneIdx:</b> This controls on which lane enemy is spawned.</li>",
+                                                "<li><b>RowLocation:</b> Use this to adjust the position of the enemy on any lane.</li>",
+                                                "</li></ul>",
+                                                "<li><b>CollectibleDB:</b>An array of structures for configuring properties of more than one or same type of collectibles. See <i>CollectionComponent</i> for more details regarding each element.",
+                                                "<li><b>Left & Right EnvironmentClass:</b> Select the environment class asset that you wish to spawn here.</li>",
+                                                "<li><b>Offset:</b> Controls the distance of the obstacles from the start position of the map.</li>",
+                                                "<li><b>SpawnCollectibles:</b> Controls whether or not the data from <i>CollectibleDB</i> can be used for spawning collectibles.</li>",
+                                                "<li><b>DebugPlatform:</b>It is useful for dubugging the object placement on the platform when game is not running.</li>",
+                                                "<li><b>DebugArray:</b>It is useful for checking placement of various obstacles on these lane values when game is not running.</li>",
+                                                "</ul>"
+                                            ]
+                                        },
+                                        {
+                                            "type": "note",
+                                            "value": [
+                                                "<ul>",
+                                                "<li><i>SpawnCollectibles</i> doesn’t restricts CACs to spawn collectibles, i.e., BP_DynamicObstacles. Only the data present in CollectibleDB remains unused.</li>",
+                                                "<li>When the game is running, lane data from GameMode is used.</li>",
+                                                "<li>Use <i>Offset</i> to push obstacles towards the center of the map.</li>",
+                                                "</ul>"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "title": "BPSP Obstacle System",
+                                    "content": [
+                                        {
+                                            "type": "header",
+                                            "value": "BPSP_ObstacleBase"
+                                        },
+                                        {
+                                            "type": "image",
+                                            "src": "",
+                                            "align": "full",
+                                            "caption": "BPSP Parameters"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "value": [
+                                                "<ul>",
+                                                "<li>Used for pre-configured, non-random platforms.</li>",
+                                                "<li>A fixed obstacle from ObstacleData is spawned at the of the pre-defined spawn index with the given physics behavior.</li>",
+                                                "<li>These are intended for creation of unique platforms.</li>",
+                                                "</ul>"
+                                            ]
+                                        },
+                                        {
+                                            "type": "header",
+                                            "value": "Properties"
+                                        },
+                                        {
+                                            "type": "text",
+                                            "value": [
+                                                "<ul>",
+                                                "<li><b>Offset:</b> Controls the distance of the obstacles from the start position of the map.</li>",
+                                                "<li><b>SpawnPowerUp:</b> Controls whether or not to spawn powerUps on this platform.</li>",
+                                                "<li><b>SpawnCollectibles?:</b> Boolean to toggle whether or not collectibles can be spawned on this platform.</li>",
+                                                "<li><b>ObstaclesData:</b> An array of structure for storing the obstacle mesh, its physics behavior and spawn point.</li>",
+                                                "<li><b>SpawnCollectible:</b>Boolean to determine if collectibles appear above this obstacle.</li>",
+                                                "<li><b>ZOffset:</b>Adjusts the vertical height of the obstacle (including the height of obstacle).</li>",
+                                                "<li><b>PowerDB:</b> An array of structures for configuring spawn properties of one or more powerUps data sets.",
+                                                "<ul>",
+                                                "<li><b>PowerUpDA</b> takes a power up data set asset as input.</li>",
+                                                "<li><b>ZOffset</b> defines how high above the ground the powerUp should be spawned.</li>",
+                                                "<li><b>SpawnPointIdx</b> is the location at which the powerUp is spawned.</li>",
+                                                "</ul></li>",
+                                                "<li><b>EnemySpawnDB:</b> An array for adding enemies/obstacle classes of type <i>BP_BaseEnemyType</i>.",
+                                                "<ul>",
+                                                "<li><b>EnemyClass:</b> Assign any enemy of type <i>BP_BaseEnemyType</i>.</li>",
+                                                "<li><b>LaneIdx:</b> This controls on which lane enemy is spawned.</li>",
+                                                "<li><b>RowLocation:</b> Use this to adjust the position of the enemy on any lane.</li>",
+                                                "</ul></li>",
+                                                "<li><b>CollectibleDB:</b> An array of structures for configuring properties of more than one or same type of collectibles. See <i>CollectionComponent</i> for more details.</li>",
+                                                "<li><b>Left & Right EnvironmentClass:</b> Select the environment class<i>(EnvironmentCreationTool)</i> asset that you wish to spawn here.</li>",
+                                                "<li><b>DebugPlatform:</b>It is useful for dubugging the object placement on the platform when game is not running.</li>",
+                                                "<li><b>DebugArray:</b>It is useful for checking placement of various obstacles on these lane values when game is not running.</li>",
+                                                "</ul>"
+                                            ]
+                                        },
+                                        {
+                                            "type": "tip",
+                                            "value": [
+                                                "<ul>",
+                                                "<li>Remember to turn off <i>DebugPlatform</i> toggle before finalizing the platform.</li>",
+                                                "<li>Ensure static meshes have their origin at the bottom-center and collision set to <i>BlockAllDynamic</i> for <i>Blocking Obstacles</i> and <i>PhysicsBody</i> for <i>UnderRolls</i>.</li>",
+                                                "<li>Use <i>Offset</i> to push the obstacles towards the center of the map.</li>",
+                                                "</ul>"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Spawn Zones",
+                            "content": [
+                                {
+                                    "type": "header",
+                                    "value": "Spawn Zones"
+                                },
+                                {
+                                    "type": "image",
+                                    "src": "",
+                                    "align": "right",
+                                    "caption": "Spawn Zone Parameters"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<ul>",
+                                        "<li>Platforms can be grouped into Zones (e.g., City, Forest).</li>",
+                                        "<li>You can set them to cycle <i>Sequentially</i> or <i>Randomly</i> using Data Assets (PDA).</li>",
+                                        "<li>The management of current zone platforms and when to switch to new zones also occurs in the Game Mode.</li>",
+                                        "</ul>"
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<b>Configuration:</b>",
+                                        "<ul>",
+                                        "<li>Create Zone Data Assets (DAs) from DA_PDA_FD inside <i>Components > PlatformSystem > PDA > ZonePDA</i> by duplicating existing ones and clearing them.</li>",
+                                        "<li>Now add your platform obstacle sets of type BP_MapBase.</li>",
+                                        "<li>Add your newly created platform Zone Data Assets to SpawnZonePDA.</li>",
+                                        "<li><i>Sequential Mode:</i> If SpawnSequentially is true, the platforms inside any zone will cycle in a fixed order.</li>",
+                                        "<li><i>Random Mode:</i>Define MinSpawnedPlatforms and MaxSpawnedPlatforms to randomize how long a zone lasts before switching.</li>",
+                                        "</ul>"
+                                    ]
+                                },
+                                {
+                                    "type": "tip",
+                                    "value": [
+                                        "<i>BP_Floor</i> uses the interface function call <i>GetNextFloorClassToSpawn</i> to find the next suitable platform to spawn."
                                     ]
                                 }
                             ]
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "title": "Endless Runner Attributes Component",
-            "content": [
-                {
-                    "type": "text",
-                    "value": "This component manages gameplay configurations for the player including but not limited to widget state, action state, customization items and decor data."
-                }
-            ],
-            "subsections": [
-                {
-                    "title": "BPCC Obstacle System",
-                    "content": [
-                        {
-                            "type": "header",
-                            "value": "Obstacle Families"
-                        },
-                        {
-                            "type": "image",
-                            "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
-                            "align": "right",
-                            "caption": "Obstacle Families"
-                        },
-                        {
-                            "type": "text",
-                            "value": [
-                                "Obstacles are grouped into families to allow variation.",
-                                "<ul><li><b>Blocking:</b>Obstacles must be WorldDynamic or BlockAllDynamic collision (e.g., walls, cars, barriers).</li>",
-                                "<li><b>UnderRolls:</b>Obstacles must be PhysicsActor(PhysicsBody) collision that the player can slide under.</li></ul>"
-                            ]
-                        },
-                        {
-                            "type": "text",
-                            "value": "<b>BP_DynamicObstacles:</b> This class dynamically spawns obstacles from a selected family at specific lane indices."
-                        },
-                        {
-                            "type": "note",
-                            "value": [
-                                "<ul><li>You can create more families for say cars, trains, etc;</li>",
-                                "<li>Depending on the type of parkouring behvaior they allow, you will need to set their type to either Blocking or UnderRoll.</li>",
-                                "<li>Do not use BP_DynamicObstacles directly.</li>",
-                                "<li>Always use child classes BP_DOD_Blockers and BP_DOD_UnderRolls wherever required.</li></ul>"
-                            ]
-                        },
-                        {
-                            "type": "image",
-                            "src": "",
-                            "align": "right",
-                            "caption": "DOD DA"
-                        },
-                        {
-                            "type": "text",
-                            "value": [
-                                "<b>Dynamic Obstacle Data Parameters:</b>",
-                                "<ul><li><b>ObstacleType:</b>Determines the general category of the obstacles.</li>",
-                                "<li><b>CollisionObjectType:</b>Define the collision behavior of the obstacles in the family.</li>",
-                                "<li><b>ObstacleData:</b><ul><li><b>SM:</b>Contains the Static Mesh (SM).</li>",
-                                "<li><b>SpawnCollectible:</b>Boolean to determine if collectibles appear above this obstacle.</li>",
-                                "<li><b>ZOffset:</b>Adjusts the vertical height of the obstacle (including the height of obstacle).</li></ul></li></ul>"
-                            ]
-                        },
-                        {
-                            "type": "tip",
-                            "value": "Disable collectibles spawning for thin obstacles."
-                        },
-                        {
-                            "type": "image",
-                            "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
-                            "align": "right",
-                            "caption": "BP DOD"
-                        },
-                        {
-                            "type": "text",
-                            "value": [
-                                "<b>BP_DynamicObstacles Paramerters:</b><ul><li><b>ObstacleData:</b>Assign the Obstacle Family Data Asset to spawn.</li>",
-                                "<li><b>CurrentISMData:</b>Configure properties for collectibles that can be spawned with any obstacle of this family.</li>",
-                                "<li><b>SpawnedPowerUpData:</b>Contains the array of powerUp data assets that can be spawned on these obstacles randomly.</li></ul>"
-                            ]
-                        },
-                        {
-                            "type": "tip",
-                            "value": "More elements means lesser repetition."
-                        },
-                        {
-                            "type": "header",
-                            "value": "BPCC_ObstacleBase"
-                        },
-                        {
-                            "type": "image",
-                            "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
-                            "align": "right",
-                            "caption": "BPCC Parameters"
-                        },
-                        {
-                            "type": "text",
-                            "value": "<ul><li>These are the platforms where obstacles are spawned using ObstacleFamilies, i.e., BP_DynamicObstacles.</li><li>A random obstacle from any family is spawned in any of the pre-defined spawn indices.</li><li>These are intended for mass generation of two or more different platforms from a single platform by randomly changing the positions of CACs.</li></ul>"
-                        },
-                        {
-                            "type": "text",
-                            "value": [
-                                "<ul><li><b>DynObsData:</b>Assign the class reference of the child classes of type ‘BP_DynamicObstacles’.</li>",
-                                "<li><b>Spawn Positions:</b>An array of indices (0-8) where any obstacle from a obstacle family can be spawned randomly.</li>",
-                                "<li><b>CollectibleDB:</b>An array of structures for configuring properties of more than one or same type of collectibles.",
-                                "<ul><li><b>CollectibleStaticMesh:</b> to spawn via Instanced Static Mesh Component.</li>",
-                                "<li><b>CollectibleCollisionType:</b> must be Collectibles only. Other types are prone to interfere with other gameplay behaviors.</li>",
-                                "<li><b>LaneIdx:</b> controls on which collectibles are spawned here.</li>",
-                                "<li><b>No.OfCollectibles:</b> determine the number of instances to spawn over the obstacles.</li>",
-                                "<li><b>RowLocation:</b> can be used for adjusting spawn point of collectibles for all obstacles in a family.</li>",
-                                "<li><b>Scale:</b> changes the size of obstacles.</li>",
-                                "<li><b>CorrectiveZRotation:</b> is for changing the default rotation of the collectibles if they aren’t facing the desired direction on Z axis.</li>",
-                                "<li><b>Offset:</b> Controls the distance of the obstacles from the start position of the map.</li>",
-                                "<li><b>SpawnCollectibles?:</b> Boolean to toggle whether or not collectibles can be spawned on this platform.<br><i>",
-                                "It doesn’t restricts CACs to spawn collectibles. Only the data present in CollectibleDB remains unused.</i></li>",
-                                "<li><b>NoOfRowSpawners:</b>Decide the number of elements to use for spawning from CollectibleDB.</li></ul>",
-                                "<li><b>LeftEnvironmentData & RightEnvironmentData:</b>are just PropData arrays explained in EnvironmentCreationTools.</li>",
-                                "<li><b>DebugPlatform:</b>It is useful for dubugging the object placement on the platform when game is not running.<br>",
-                                "<li><b>DebugArray:</b>It is useful for checking placement of various obstacles on these lane values when game is not running.<br>",
-                                "<i>When the game is running, lane data from GameMode is used.</i></li>",
-                                "<li><b>Left & Right EnvironmentClass:</b> Select the environment class asset that you wish to spawn here.</li></ul>"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "title": "BPSP Obstacle System",
-                    "content": [
-                        {
-                            "type": "header",
-                            "value": "BPSP_ObstacleBase"
-                        },
-                        {
-                            "type": "image",
-                            "src": "",
-                            "align": "right",
-                            "caption": "BPSP Parameters"
-                        },
-                        {
-                            "type": "text",
-                            "value": "<ul><li>Used for pre-configured, non-random platforms.</li><li>A fixed obstacle from ObstacleData is spawned at the of the pre-defined spawn index with the given physics behavior.</li><li>These are intended for creation of unique platforms.</li></ul>"
-                        },
-                        {
-                            "type": "text",
-                            "value": [
-                                "<b>Configuration:</b><br><ul><li>Ensure static meshes have their origin at the bottom-center and collision set to <i>BlockAllDynamic</i>.</li>",
-                                "<li><b>Offset:</b> Controls the distance of the obstacles from the start position of the map.</li>",
-                                "<li><b>SpawnPowerUp:</b> Controls whether or not to spawn powerUps on this platform.</li>",
-                                "<li><b>SpawnCollectibles?:</b> Boolean to toggle whether or not collectibles can be spawned on this platform.</li>",
-                                "<li><b>ObstaclesData:</b> An array of structure for storing the obstacle mesh, its physics behavior and spawn point.<ul><li><b>SM:</b>Contains the Static Mesh (SM).</li>",
-                                "<li><b>SpawnCollectible:</b>Boolean to determine if collectibles appear above this obstacle.</li>",
-                                "<li><b>ZOffset:</b>Adjusts the vertical height of the obstacle (including the height of obstacle).</li></ul></li>",
-                                "<li><b>PowerDB:</b> An array of structures for configuring spawn properties of one or more powerUps.",
-                                "<ul><li><b>PowerUpDA</b> takes a power up data asset as input.</li>",
-                                "<li><b>ZOffset</b> defines how high above the ground the powerUp should be spawned.</li>",
-                                "<li><b>SpawnPointIdx</b> is the location at which the powerUp is spawned.</li></ul>",
-                                "<li><b>CollectibleDB:</b> An array of structures for configuring properties of more than one or same type of collectibles.",
-                                "<ul><li><b>CollectibleStaticMesh:</b> to spawn via Instanced Static Mesh Component.</li>",
-                                "<li><b>CollectibleCollisionType:</b> must be Collectibles only. Other types are prone to interfere with other gameplay behaviors.</li>",
-                                "<li><b>LaneIdx:</b> controls on which collectibles are spawned here.</li>",
-                                "<li><b>No.OfCollectibles:</b> determine the number of instances to spawn over the obstacles.</li>",
-                                "<li><b>RowLocation:</b> can be used for adjusting spawn point of collectibles for all obstacles in a family.</li>",
-                                "<li><b>Scale:</b> changes the size of obstacles.</li>",
-                                "<li><b>CorrectiveZRotation:</b> is for changing the default rotation of the collectibles if they aren’t facing the desired direction on Z axis.</li>",
-                                "<li><b>Offset:</b> Controls the distance of the obstacles from the start position of the map.</li>",
-                                "<li><b>SpawnCollectibles?:</b> Boolean to toggle whether or not collectibles can be spawned on this platform.<br><i>",
-                                "It doesn’t restricts CACs to spawn collectibles. Only the data present in CollectibleDB remains unused.</i></li>",
-                                "<li><b>NoOfRowSpawners:</b>Decide the number of elements to use for spawning from CollectibleDB.</li></ul>",
-                                "<li><b>LeftEnvironmentData & RightEnvironmentData:</b>are just PropData arrays explained in EnvironmentCreationTools.</li>",
-                                "<li><b>DebugPlatform:</b>It is useful for dubugging the object placement on the platform when game is not running.<br>",
-                                "<li><b>DebugArray:</b>It is useful for checking placement of various obstacles on these lane values when game is not running.<br>",
-                                "<i>When the game is running, lane data from GameMode is used.</i></li>",
-                                "<li><b>Left & Right EnvironmentClass:</b> Select the environment class asset that you wish to spawn here.</li></ul>"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "title": "Obstacle System",
-            "content": [
-                {
-                    "type": "text",
-                    "value": "The obstacle system is split into two main components..."
-                }
-            ],
-            "subsections": [
-                {
-                    "title": "BPCC Obstacle System",
-                    "content": [
-                        {
-                            "type": "header",
-                            "value": "Obstacle Families"
-                        },
-                        {
-                            "type": "image",
-                            "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
-                            "align": "right",
-                            "caption": "Obstacle Families"
-                        },
-                        {
-                            "type": "text",
-                            "value": [
-                                "Obstacles are grouped into families to allow variation.",
-                                "<ul><li><b>Blocking:</b>Obstacles must be WorldDynamic or BlockAllDynamic collision (e.g., walls, cars, barriers).</li>",
-                                "<li><b>UnderRolls:</b>Obstacles must be PhysicsActor(PhysicsBody) collision that the player can slide under.</li></ul>"
-                            ]
-                        },
-                        {
-                            "type": "text",
-                            "value": "<b>BP_DynamicObstacles:</b> This class dynamically spawns obstacles from a selected family at specific lane indices."
-                        },
-                        {
-                            "type": "note",
-                            "value": [
-                                "<ul><li>You can create more families for say cars, trains, etc;</li>",
-                                "<li>Depending on the type of parkouring behvaior they allow, you will need to set their type to either Blocking or UnderRoll.</li>",
-                                "<li>Do not use BP_DynamicObstacles directly.</li>",
-                                "<li>Always use child classes BP_DOD_Blockers and BP_DOD_UnderRolls wherever required.</li></ul>"
-                            ]
-                        },
-                        {
-                            "type": "image",
-                            "src": "",
-                            "align": "right",
-                            "caption": "DOD DA"
-                        },
-                        {
-                            "type": "text",
-                            "value": [
-                                "<b>Dynamic Obstacle Data Parameters:</b>",
-                                "<ul><li><b>ObstacleType:</b>Determines the general category of the obstacles.</li>",
-                                "<li><b>CollisionObjectType:</b>Define the collision behavior of the obstacles in the family.</li>",
-                                "<li><b>ObstacleData:</b><ul><li><b>SM:</b>Contains the Static Mesh (SM).</li>",
-                                "<li><b>SpawnCollectible:</b>Boolean to determine if collectibles appear above this obstacle.</li>",
-                                "<li><b>ZOffset:</b>Adjusts the vertical height of the obstacle (including the height of obstacle).</li></ul></li></ul>"
-                            ]
-                        },
-                        {
-                            "type": "tip",
-                            "value": "Disable collectibles spawning for thin obstacles."
-                        },
-                        {
-                            "type": "image",
-                            "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
-                            "align": "right",
-                            "caption": "BP DOD"
-                        },
-                        {
-                            "type": "text",
-                            "value": [
-                                "<b>BP_DynamicObstacles Paramerters:</b><ul><li><b>ObstacleData:</b>Assign the Obstacle Family Data Asset to spawn.</li>",
-                                "<li><b>CurrentISMData:</b>Configure properties for collectibles that can be spawned with any obstacle of this family.</li>",
-                                "<li><b>SpawnedPowerUpData:</b>Contains the array of powerUp data assets that can be spawned on these obstacles randomly.</li></ul>"
-                            ]
-                        },
-                        {
-                            "type": "tip",
-                            "value": "More elements means lesser repetition."
-                        },
-                        {
-                            "type": "header",
-                            "value": "BPCC_ObstacleBase"
-                        },
-                        {
-                            "type": "image",
-                            "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
-                            "align": "right",
-                            "caption": "BPCC Parameters"
-                        },
-                        {
-                            "type": "text",
-                            "value": "<ul><li>These are the platforms where obstacles are spawned using ObstacleFamilies, i.e., BP_DynamicObstacles.</li><li>A random obstacle from any family is spawned in any of the pre-defined spawn indices.</li><li>These are intended for mass generation of two or more different platforms from a single platform by randomly changing the positions of CACs.</li></ul>"
-                        },
-                        {
-                            "type": "text",
-                            "value": [
-                                "<ul><li><b>DynObsData:</b>Assign the class reference of the child classes of type ‘BP_DynamicObstacles’.</li>",
-                                "<li><b>Spawn Positions:</b>An array of indices (0-8) where any obstacle from a obstacle family can be spawned randomly.</li>",
-                                "<li><b>CollectibleDB:</b>An array of structures for configuring properties of more than one or same type of collectibles.",
-                                "<ul><li><b>CollectibleStaticMesh:</b> to spawn via Instanced Static Mesh Component.</li>",
-                                "<li><b>CollectibleCollisionType:</b> must be Collectibles only. Other types are prone to interfere with other gameplay behaviors.</li>",
-                                "<li><b>LaneIdx:</b> controls on which collectibles are spawned here.</li>",
-                                "<li><b>No.OfCollectibles:</b> determine the number of instances to spawn over the obstacles.</li>",
-                                "<li><b>RowLocation:</b> can be used for adjusting spawn point of collectibles for all obstacles in a family.</li>",
-                                "<li><b>Scale:</b> changes the size of obstacles.</li>",
-                                "<li><b>CorrectiveZRotation:</b> is for changing the default rotation of the collectibles if they aren’t facing the desired direction on Z axis.</li>",
-                                "<li><b>Offset:</b> Controls the distance of the obstacles from the start position of the map.</li>",
-                                "<li><b>SpawnCollectibles?:</b> Boolean to toggle whether or not collectibles can be spawned on this platform.<br><i>",
-                                "It doesn’t restricts CACs to spawn collectibles. Only the data present in CollectibleDB remains unused.</i></li>",
-                                "<li><b>NoOfRowSpawners:</b>Decide the number of elements to use for spawning from CollectibleDB.</li></ul>",
-                                "<li><b>LeftEnvironmentData & RightEnvironmentData:</b>are just PropData arrays explained in EnvironmentCreationTools.</li>",
-                                "<li><b>DebugPlatform:</b>It is useful for dubugging the object placement on the platform when game is not running.<br>",
-                                "<li><b>DebugArray:</b>It is useful for checking placement of various obstacles on these lane values when game is not running.<br>",
-                                "<i>When the game is running, lane data from GameMode is used.</i></li>",
-                                "<li><b>Left & Right EnvironmentClass:</b> Select the environment class asset that you wish to spawn here.</li></ul>"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "title": "BPSP Obstacle System",
-                    "content": [
-                        {
-                            "type": "header",
-                            "value": "BPSP_ObstacleBase"
-                        },
-                        {
-                            "type": "image",
-                            "src": "",
-                            "align": "right",
-                            "caption": "BPSP Parameters"
-                        },
-                        {
-                            "type": "text",
-                            "value": "<ul><li>Used for pre-configured, non-random platforms.</li><li>A fixed obstacle from ObstacleData is spawned at the of the pre-defined spawn index with the given physics behavior.</li><li>These are intended for creation of unique platforms.</li></ul>"
-                        },
-                        {
-                            "type": "text",
-                            "value": [
-                                "<b>Configuration:</b><br><ul><li>Ensure static meshes have their origin at the bottom-center and collision set to <i>BlockAllDynamic</i>.</li>",
-                                "<li><b>Offset:</b> Controls the distance of the obstacles from the start position of the map.</li>",
-                                "<li><b>SpawnPowerUp:</b> Controls whether or not to spawn powerUps on this platform.</li>",
-                                "<li><b>SpawnCollectibles?:</b> Boolean to toggle whether or not collectibles can be spawned on this platform.</li>",
-                                "<li><b>ObstaclesData:</b> An array of structure for storing the obstacle mesh, its physics behavior and spawn point.<ul><li><b>SM:</b>Contains the Static Mesh (SM).</li>",
-                                "<li><b>SpawnCollectible:</b>Boolean to determine if collectibles appear above this obstacle.</li>",
-                                "<li><b>ZOffset:</b>Adjusts the vertical height of the obstacle (including the height of obstacle).</li></ul></li>",
-                                "<li><b>PowerDB:</b> An array of structures for configuring spawn properties of one or more powerUps.",
-                                "<ul><li><b>PowerUpDA</b> takes a power up data asset as input.</li>",
-                                "<li><b>ZOffset</b> defines how high above the ground the powerUp should be spawned.</li>",
-                                "<li><b>SpawnPointIdx</b> is the location at which the powerUp is spawned.</li></ul>",
-                                "<li><b>CollectibleDB:</b> An array of structures for configuring properties of more than one or same type of collectibles.",
-                                "<ul><li><b>CollectibleStaticMesh:</b> to spawn via Instanced Static Mesh Component.</li>",
-                                "<li><b>CollectibleCollisionType:</b> must be Collectibles only. Other types are prone to interfere with other gameplay behaviors.</li>",
-                                "<li><b>LaneIdx:</b> controls on which collectibles are spawned here.</li>",
-                                "<li><b>No.OfCollectibles:</b> determine the number of instances to spawn over the obstacles.</li>",
-                                "<li><b>RowLocation:</b> can be used for adjusting spawn point of collectibles for all obstacles in a family.</li>",
-                                "<li><b>Scale:</b> changes the size of obstacles.</li>",
-                                "<li><b>CorrectiveZRotation:</b> is for changing the default rotation of the collectibles if they aren’t facing the desired direction on Z axis.</li>",
-                                "<li><b>Offset:</b> Controls the distance of the obstacles from the start position of the map.</li>",
-                                "<li><b>SpawnCollectibles?:</b> Boolean to toggle whether or not collectibles can be spawned on this platform.<br><i>",
-                                "It doesn’t restricts CACs to spawn collectibles. Only the data present in CollectibleDB remains unused.</i></li>",
-                                "<li><b>NoOfRowSpawners:</b>Decide the number of elements to use for spawning from CollectibleDB.</li></ul>",
-                                "<li><b>LeftEnvironmentData & RightEnvironmentData:</b>are just PropData arrays explained in EnvironmentCreationTools.</li>",
-                                "<li><b>DebugPlatform:</b>It is useful for dubugging the object placement on the platform when game is not running.<br>",
-                                "<li><b>DebugArray:</b>It is useful for checking placement of various obstacles on these lane values when game is not running.<br>",
-                                "<i>When the game is running, lane data from GameMode is used.</i></li>",
-                                "<li><b>Left & Right EnvironmentClass:</b> Select the environment class asset that you wish to spawn here.</li></ul>"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "title": "Spawn Zones",
-            "content": [
-                {
-                    "type": "header",
-                    "value": "Spawn Zones"
-                },
-                {
-                    "type": "image",
-                    "src": "",
-                    "align": "right",
-                    "caption": "Spawn Zone Parameters"
-                },
-                {
-                    "type": "text",
-                    "value": "<ul><li>Platforms can be grouped into Zones (e.g., City, Forest).</li><li>You can set them to cycle <b>Sequentially</b> or <b>Randomly</b> using Data Assets (PDA).</li><li>The management of current zone platforms and when to switch to new zones also occurs in the Game Mode.</li></ul>"
-                },
-                {
-                    "type": "text",
-                    "value": [
-                        "<b>Configuration:</b>",
-                        "<ul><li>Create Zone Data Assets (DAs) from DA_PDA_FD inside <b>Components > PlatformSystem > PDA > ZonePDA</b> by duplicating existing ones and clearing them.</li>",
-                        "<li>Now add your platform obstacle sets of type BP_MapBase.</li><li>Add your newly created platform Zone Data Assets to SpawnZonePDA (e.g., DA_PDA_SZD_FD).</li>",
-                        "<li><b>Sequential Mode:</b> If SpawnSequentially is true, the platforms inside any zone will cycle in a fixed order.</li>",
-                        "<li><b>Random Mode:</b>Define MinSpawnedPlatforms and MaxSpawnedPlatforms to randomize how long a zone lasts before switching.",
-                        "This prevents the generator from getting stuck in a single zone.</li><li><b>‘BP_Floor’</b> uses the interface function call GetNextFloorClassToSpawn to find the next suitable platform to spawn.</li></ul>"
-                    ]
-                }
-            ]
-        },
-        {
-            "title": "Environment Tools",
-            "content": [
-                {
-                    "type": "header",
-                    "value": "BP_EnvironmentBase"
-                },
-                {
-                    "type": "text",
-                    "value": [
-                        "This tool allows you to create complex environments using <b>PropsData</b> maps.<br>",
-                        "<ul><li><b>UseRandomSeedValues:</b> Randomizes transform within min/max ranges.</li>",
-                        "<li><b>AutoUpdatePropsData:</b> Updates viewport in real-time.</li>",
-                        "<li><b>PropsData:</b> Supports both Static Meshes (Instanced) and Skeletal Meshes (Animated).</li></ul>"
-                    ]
-                }
-            ]
-        },
-        {
-            "title": "Player Character",
-            "content": [
-                {
-                    "type": "header",
-                    "value": "CBP_SandboxCharacter"
-                },
-                {
-                    "type": "text",
-                    "value": "Handles movement, lane logic, and input detection."
-                },
-                {
-                    "type": "text",
-                    "value": ""
-                },
-                {
-                    "type": "header",
-                    "value": "Attributes Component"
-                },
-                {
-                    "type": "text",
-                    "value": "<b>SpeedUpdateRate:</b> Score required to increase speed.<br><b>Lane Settings:</b> Controls lane width and switching speed.<br><b>Death Logic:</b> Checks for 'DeathTracer' collision and triggers ragdoll."
-                },
-                {
-                    "type": "header",
-                    "value": "Parkour Component"
-                },
-                {
-                    "type": "text",
-                    "value": "Uses <b>Motion Warping</b> to adapt animations. Handles Sliding, Rolling, and Bump reactions based on collision strength."
-                }
-            ]
-        },
-        {
-            "title": "Power-Ups",
-            "content": [
-                {
-                    "type": "header",
-                    "value": "Available Power-Ups"
-                },
-                {
-                    "type": "text",
-                    "value": "<ul><li><b>DoubleCoins:</b> Multiplies coin value by 2.</li><li><b>Invincibility:</b> Phases through obstacles.</li><li><b>Magnet:</b> Increases collection radius.</li><li><b>SuperJump:</b> Allows extremely high jumps.</li></ul>"
-                },
-                {
-                    "type": "header",
-                    "value": "Management"
-                },
-                {
-                    "type": "text",
-                    "value": "Managed by <b>BPC_PowerUpsManager</b>. Only one power-up is active at a time. Picking up a new one overwrites the current effect."
-                }
-            ]
-        },
-        {
-            "title": "Customization",
-            "content": [
-                {
-                    "type": "header",
-                    "value": "Character System"
-                },
-                {
-                    "type": "text",
-                    "value": "All characters must inherit from <b>CBP_SandboxCharacter</b> to preserve running logic. Data is fetched from `DA_PDA_CD` assets."
-                },
-                {
-                    "type": "header",
-                    "value": "Adding New Characters"
-                },
-                {
-                    "type": "text",
-                    "value": "1. Create Child Class of CBP_SandboxCharacter.<br>2. Assign Skeletal Mesh.<br>3. Create new Data Asset and add to `DA_PDA_CSD`.<br>4. Setup sockets (hat, glasses, backpack) on the skeleton."
-                },
-                {
-                    "type": "text",
-                    "value": ""
-                }
-            ]
-        },
-        {
-            "title": "Camera System",
-            "content": [
-                {
-                    "type": "header",
-                    "value": "Modes"
-                },
-                {
-                    "type": "text",
-                    "value": "<b>Third Person (TPS):</b> Standard runner view.<br><b>First Person (FPS):</b> Attached to head bone with dynamic stabilization.<br><b>Rigs:</b> Specific camera rigs are triggered for actions (Slide, Roll) and Menus."
-                }
-            ]
-        },
-        {
-            "title": "UI & Widgets",
-            "content": [
-                {
-                    "type": "header",
-                    "value": "Widget Management"
-                },
-                {
-                    "type": "text",
-                    "value": "Uses <b>WidgetsManagementSystem</b> with reusable elements (E_Button, E_FixedText).<br><b>Workflow:</b> Create Widget -> Define Category in Enum -> Add to Data Asset -> Call `AddWidgetToScreen` interface."
-                },
-                {
-                    "type": "text",
-                    "value": ""
                 }
             ]
         },
@@ -2488,15 +2251,15 @@
                     "value": "<b>Q: Why do my custom animations look wrong?</b><br><b>A:</b> The default GASP setup is generic. For best results, you need to add specific animations to the chooser or use the <i>CharacterAnimationModification</i> system to layer changes over the base motion matching set."
                 },
                 {
-                    "type":"text",
+                    "type": "text",
                     "value": [
-                        "<b>Q: Why do my custom animations look wrong?</b><br>",
+                        "<b>Q: Collectibles are not spawned in the viewport even when <i>SpawnCollectibles</i> is true in dynamic obstacles?</b><br>",
                         "<b>A:</b> Even if <i>SpawnCollectibles (in PDA_DynamicObsData)</i> is set to true, it may happen that collectibles are not spawning with the obstacle in the viewport of BP_DynamicObstacles -",
                         "<ul>",
                         "<li>Set <i>DebugIndex</i> to that obstacle's index from <i>ObstacleData</i>.</li>",
                         "<li>Set <i>DebugObstacle</i> to True.</li>",
                         "<li>Play the game.</li>",
-                        "<li>In my testing, collectibles were not visible in the viewport, but were spawning correctly during gameplay. This is most likely to do with how world transforms and relative transforms work and I might be using the wrong ones in the wrong places.</li>",
+                        "<li>In my testing, collectibles were not visible in the viewport, but were spawning correctly during gameplay. In my opinion, this is most likely to do with how world transforms and relative transforms work and I might be using the wrong ones in the wrong places.</li>",
                         "</ul>"
                     ]
                 }

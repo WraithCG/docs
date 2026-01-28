@@ -212,7 +212,7 @@ body.theme-metal {
     letter-spacing: 1px;
 }
 
-.icon-btn, a{
+.icon-btn, #user{
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--first-color);
@@ -228,7 +228,7 @@ body.theme-metal {
     text-decoration: none;
 }
 
-.icon-btn:hover, a:hover{
+.icon-btn:hover, #user:hover{
     background: var(--first-color);
     color: #000;
     scale: 1.05;
@@ -735,7 +735,7 @@ img.loaded {
     z-index: 10;
 }
 
-.nav-btn {
+.nav-btn, #link{
     display: flex;
     align-items: center;
     gap: 0.8rem;
@@ -759,6 +759,14 @@ img.loaded {
     transform: translateY(-2px);
     scale: .9;
 }
+
+#link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--first-color);
+    transform: translateY(-2px);
+    scale: .9;
+}
+
 
 .nav-btn i {
     font-size: 1.5rem;
@@ -913,7 +921,7 @@ img.loaded {
         gap: 25px;
     }
 
-    .icon-btn a{
+    .icon-btn #user{
         height: 64%;
         width: 64%;
     }
