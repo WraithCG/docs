@@ -369,7 +369,7 @@
             "content": [
                 {
                     "type": "image",
-                    "src": "https://placehold.co/800x400/222/FFF?text=Input+Actions",
+                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/839/355/large/wraithcg-screenshot-2026-01-28-093334.jpg?1769648129",
                     "align": "right",
                     "caption": "Input Actions"
                 },
@@ -413,7 +413,7 @@
                         },
                         {
                             "type": "image",
-                            "src": "",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/839/347/large/wraithcg-screenshot-2026-01-28-093128.jpg?1769648115",
                             "align": "full",
                             "caption": "Character Blueprints"
                         },
@@ -447,14 +447,20 @@
                                     "value": "The logic for various actions is separated into different graphs."
                                 },
                                 {
-                                    "type": "header",
-                                    "value": "Setting Up a New Character"
+                                    "type": "image",
+                                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/793/669/large/wraithcg-screenshot-2026-01-26-192420.jpg?1769535375",
+                                    "align": "left",
+                                    "caption": "RetargetedCharacterBlueprint"
                                 },
                                 {
                                     "type": "image",
-                                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/793/669/large/wraithcg-screenshot-2026-01-26-192420.jpg?1769535375",
-                                    "align": "full",
-                                    "caption": "RetargetedCharacterBlueprint"
+                                    "src": "https://cdna.artstation.com/p/assets/images/images/095/839/346/large/wraithcg-screenshot-2026-01-28-093123.jpg?1769648111",
+                                    "align": "right",
+                                    "caption": "RetargetedCharacters"
+                                },
+                                {
+                                    "type": "header",
+                                    "value": "Setting Up a New Character"
                                 },
                                 {
                                     "type": "text",
@@ -503,7 +509,12 @@
                                 },
                                 {
                                     "type": "text",
-                                    "value": "Enable <b>UseCustomAnimationData</b> to modify animations for specific actions (e.g., Running, Jumping) .<br>Define a <i>ModifierAnimation</i>, a <i>BlendValue</i> (0.0–1.0), and a list of <i>BoneToAffect</i> (from E_BonesToModify).Current categories: UpperBody, LeftArm, RightArm, LeftThigh, RightThigh."
+                                    "value": [ "<ul>",
+                                    "<li>Enable <b>UseCustomAnimationData</b> to modify animations for specific actions (e.g., Running, Jumping).</li>",
+                                    "<li>Define a <i>ModifierAnimation</i>, a <i>BlendValue</i> (0.0–1.0), and a list of <i>BoneToAffect</i> (from E_BonesToModify).</li>",
+                                    "<li>Current categories: UpperBody, LeftArm, RightArm, LeftThigh, RightThigh.</li>",
+                                    "</ul>"
+                                ]
                                 }
                             ]
                         }
@@ -741,12 +752,6 @@
                                 {
                                     "title": "E_Button",
                                     "content": [
-                                        {
-                                            "type": "image",
-                                            "src": "",
-                                            "align": "left",
-                                            "caption": "E_Button"
-                                        },
                                         {
                                             "type": "header",
                                             "value": "Properties"
@@ -997,7 +1002,7 @@
                 },
                 {
                     "type": "image",
-                    "src": "",
+                    "src": "https://cdna.artstation.com/p/assets/images/images/095/839/328/large/wraithcg-screenshot-2026-01-28-193815.jpg?1769648050",
                     "align": "right",
                     "caption": "Components"
                 }
@@ -1012,7 +1017,7 @@
                         },
                         {
                             "type": "image",
-                            "src": "",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/839/322/large/wraithcg-screenshot-2026-01-28-093153.jpg?1769648039",
                             "align": "full",
                             "caption": "BPC_EndlessRunnerAttributes"
                         },
@@ -1434,6 +1439,12 @@
                             ]
                         },
                         {
+                            "type":"image",
+                            "src":"https://cdnb.artstation.com/p/assets/images/images/095/839/351/large/wraithcg-screenshot-2026-01-28-093250.jpg?1769648126",
+                            "align":"right",
+                            "caption":"AN_FullHeadBlend"
+                        },
+                        {
                             "type": "header",
                             "value": "AN_FullHeadBlend"
                         },
@@ -1597,7 +1608,7 @@
                                 },
                                 {
                                     "type": "image",
-                                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/627/689/large/wraithcg-screenshot-2026-01-22-001738.jpg?1769069440",
+                                    "src": "https://cdna.artstation.com/p/assets/images/images/095/839/350/large/wraithcg-screenshot-2026-01-28-093230.jpg?1769648122",
                                     "align": "full",
                                     "caption": "BP_DecorData"
                                 },
@@ -1639,7 +1650,7 @@
                                 },
                                 {
                                     "type": "image",
-                                    "src": "",
+                                    "src": "https://cdna.artstation.com/p/assets/images/images/095/839/362/large/wraithcg-screenshot-2026-01-28-154226.jpg?1769648145",
                                     "align": "full",
                                     "caption": "BPC_PowerUpsManager"
                                 },
@@ -1659,7 +1670,7 @@
                                 },
                                 {
                                     "type": "image",
-                                    "src": "",
+                                    "src": "https://cdna.artstation.com/p/assets/images/images/095/793/612/large/wraithcg-screenshot-2026-01-27-154133.jpg?1769535304",
                                     "align": "right",
                                     "caption": "E_PowerType"
                                 },
@@ -1905,7 +1916,7 @@
                             "content": [
                                 {
                                     "type": "image",
-                                    "src": "https://cdna.artstation.com/p/assets/images/images/095/793/586/large/wraithcg-screenshot-2026-01-27-162144.jpg?1769535270",
+                                    "src": "https://cdna.artstation.com/p/assets/images/images/095/839/364/large/wraithcg-screenshot-2026-01-28-154254.jpg?1769648149",
                                     "align": "full",
                                     "caption": "Overview"
                                 },
@@ -1929,7 +1940,7 @@
                                         },
                                         {
                                             "type": "image",
-                                            "src": "",
+                                            "src": "https://cdna.artstation.com/p/assets/images/images/095/839/366/large/wraithcg-screenshot-2026-01-28-154304.jpg?1769648160",
                                             "align": "full",
                                             "caption": "BP_CharacterEnemyBase"
                                         },
@@ -1939,7 +1950,7 @@
                                         },
                                         {
                                             "type": "image",
-                                            "src": "",
+                                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/839/653/large/wraithcg-screenshot-2026-01-28-092214.jpg?1769649484",
                                             "align": "left",
                                             "caption": "ABP_CharacterEnemy"
                                         },
@@ -1969,19 +1980,19 @@
                                         },
                                         {
                                             "type": "image",
-                                            "src": "",
+                                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/839/365/large/wraithcg-screenshot-2026-01-28-154259.jpg?1769648155",
                                             "align": "full",
                                             "caption": "BP_AdvObstaclesBase"
                                         },
                                         {
                                             "type": "image",
-                                            "src": "",
+                                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/839/345/large/wraithcg-screenshot-2026-01-28-092952.jpg?1769648108",
                                             "align": "left",
                                             "caption": "BP_AOB_BallUpDown"
                                         },
                                         {
                                             "type": "image",
-                                            "src": "",
+                                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/839/345/large/wraithcg-screenshot-2026-01-28-092952.jpg?1769648108",
                                             "align": "right",
                                             "caption": "BP_AOB_RollingBlade"
                                         },
@@ -2033,7 +2044,7 @@
                                         },
                                         {
                                             "type": "image",
-                                            "src": "https://placehold.co/800x400/222/FFF?text=Game+Project+Title+Banner",
+                                            "src": "https://cdna.artstation.com/p/assets/images/images/095/839/318/large/wraithcg-screenshot-2026-01-28-092550.jpg?1769648032",
                                             "align": "full",
                                             "caption": "BPCC Parameters"
                                         },
@@ -2097,7 +2108,7 @@
                                         },
                                         {
                                             "type": "image",
-                                            "src": "",
+                                            "src": "https://cdna.artstation.com/p/assets/images/images/095/839/320/large/wraithcg-screenshot-2026-01-28-092842.jpg?1769648035",
                                             "align": "full",
                                             "caption": "BPSP Parameters"
                                         },
@@ -2167,7 +2178,7 @@
                                 },
                                 {
                                     "type": "image",
-                                    "src": "",
+                                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/839/315/large/wraithcg-screenshot-2026-01-27-162230.jpg?1769648024",
                                     "align": "right",
                                     "caption": "Spawn Zone Parameters"
                                 },
