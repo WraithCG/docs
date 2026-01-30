@@ -120,8 +120,8 @@
                         },
                         {
                             "version": "Version 1.4",
-                            "date": "TBA",
-                            "status": "in-progress",
+                            "date": "January 2026",
+                            "status": "completed",
                             "features": [
                                 "Curved World System",
                                 "Fixing Collision Issues",
@@ -137,7 +137,7 @@
                         {
                             "version": "Version 1.5",
                             "date": "TBA",
-                            "status": "planned",
+                            "status": "in-progress",
                             "features": [
                                 "Moving Obstacles",
                                 "Inventory System",
@@ -893,7 +893,7 @@
                                         {
                                             "type": "text",
                                             "value": [
-                                                "<ul><li>It uses <i>SetKeyElement</i> function to change on-screen image. Takes a Texture2D format file as input.</li></ul>"
+                                                "<ul><li>It is intended for use in widget blueprint only.</li></ul>"
                                             ]
                                         }
                                     ]
@@ -912,8 +912,7 @@
                                         {
                                             "type": "text",
                                             "value": [
-                                                "<ul><li>It uses <i>SetPairKeyText</i> & <i>SetPairValueText</i> function to change key-value data independently during runtime.</li>",
-                                                "<li>It uses <i>SetPairKeyText</i> & <i>SetPairValueText</i> function to change key-value data independently during runtime.</li></ul>"
+                                                "<ul><li>It uses <i>SetPairKeyText</i> & <i>SetPairValueText</i> function to change key-value data independently during runtime.</li></ul>"
                                             ]
                                         }
                                     ]
@@ -932,8 +931,12 @@
                                         {
                                             "type": "text",
                                             "value": [
-                                                "<ul><li>It uses <i>SetPairKeyText</i> & <i>SetPairValueText</i> function to change key-value data independently during runtime.</li>",
-                                                "<li>It uses <i>SetPairKeyText</i> & <i>SetPairValueText</i> function to change key-value data independently during runtime.</li></ul>"
+                                                "<ul>",
+                                                "<li>It is status based - Enabled/Disabled.</li>",
+                                                "<li>When enabled, it sets the opacity of the image to 1, text to provided text and initiates a timer for given duration.</li>",
+                                                "<li>It starts as disabled and when the timer ends, it is disabled again. Its opacity is set to 0 and text to None.</li>",
+                                                "<li>Use the functions <i>GetStatus</i> and <i>UpdateStatus</i> for the same.</li>",
+                                                "</ul>"
                                             ]
                                         }
                                     ]
@@ -1350,7 +1353,7 @@
                         },
                         {
                             "type": "image",
-                            "src": "",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/877/433/large/wraithcg-screenshot-2026-01-30-093049.jpg?1769746124",
                             "align": "full",
                             "caption": "CurrentISMData"
                         },
@@ -1395,6 +1398,22 @@
                                 "<li><b>DirectionVector:</b> Each component represents a respective XYZ direction. Alpha plays no role.</li>",
                                 "</ul>"
                             ]
+                        },
+                        {
+                            "type": "tip",
+                            "value": [
+                                "To remove curve world shading, remove the <i>MF_CurveShaderFunction</i> from the <i>M_Solid</i>, <i>M_Grid</i> & <i>M_Glow</i> shaders."
+                            ]
+                        },
+                        {
+                            "type": "note",
+                            "value": [
+                                "<ul>",
+                                "<li>The Curve World Shading sometimes causes objects flickering.</li>",
+                                "<li>If the <i>CurveBool</i> is true, then moving backwards in the scene causes heavy objects flickering.</li>",
+                                "<li>It is still a work in progress.</li>",
+                                "</ul>"
+                            ]
                         }
                     ]
                 },
@@ -1407,7 +1426,7 @@
                         },
                         {
                             "type": "image",
-                            "src": "",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/877/432/large/wraithcg-screenshot-2026-01-30-092922.jpg?1769746120",
                             "align": "full",
                             "caption": "BPC_ParkourComponent"
                         },
@@ -1692,7 +1711,7 @@
                                 {
                                     "type": "image",
                                     "src": "https://cdnb.artstation.com/p/assets/images/images/095/793/615/large/wraithcg-screenshot-2026-01-27-154018.jpg?1769535310",
-                                    "align": "right",
+                                    "align": "full",
                                     "caption": "PDA_PowerData"
                                 },
                                 {
@@ -2179,7 +2198,7 @@
                                 {
                                     "type": "image",
                                     "src": "https://cdnb.artstation.com/p/assets/images/images/095/839/315/large/wraithcg-screenshot-2026-01-27-162230.jpg?1769648024",
-                                    "align": "right",
+                                    "align": "full",
                                     "caption": "Spawn Zone Parameters"
                                 },
                                 {
@@ -2221,12 +2240,25 @@
             "title": "Level Setup",
             "content": [
                 {
+                    "type":"image",
+                    "src" : "https://cdna.artstation.com/p/assets/images/images/095/877/434/large/wraithcg-screenshot-2026-01-30-093411.jpg?1769746131",
+                    "caption": "World Settings",
+                    "align" : "right"
+                },
+                {
                     "type": "header",
                     "value": "Play in a New Level"
                 },
                 {
                     "type": "text",
-                    "value": "1. File -> New Level (Basic).<br>2. Add <b>BP_PlatformManager</b> and <b>PlayerStart</b> at (0,0,0).<br>3. Set GameMode to <b>BP_RunnerGM</b>.<br>4. Press Play."
+                    "value": [
+                        "<ul>",
+                        "<li>Go to <i>File -> New Level (Basic).</li>",
+                        "<li>Add <i>BP_PlatformManager</i> and <i>PlayerStart</i> at (0,0,0).</li>",
+                        "<li>Set GameMode to <i>BP_RunnerGM</i>.</li>",
+                        "<li>Press Play.</li>",
+                        "</ul>"
+                    ]
                 }
             ]
         },
