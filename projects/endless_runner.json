@@ -20,8 +20,8 @@
                     "value": "This document serves as a comprehensive guide to the <b>Infinite Runner Template</b>, which has been integrated with <b>Motion Matching</b>. The template provides a robust framework for creating endless runner games in Unreal Engine, featuring dynamic obstacle generation, character selection, customization, and a power-ups system."
                 },
                 {
-                    "type":"text",
-                    "value":[
+                    "type": "text",
+                    "value": [
                         "<b>Showcase Videos</b>:",
                         "<ul>",
                         "<li><a id=\"link\" href=\"https://youtu.be/rBk-THbrwZw?si=R4loV-GOLNUfO3IA\">Version 1.3</a></li>",
@@ -509,12 +509,13 @@
                                 },
                                 {
                                     "type": "text",
-                                    "value": [ "<ul>",
-                                    "<li>Enable <b>UseCustomAnimationData</b> to modify animations for specific actions (e.g., Running, Jumping).</li>",
-                                    "<li>Define a <i>ModifierAnimation</i>, a <i>BlendValue</i> (0.0–1.0), and a list of <i>BoneToAffect</i> (from E_BonesToModify).</li>",
-                                    "<li>Current categories: UpperBody, LeftArm, RightArm, LeftThigh, RightThigh.</li>",
-                                    "</ul>"
-                                ]
+                                    "value": [
+                                        "<ul>",
+                                        "<li>Enable <b>UseCustomAnimationData</b> to modify animations for specific actions (e.g., Running, Jumping).</li>",
+                                        "<li>Define a <i>ModifierAnimation</i>, a <i>BlendValue</i> (0.0–1.0), and a list of <i>BoneToAffect</i> (from E_BonesToModify).</li>",
+                                        "<li>Current categories: UpperBody, LeftArm, RightArm, LeftThigh, RightThigh.</li>",
+                                        "</ul>"
+                                    ]
                                 }
                             ]
                         }
@@ -1458,10 +1459,10 @@
                             ]
                         },
                         {
-                            "type":"image",
-                            "src":"https://cdnb.artstation.com/p/assets/images/images/095/839/351/large/wraithcg-screenshot-2026-01-28-093250.jpg?1769648126",
-                            "align":"right",
-                            "caption":"AN_FullHeadBlend"
+                            "type": "image",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/839/351/large/wraithcg-screenshot-2026-01-28-093250.jpg?1769648126",
+                            "align": "right",
+                            "caption": "AN_FullHeadBlend"
                         },
                         {
                             "type": "header",
@@ -2240,10 +2241,10 @@
             "title": "Level Setup",
             "content": [
                 {
-                    "type":"image",
-                    "src" : "https://cdna.artstation.com/p/assets/images/images/095/877/434/large/wraithcg-screenshot-2026-01-30-093411.jpg?1769746131",
+                    "type": "image",
+                    "src": "https://cdna.artstation.com/p/assets/images/images/095/877/434/large/wraithcg-screenshot-2026-01-30-093411.jpg?1769746131",
                     "caption": "World Settings",
-                    "align" : "right"
+                    "align": "right"
                 },
                 {
                     "type": "header",
@@ -2271,11 +2272,7 @@
                 },
                 {
                     "type": "text",
-                    "value": "<b>Q: Is game data saved?</b><br><b>A:</b> Yes. Unlike the basic game project, this template uses a SaveGame class (<i>SG_Runner</i>). It automatically saves High Scores, Total Coins, Last Selected Character, and Customization Data."
-                },
-                {
-                    "type": "text",
-                    "value": "<b>Q: What plugins are required?</b><br><b>A:</b> You must enable AnimationWarping, MotionWarping, AnimationLocomotionLibrary, PoseSearch, Chooser, RigLogic, LiveLink, and LiveLinkControlRig."
+                    "value": "<b>Q: Why do blueprints flicker- objects appear/disappear when modified, compiled, or moved?</b><br><b>A:</b> The construction script for the blueprint runs on every change in blueprint transforms and data. You can explicitly disable this by toggling either <i>Realtime Preview</i> or <i>Run Construction Script on Every Change</i> in the class defaults for the blueprint."
                 },
                 {
                     "type": "text",
@@ -2287,11 +2284,11 @@
                 },
                 {
                     "type": "text",
-                    "value": "<b>Q: How are platforms managed?</b><br><b>A:</b> The <i>BP_RunnerGM</i> manages the loop. It spawns new platforms when the player overlaps a trigger and deletes old platforms after a set time to maintain performance."
+                    "value": "<b>Q: How to change the lanes distance/gap?</b><br><b>A:</b> The <i>BP_RunnerGM</i> manages the lane data. You can customize the lane data in the class defaults inside Runner section."
                 },
                 {
                     "type": "text",
-                    "value": "<b>Q: Why do my custom animations look wrong?</b><br><b>A:</b> The default GASP setup is generic. For best results, you need to add specific animations to the chooser or use the <i>CharacterAnimationModification</i> system to layer changes over the base motion matching set."
+                    "value": "<b>Q: Why do my custom animations look wrong?</b><br><b>A:</b> The default GASP setup is generic. For best results, you need to add specific animations to the chooser or use the <i>CharacterAnimationModification</i> system to layer changes over the base motion matching set. Use the already present motion matching animation montages as reference for addition of new parkour montages."
                 },
                 {
                     "type": "text",
@@ -2306,6 +2303,329 @@
                         "</ul>"
                     ]
                 }
+            ],
+            "subsections": [                
+                {
+                    "title": "Extending Platforms",
+                    "content": [
+                        {
+                            "type": "header",
+                            "value": "Workflow Overview"
+                        },
+                        {
+                            "type": "text",
+                            "value": "To expand your game world, you will primarily work with Platform Blueprints and Zone Data Assets. The workflow involves creating a new map blueprint, customizing its assets, and registering it within a Spawn Zone."
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdna.artstation.com/p/assets/images/images/095/839/320/large/wraithcg-screenshot-2026-01-28-092842.jpg?1769648035",
+                            "caption": "Create-a-Platform",
+                            "align": "left"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/839/315/large/wraithcg-screenshot-2026-01-27-162230.jpg?1769648024",
+                            "caption": "Customize-SpawnZone",
+                            "align": "right"
+                        },
+                        {
+                            "type": "image",
+                            "src": "https://cdnb.artstation.com/p/assets/images/images/095/727/011/large/wraithcg-screenshot-2026-01-25-083957.jpg?1769362200",
+                            "caption": "Register-in-GameMode",
+                            "align": "full"
+                        }
+                    ],
+                    "subsections": [
+                        {
+                            "title": "Adding New Platforms",
+                            "content": [
+                                {
+                                    "type": "header",
+                                    "value": "Create the Blueprint"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "Instead of creating a platform from scratch, it is highly recommended to duplicate an existing base class to preserve logic:",
+                                        "<ul>",
+                                        "<li><b>For Static Layouts:</b> Navigate to <i>MM_Runner > Blueprints > PlatformSystem</i> and create a child class or duplicate <b>BPSP_ObstacleBase</b>.</li>",
+                                        "<li><b>For Dynamic Layouts:</b> Create a child class or duplicate <b>BPCC_ObstacleBase</b> if you want the obstacles to randomize positions every time the platform spawns.</li>",
+                                        "</ul>"
+                                    ]
+                                },
+                                {
+                                    "type": "image",
+                                    "src": "https://cdna.artstation.com/p/assets/images/images/095/839/320/large/wraithcg-screenshot-2026-01-28-092842.jpg?1769648035",
+                                    "caption": "Static BPSP Platform",
+                                    "align": "left"
+                                },
+                                {
+                                    "type": "image",
+                                    "src": "https://cdna.artstation.com/p/assets/images/images/095/839/318/large/wraithcg-screenshot-2026-01-28-092550.jpg?1769648032",
+                                    "caption": "Dynamic BPCC Platform",
+                                    "align": "right"
+                                },
+                                {
+                                    "type": "header",
+                                    "value": "<br>Configure the Platform"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "Create/Modify existing platforms to your liking : ",
+                                        "<ul>",
+                                        "<li>In <i>BPSP</i>, modify the <b>ObstaclesData</b> array to set specific static meshes.</li>",
+                                        "<li>In <i>BPCC</i>, modify <b>DynObsData</b> to choose which obstacle families can spawn.</li>",
+                                        "<li>Assign your desired environment creation blueprints to <b>LeftEnvironmentClass</b> and <b>RightEnvironmentClass</b>.</li>",
+                                        "<li>Set up collectibles on various lanes.",
+                                        "</ul>"
+                                    ]
+                                },
+                                {
+                                    "type": "tip",
+                                    "value": "Consider checking out <i>Components > Platforms > Obstacle Systems</i> for more details!"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Registering in Spawn Zones",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "value": "For the game to spawn your new platform, it must be added to a Zone Data Asset."
+                                },
+                                {
+                                    "type": "image",
+                                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/839/315/large/wraithcg-screenshot-2026-01-27-162230.jpg?1769648024",
+                                    "align": "full",
+                                    "caption": "Zone Data Asset"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<ul>",
+                                        "<li>Navigate to <i>Components > PlatformSystem > PDA > ZonePDA</i>.</li>",
+                                        "<li>Open the desired Zone Data Asset (e.g., <i>DA_Zone_City</i>) or create a new one derived from <b>DA_PDA_FD</b>.</li>",
+                                        "<li>Add a new element to the array and select your newly created Platform Blueprint class (<i>BP_MapBase</i> child).</li>",
+                                        "<li>If the Zone is set to <b>Sequential</b>, the platform will appear in the order listed, else randomly.</li>",
+                                        "</ul>"
+                                    ]
+                                },
+                                {
+                                    "type": "tip",
+                                    "value": "If you created a completely new Zone Data Asset, remember to register that Zone inside the <b>BP_RunnerGM</b> (GameMode) under <i>NormalRunnerZones</i> or <i>VectorRunnerZones</i>."
+                                },
+                                {
+                                    "type": "image",
+                                    "src": "https://cdnb.artstation.com/p/assets/images/images/095/727/011/large/wraithcg-screenshot-2026-01-25-083957.jpg?1769362200",
+                                    "caption": "Register-in-GameMode",
+                                    "align": "full"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Replacing Assets",
+                            "content": [
+                                {
+                                    "type": "header",
+                                    "value": "Replacing Obstacles"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "<b>Static Platforms (BPSP):</b><br>",
+                                        "Simply open the platform blueprint, locate <b>ObstaclesData</b>, and change the <i>StaticMesh</i> reference to your new mesh. Ensure the pivot is at the bottom-center.</li>",
+                                        "<b>Dynamic Platforms (BPCC):</b><br>",
+                                        "Open the <b>PDA_DynamicObsData</b> (found in <i>Components > PlatformSystem > PDA > DynamicObs</i>). Modify the <i>ObstaclesData</i> array to include your new mesh. This will automatically update all platforms using this Dynamic Obstacle family."
+                                    ]
+                                },
+                                {
+                                    "type": "header",
+                                    "value": "Replacing Environments"
+                                },
+                                {
+                                    "type": "text",
+                                    "value": [
+                                        "Environments are managed via the <b>Environment Creation Tool</b>.",
+                                        "<ul>",
+                                        "<li>Create a child class of <b>BP_EnvironmentBase</b>.</li>",
+                                        "<li>In the details panel, locate <b>StaticPropsData</b> or <b>SkeletalPropsData</b>.</li>",
+                                        "<li>Replace the <i>StaticMeshAsset</i> or <i>SkeletalMeshAsset</i> with your own art assets (trees, buildings, streetlights).</li>",
+                                        "<li>Once configured, assign this new Environment Blueprint to the <i>Left/RightEnvironmentClass</i> variable inside your Platform Blueprints.</li>",
+                                        "</ul>"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Applying Curved World to Custom Assets",
+                    "content": [
+                        {
+                            "type": "text",
+                            "value": "When you import custom static meshes (buildings, trees, obstacles), they will not curve with the world by default. You must modify their materials to respect the global curve parameters."
+                        },
+                        {
+                            "type": "header",
+                            "value": "Material Setup Steps"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li>Open the <b>Material</b> of your custom asset.</li>",
+                                "<li>Right-click and search for the Material Function <b>MF_CurveShaderFunction</b>.</li>",
+                                "<li>Connect the output of this function to the <i>World Position Offset</i> & <i>Pixel Position Offset</i> pin of your Main Material Node.</li>",
+                                "<li>Ensure <b>Tangent Space Normal</b> is unchecked in the material details if you notice lighting artifacts (optional, depends on asset).</li>",
+                                "</ul>"
+                            ]
+                        },
+                        {
+                            "type": "note",
+                            "value": "If your material already uses World Position Offset (e.g., for wind or sway), you must <i>Add</i> the output of <i>MF_CurveShaderFunction</i> to your existing offset logic before plugging it into the Master Node."
+                        }
+                    ]
+                },
+                {
+                    "title": "Scripting New Power-Ups",
+                    "content": [
+                        {
+                            "type": "text",
+                            "value": "Creating a new Power-Up requires two steps: defining the data (Data Asset) and scripting the gameplay effect (Blueprint Logic) in <i>BPC_PowerUpsManager</i>."
+                        },
+                        {
+                            "type": "header",
+                            "value": "Register the Type"
+                        },
+                        {
+                            "type":"image",
+                            "src":"https://cdna.artstation.com/p/assets/images/images/095/793/612/large/wraithcg-screenshot-2026-01-27-154133.jpg?1769535304",
+                            "align":"right",
+                            "caption": "Power Ups Assets"
+                        },
+                        {
+                            "type": "text",
+                            "value": "Navigate to <i>Components > PowerUps > Enumeration</i> and open <b>E_PowerType</b>. Add a new Enum entry (<i>e.g. *New*</i>)."
+                        },
+                        {
+                            "type": "header",
+                            "value": "Script the Logic"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "The gameplay effects are handled centrally to avoid scattering logic.",
+                                "<ul>",
+                                "<li>Open <i>BPC_PowerUpsManager</i>.</li>",
+                                "<li>Locate the <i>ActivatePowerUp</i> and <i>DeactivatePowerUp</i> events in the Event Graph.</li>",
+                                "<li>You will see a <i>Switch on E_PowerType</i> node. Expand it to see your *New* pin.</li>",
+                                "<li><b>On Activate:</b> Script your start logic by creating a new custom event.</li>",
+                                "<li><b>On Deactivate:</b> Script your cleanup logic by creating a new custom event.</li>",
+                                "</ul>"
+                            ]
+                        },
+                        {
+                            "type":"tip",
+                            "value":[
+                                "<ul>",
+                                "<li>See existing graphs for other powerUps and similarly script activation and deactivation logic for your *new* powerUp.</li>",
+                                "<li>It is recommended to create a new event graph for unique powerTypes and use custom events for activation/deactivation logics.</li>",
+                                "</ul>"
+                            ]
+                        },
+                        {
+                            "type":"image",
+                            "src":"https://cdna.artstation.com/p/assets/images/images/095/839/362/large/wraithcg-screenshot-2026-01-28-154226.jpg?1769648145",
+                            "align":"full",
+                            "caption": "BPC_PowerUpsManager"
+                        },
+                        {
+                            "type": "header",
+                            "value": "Create the Asset"
+                        },
+                        {
+                            "type": "text",
+                            "value": "Create a new <b>PDA_PowerData</b>, select your *New* PowerType, and assign your desired duration and visual effects. The system will now automatically trigger your logic when this asset is picked up. See <i>Components > Power Ups Component > Data Assets</i> for more details."
+                        }
+                    ]
+                },
+                {
+                    "title": "Animation Layering Hierarchy",
+                    "content": [
+                        {
+                            "type": "text",
+                            "value": "Understanding the order of operations in <b>ABP_SandboxCharacter</b> is crucial for debugging animation issues. The AnimBP processes poses in a specific priority order."
+                        },
+                        {
+                            "type": "header",
+                            "value": "Blend Order (Lowest to Highest Priority)"
+                        },
+                        {
+                            "type": "text",
+                            "value": [
+                                "<ul>",
+                                "<li><b>Base Motion Matching (P_MotionMatched):</b>",
+                                "<ul>",
+                                "<li>The foundation.</li>",
+                                "<li>Handles basic running, stopping, and turning based on velocity and trajectory.</li>",
+                                "<li>If no other systems are active, this is what you see.</li>",
+                                "</ul></li>",
+                                "<li><b>Animation Modifiers (P_AnimModified):</b>",
+                                "<ul>",
+                                "<li>Overrides specific bones based on gameplay tags.</li>",
+                                "<li>Used for things like holding items or specific action states.</li>",
+                                "<li>This is blended <i>on top</i> of Motion Matching.</li>",
+                                "</ul></li>",
+                                "<li><b>Power-Up Overrides (P_PowerBlended):</b> <br> If a Power-Up is active (e.g., SuperJump), its defined Animation Sequence in the Data Asset takes priority over the specific slots (UpperBody/FullBody) defined in the Asset.</li>",
+                                "<li><b>Camera Blending (P_CameraBlended):</b>",
+                                "<ul>",
+                                "<li>The final layer.</li>",
+                                "<li>This adjusts the spine and head bones to stabilize the camera view or look at targets.</li>",
+                                "<li>It does not play animations but alters the final pose.</li>",
+                                "</ul></li>",
+                                "</ul>"
+                            ]
+                        },
+                        {
+                            "type": "tip",
+                            "value": "If your custom animation isn't showing, check if a <b>Power-Up</b> is active or if the <b>Camera Blend</b> is clamping the bone rotation too aggressively."
+                        }
+                    ]
+                },
+                {
+            "title": "Understanding Save Data",
+            "content": [
+                {
+                    "type": "text",
+                    "value": "Only high score, collected coins and remaining keys are tracked during any run. This project does not contains any dedicated save game manager. Character Customizations and Selections are lost on restarting the level."
+                }
+            ]
+        },
+        {
+            "title": "Debugging Tools",
+            "content": [
+                {
+                    "type": "text",
+                    "value": "Several components have built-in debug toggles to help visualize invisible gameplay systems."
+                },
+                {
+                    "type": "header",
+                    "value": "Visualization Toggles"
+                },
+                {
+                    "type": "text",
+                    "value": [
+                        "<ul>",
+                        "<li><b>Collision & Death:</b> In <i>BPC_EndlessRunnerAttributes</i>, enable <b>DrawDebugDeathTracer</b> to see the collision sphere detecting obstacles.</li>",
+                        "<li><b>Parkour Logic:</b> In <i>BPC_ParkourComponent</i>, enable <b>CollisionTraceDebug</b> to visualize the safe-stop distances for slides and rolls.</li>",
+                        "<li><b>Collectibles:</b> In <i>BPC_CollectorComponent</i>, use <b>DrawDebugType</b> to see the magnetic collection radius.</li>",
+                        "<li><b>Obstacle Spawning:</b> In <i>BP_DynamicObstacles</i>, set <b>DebugObstacle</b> to <i>True</i> to preview potential collectible/power-up spawn points in the editor viewport.</li>",
+                        "</ul>"
+                    ]
+                }
+            ]
+        }
             ]
         },
         {

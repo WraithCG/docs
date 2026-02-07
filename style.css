@@ -916,6 +916,11 @@ img.loaded {
         padding-bottom: 5px;
     }
 
+    .img-wrap.full, .img-wrap.left, .img-wrap.right {
+    width: 100%;
+    clear: both;
+    }
+
     .logo-area {
         margin-bottom: 5px;
         gap: 25px;
